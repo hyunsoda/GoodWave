@@ -3,19 +3,53 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    /* border: 1px solid black; */
     
   }
 
   nav{
     background-color: transparent;
     color: black;
-
+    display: flex;
     position: sticky;
+    margin-top: 20px;
   }
 
   nav > ul {
     display: flex;
     list-style: none;
     height: 100%;
+    flex-basis: 70%;
+    justify-content: center;
   }
   
+  nav li {
+    margin-left: 50px;
+    font-size: 30px;
+ 
+  }
+
+  nav >div:first-child{
+    flex-basis: 15%;
+    margin-left: 20px;
+  }
+
+  nav > div:last-child{
+    flex-basis: 15%;
+    justify-content:flex-end;
+    display: flex;
+    margin-right: 20px;
+  }
+
+#navlogo{
+  height: 50px;
+}
+
+nav button {
+  height: 100%;
+  border-radius: 15%;
+}
+
+#right-icon {
+  font-size: 15px;
+}
