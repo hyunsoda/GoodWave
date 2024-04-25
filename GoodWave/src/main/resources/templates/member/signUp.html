@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/member/member.css">
+    <link rel="stylesheet" href="/css/member/signUp.css">
+    <th:block th:replace="~{/common/common}"></th:block>
+</head>
+<body>
+    <th:block th:replace="~{/common/header2}"></th:block>
+
+    <main>
+        <section class="main">
+            <form action="/member/signUp" method="post">
+                <fieldset class="loginfield">
+                    
+                    <label>
+                    이메일 
+                    <span class="required">*</span>
+                    </label>
+
+                    <div>
+                        <input type="text" class="btn2">
+                        <button type="button">중복확인</button>
+                    </div>
+
+                    <label>
+                         비밀번호 
+                        <span class="required">*</span>
+                    </label>
+
+                    <input type="password" class="normalBtn">
+
+                    <label>
+                         비밀번호 확인 
+                        <span class="required">*</span>
+                    </label>
+
+                    <input type="password" class="normalBtn">
+
+                    <label>
+                        성명
+                        <span class="required">*</span>
+                    </label>
+
+                    <input type="text">
+
+                    <label>
+                        휴대폰 번호
+                        <span class="required">*</span>
+                    </label>
+
+                    <input type="tel" class="normalBtn">
+
+                    선택사항
+                    <hr>
+                    
+             
+                    <label for="memberAddress">주소</label>
+
+                    <div class="signUp-input-area">
+                      <input type="text" name="memberAddress" placeholder="우편번호" maxlength="6" id="postcode" class="btn2">                       
+                      
+                      <button type="button" id="searchAddress">검색</button>
+                    </div>
+            
+                    <div class="signUp-input-area">
+                      <input type="text" name="memberAddress" placeholder="도로명/지번 주소" id="address" class="normalBtn">
+                    </div>
+            
+                    <div class="signUp-input-area">
+                      <input type="text" name="memberAddress" placeholder="상세 주소" id="detailAddress" class="normalBtn">
+                    </div>  
+
+                    <button id="submitBtn">회원가입 하기</button>
+                </fieldset>
+
+
+
+            </form>
+
+
+
+
+        </section>
+
+
+
+
+    </main>
+
+
+
+    <th:block th:replace="~{/common/footer}"></th:block>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="/js/member/signUp.js"></script>
+</body>
+</html>

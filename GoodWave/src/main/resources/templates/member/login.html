@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/member/member.css">
+    <th:block th:replace="~{/common/common}"></th:block>
+
+</head>
+<body>
+    <th:block th:replace="~{/common/header2}"></th:block>
+
+    <main>
+
+        <!-- 메인 -->
+        <section class="second">
+
+            <section class="loginBox">
+                <h1>로그인</h1>
+                 <form action="/member/login" method="post">   
+                    <fieldset class="loginfield">
+
+                       <input type="text" name="loginId" id="loginId">
+                       <input type="password" name="loginPw" id="loginPw"> 
+
+                       <div>
+                            <input type="checkbox">
+                            아이디 저장
+                       </div>
+
+                       <button>로그인하기</button>
+
+                    </fieldset>
+                </form>
+
+                <div class="loginBox2">
+                    <a>아이디 찾기</a>
+                    <span> | </span>
+                    <a>비밀번호 찾기</a>
+                    <span> | </span>
+                    <a href="/member/signUp">회원가입</a>
+                </div>    
+
+            </section>
+                    
+
+            
+        </section>
+    <!-- 메인 -->
+
+    </main>
+
+
+
+
+
+
+
+    <th:block th:replace="~{/common/footer}"></th:block>
+
+
+</body>
+</html>
