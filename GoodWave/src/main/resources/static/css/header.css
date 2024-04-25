@@ -13,7 +13,12 @@
     padding: 0;
     margin: 0;
     font-weight: 900;
+    z-index: 10;
     /* border: 1px solid black; */
+    border-bottom: 1px solid white;
+    color: white;
+    justify-content: space-between;
+
 
   }
 
@@ -21,19 +26,21 @@
     display: flex;
     list-style: none;
     height: 100%;
-    flex-basis: 70%;
-    justify-content: center;
+    flex-basis: 37%;
+    justify-content: space-between;
     margin-top: 30px;
+   
   }
   
   nav li {
     margin-left: 50px;
-    font-size: 30px;
+    font-size: 20px;
+    cursor: pointer;
  
   }
 
   .header1div {
-    flex-basis: 15%;
+    flex-basis: 10%;
     margin-left: 30px;
     margin-top: 6px;
     margin-bottom: 6px;
@@ -51,12 +58,15 @@
 
 #navlogo{
   height: auto;
-  width: 80px;
-  margin-left: 15%;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  width:80%;
+  
+
   
 }
+
+
+
+
 
 nav button {
   height: 45PX;
@@ -67,7 +77,9 @@ nav button {
   font-weight: bold;
   background-color: transparent;
   margin-top: 4px;
-  
+  color: white;
+  /* border-color: white; */
+  border: 1px solid white;
 }
 
 #right-icon {
