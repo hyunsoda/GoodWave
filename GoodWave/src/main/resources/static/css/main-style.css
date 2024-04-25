@@ -19,6 +19,28 @@
 .confirm{
     color:green;
 }
+#middle_main {
+    width: 100%;
+    height: 600px;
+    background-color: rgb(185, 165, 165);
+    position: relative;
+    bottom: 100px;
+    z-index: 1;
+}
 
+
+.section1 {
+    width: 100%;
+    height: 350px;
+    position: absolute;
+    top: 100px;
+    display:none;
+    left: 0;
+    grid-template-columns: 220px 220px 220px 220px;
+    background-color: rgb(255, 255, 255);
+    z-index: 100;
+    justify-content: center;
+    text-align: center;
+}
 
 
