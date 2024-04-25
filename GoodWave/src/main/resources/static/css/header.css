@@ -120,3 +120,11 @@ nav button {
   align-items: center;
   display: flex;
 }
+
+
+.imageBox {
+  height: 200px;
+  background-color: aliceblue;
+  /* backgroun-color는 그냥 알아보려고 넣어둔 거임
+  사진 넣을 거니까 신경 ㄴㄴ 나중에 지워줘 */
+}
