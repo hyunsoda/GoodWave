@@ -22,6 +22,26 @@
 
   }
 
+
+  .header2nav{
+    background-color: transparent;
+    color: black;
+    display: flex;
+    position: sticky;
+    height: 100px;
+    width: 1920px;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-weight: 900;
+    z-index: 10;
+    /* border: 1px solid black; */
+    border-bottom: 1px solid white;
+    color: black;
+    justify-content: space-between;
+
+  }
+
   nav > ul {
     display: flex;
     list-style: none;
@@ -127,4 +147,8 @@ nav button {
   background-color: aliceblue;
   /* backgroun-color는 그냥 알아보려고 넣어둔 거임
   사진 넣을 거니까 신경 ㄴㄴ 나중에 지워줘 */
+}
+
+#donationBtn{
+  color: black;
 }

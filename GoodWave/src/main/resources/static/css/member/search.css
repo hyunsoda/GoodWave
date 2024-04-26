@@ -1,0 +1,59 @@
+
+.boxSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 400px;
+    align-items: center;
+}
+
+
+.searchBox{
+    width: 600px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+#searchId {
+    margin-bottom: 10px;    
+    width: 350px;
+    height: 40px;
+    font-size: 20px;
+}
+
+#searchPw{
+    margin-bottom: 10px;    
+    width: 350px;
+    height: 40px;
+    font-size: 20px;
+}
+/* ******비밀번호 찾기********** */
+#search2Id {
+    margin-bottom: 10px;    
+    width: 350px;
+    height: 40px;
+    font-size: 20px;
+}
+
+#search2Pw{
+    margin-bottom: 10px;    
+    width: 350px;
+    height: 40px;
+    font-size: 20px;
+}
+#search2Email{
+    margin-bottom: 10px;    
+    width: 350px;
+    height: 40px;
+    font-size: 20px;
+}
+
+#searchTitle{
+    margin-top: 10px;
+}
+
