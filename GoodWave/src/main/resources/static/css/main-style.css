@@ -11,11 +11,15 @@
     margin:0px;
     box-sizing: border-box;
 
+
 }
 
 #wrap{
     width:2137px;
     /* overflow: hidden; */
+
+    /* background-color: rgba(0, 0, 0, 0.059); */
+
 }
 
 .error{

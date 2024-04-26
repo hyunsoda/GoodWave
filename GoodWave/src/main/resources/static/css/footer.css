@@ -67,3 +67,26 @@ img{
 }
 
 
+
+
+.footer_head{
+    height: 50px;
+    background-color: aliceblue;
+    display: flex;
+}
+
+.footer_tel{
+    margin-left: 300px;
+    justify-content: center;
+    display: flex;
+  
+}
+
+#footerH4{
+    line-height: 45px;
+}
+
+#footer_span{
+    line-height: 45px;
+}
+

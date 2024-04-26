@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,6 +75,35 @@
                       <input type="text" name="memberAddress" placeholder="상세 주소" id="detailAddress" class="normalBtn">
                     </div>  
 
+
+                     <h2>약관 및 개인정보 수집 이용동의</h2>
+                    <hr>
+                    
+            <section class="checkField">
+                <div class="checkbox_all">
+                    <label class="agreeText">
+                        <input type="checkbox" name="" id="" class="all" />
+                      <div class="a">전체 동의</div>
+                    </label>
+                </div>
+                <hr>
+                <div class="checkbox">
+                    <label  class="agreeText">
+                        <input type="checkbox" name="" id="" class="normal" />
+                        <div class="a">[필수]웹사이트 이용약관 동의</div>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label  class="agreeText">
+                        <input type="checkbox" name="" id="" class="normal" />
+                        <div class="a">[필수]개인정보 수집 동의</div>
+                    </label>
+                </div>
+
+
+            </section>
+
+                    <!-- ------------------------------ -->
                     <button id="submitBtn">회원가입 하기</button>
                 </fieldset>
 
@@ -87,6 +116,7 @@
 
         </section>
 
+ 
 
 
 
