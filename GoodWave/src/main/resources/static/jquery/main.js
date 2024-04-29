@@ -4,12 +4,12 @@ $(function(){
       $(".section1").css("display", "grid")
    })
    
-   $(".nav_ul").mouseout(function(){
-     $(".section1").stop().slideUp(50)
+  $(".nav_ul").mouseout(function(){
+   $(".section1").stop().slideUp(50)
      
    
    
-   })
+  })
 })
 
 $(function(){
@@ -20,9 +20,9 @@ $(function(){
       $(".stick").css("transform-origin", "50% 50%");
    });
    $(".li_1").mouseout(function(){
-      $(".stick").css("transform", ": scale(0)");
-      $(".stick").css("border", "0px solid black");
-      $(".stick").css("width", "0px");
+      $(".stick").stop().css("transform", ": scale(0)");
+      $(".stick").stop().css("border", "0px solid black");
+      $(".stick").stop().css("width", "0px");
    })
    $(".li_2").mouseover(function(){
       $(".stick2").css("border", "3.5px solid rgb(106, 141, 218)");
@@ -31,9 +31,9 @@ $(function(){
       $(".stick2").css("transform-origin", "50% 50%");
    });
    $(".li_2").mouseout(function(){
-      $(".stick2").css("transform", ": scale(0)");
-      $(".stick2").css("border", "0px solid black");
-      $(".stick2").css("width", "0px");
+      $(".stick2").stop().css("transform", ": scale(0)");
+      $(".stick2").stop().css("border", "0px solid black");
+      $(".stick2").stop().css("width", "0px");
    })
    $(".li_3").mouseover(function(){
       $(".stick3").css("border", "3.5px solid rgb(106, 141, 218)");
@@ -95,7 +95,9 @@ $(function(){
       var scrollTop = $(window).scrollTop();
 
       if(scrollTop > 300){
-         $("html").css("display", "block")
+         $(".scrollTop_div").fadeIn(300)
+      }else{
+         $(".scrollTop_div").fadeOut(300)
       }
 
    })
@@ -103,6 +105,17 @@ $(function(){
    $(".scrollTop_div").click(function(){
       $("html").animate({"scrollTop":"0"}, 100)
    })
+})
+
+$(function(){
+   $(".story_first_img_div").mouseover(function(){
+      $(".story_first_img_div_img").css("transform", "scale(1.2)")
+   })
+   $(".story_first_img_div").mouseout(function(){
+      $(".story_first_img_div_img").css("transform", "scale(1)")
+   })
+
+
 })
 
 

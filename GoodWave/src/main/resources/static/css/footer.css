@@ -6,8 +6,8 @@ li{
 
 #footer{
     width:1920px;
-    height:220px;
-    grid-template-rows: 1fr 2.5fr;
+    height:290px;
+    
     grid-template-columns: auto;
     display:grid;
     overflow:hidden;
@@ -45,6 +45,7 @@ img{
     width: 500px;
     margin-left:90px;
     margin-top:30px;
+    line-height: 30px;
 }
 
 #footer_div2_section2_ul_p{
