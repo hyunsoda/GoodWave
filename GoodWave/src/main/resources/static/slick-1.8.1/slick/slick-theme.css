@@ -23,8 +23,7 @@
     line-height: 0;
 
     position: absolute;
-    top: 50%;
-
+    top: 56%;
     display: block;
 
     width: 20px;
@@ -33,7 +32,7 @@
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
-
+  z-index: 999;
     cursor: pointer;
 
     color: transparent;
@@ -76,11 +75,12 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+/* 화살표 수정 css*/ /* 화살표 수정 css*/ /* 화살표 수정 css*/
 .slick-prev
 {
-    left: -25px;
-}
+   left:1%;
+} 
+
 [dir='rtl'] .slick-prev
 {
     right: -25px;
@@ -89,6 +89,8 @@
 .slick-prev:before
 {
     content: '←';
+    font-size:70px;
+    color:blue;
 }
 [dir='rtl'] .slick-prev:before
 {
@@ -97,7 +99,7 @@
 
 .slick-next
 {
-    right: -25px;
+    right: 4%;
 }
 [dir='rtl'] .slick-next
 {
@@ -107,11 +109,15 @@
 .slick-next:before
 {
     content: '→';
+    font-size:70px;
+    color:blue;
 }
 [dir='rtl'] .slick-next:before
 {
     content: '←';
 }
+
+/* 화살표 수정 css*/ /* 화살표 수정 css*/ /* 화살표 수정 css*/
 
 /* Dots */
 .slick-dotted.slick-slider
@@ -202,3 +208,4 @@
     opacity: .75;
     color: black;
 }
+
