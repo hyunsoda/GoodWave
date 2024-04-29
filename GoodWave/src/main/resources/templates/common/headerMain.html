@@ -2,7 +2,7 @@
 <nav id="bb">
     <!--  로고 -->
     <div class="header1div">
-        <a>
+        <a href="/">
             <img src="/images/GOODWAVE.png" 
             id="navlogo">
 
@@ -35,11 +35,11 @@
                     </div>
                   <div class="bbi right" id="right_baby">
                         <p class="font_p"><a href="#"target="_blank">연탄봉사</a></p>
-                        <p class="font_p"><a href="#"target="_blank">재능기부</a></p>
+                        <p class="font_p"><a href="/volunteer/talentDonation"target="_blank">재능기부</a></p>
                         <p class="font_p"><a href="#"target="_blank">자택방문봉사</a></p>
                     </div>
                     <div class="bbi right" id="right_ba">
-                        <p class="font_p"><a href="#"target="_blank">자주 묻는 질문</a></p>
+                        <p class="font_p"><a href="/community/FAQ"target="_blank">자주 묻는 질문</a></p>
                         <p class="font_p"><a href="#"target="_blank">Q&A</a></p>
                         
                     </div> 
@@ -92,11 +92,23 @@
     <!-- 오른쪽 -->
     <div class="headerRight">
 
-        <div>
-            <a>
-            <i class="fa-solid fa-user" id="right-icon"></i>
-            </a>
-        </div>
+        <th:block th:if="${session.loginMember == null}">
+            <div>
+                <a href="/member/login">
+                <i class="fa-solid fa-user" id="right-icon"></i>
+                </a>
+            </div>
+        </th:block>    
+
+        <th:block th:if="${session.loginMember != null}">
+            <div>
+                <a href="/member/myPage">
+                <i class="fa-solid fa-user" id="right-icon"></i>
+                </a>
+            </div>
+        </th:block>    
+
+
 
 
         <div>
