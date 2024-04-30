@@ -11,6 +11,7 @@
     margin:0px;
     box-sizing: border-box;
   }
+  
 
 
 body {
@@ -18,14 +19,15 @@ body {
   }
   
   table {
+    position: relative;
     margin-top: 50px;
     border: 1px lightgray solid;
     font-size: .9em;
     box-shadow: 0 2px 5px rgba(0,0,0,.25);
-    width: 100%;
+    width: 1200px;
     border-collapse: collapse;
     border-radius: 5px;
-    overflow: hidden;
+  
   }
   
   th {
@@ -57,55 +59,14 @@ body {
     color: #B0DBEF;
   }
     
-   @media all and (max-width: 768px) {
-      
-    table, thead, tbody, th, td, tr {
-      display: block;
-    }
-    
-    th {
-      text-align: right;
-    }s
-    
-    table {
-      position: relative; 
-      padding-bottom: 0;
-      border: none;
-      box-shadow: 0 0 10px rgba(0,0,0,.2);
-    }
-    
-    thead {
-      float: left;
-      white-space: nowrap;
-    }
-    
-    tbody {
-      overflow-x: auto;
-      overflow-y: hidden;
-      position: relative;
-      white-space: nowrap;
-    }
-    
-    tr {
-      display: inline-block;
-      vertical-align: top;
-    }
-    
-    th {
-      border-bottom: 1px solid #B0DBEF;
-      background-color: #7ABEDD;
-    }
-    
-    td {
-      border-bottom: 1px solid #B0DBEF;
-    }
-  }
+  
 
-
-
+  /*글쓰기*/
   .write-btn {
     border: 0;
     border-radius: 5px;
+    position: relative;
+    left: 1102px;
     background-color: #7ABEDD;
     color: white;
     margin-top: 20px;
@@ -114,8 +75,12 @@ body {
   }
 
   .write-btn:hover{
-   cursor: pointer;
+    cursor: pointer;
+    background-color: white;
+    color : #455ba8;
+    border: 2px solid #4C8DC3;
 }
+  /*글쓰기*/
 
 
 
