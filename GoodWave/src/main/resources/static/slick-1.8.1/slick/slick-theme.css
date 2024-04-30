@@ -90,7 +90,7 @@
 {
     content: '←';
     font-size:70px;
-    color:blue;
+    color:#979797;
 }
 [dir='rtl'] .slick-prev:before
 {
@@ -110,7 +110,7 @@
 {
     content: '→';
     font-size:70px;
-    color:blue;
+    color:#979797;
 }
 [dir='rtl'] .slick-next:before
 {
