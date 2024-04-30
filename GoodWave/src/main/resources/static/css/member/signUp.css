@@ -126,6 +126,7 @@ h2{
 
 
 
+
 .checkField span {
    justify-content: center;
    
@@ -159,4 +160,18 @@ h2{
 
 .a{
     margin-left: 7px;
+}
+
+.loginfield input {
+    font-size: 18px;
+}
+
+
+.confirm {
+    color: green;
+}
+
+.error{
+    color: red;
+    font-size: 20px;
 }
