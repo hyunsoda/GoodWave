@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>회원가입</title>
 
     <link rel="stylesheet" href="/css/member/member.css">
     <link rel="stylesheet" href="/css/member/signUp.css">
@@ -14,46 +14,56 @@
 
     <main>
         <section class="main">
-            <form action="/member/signUp" method="post">
+            <form action="/member/signUp" method="post" id="signUpForm">
                 <fieldset class="loginfield">
                     
                     <label>
+                    아이디 
+                    <span id="idSpan">*</span>
+                    </label>
+
+
+                        <input type="text" class="normalBtn" id="id">
+
+
+
+                    <label>
                     이메일 
-                    <span class="required">*</span>
+                    <span id="emailSpan">*</span>
                     </label>
 
                     <div>
-                        <input type="text" class="btn2">
+                        <input type="text" class="btn2" id="email">
                         <button type="button">중복확인</button>
                     </div>
 
                     <label>
                          비밀번호 
-                        <span class="required">*</span>
+                        <span id="pwSpan">*</span>
                     </label>
 
-                    <input type="password" class="normalBtn">
+                    <input type="password" class="normalBtn" id="pw">
 
                     <label>
                          비밀번호 확인 
-                        <span class="required">*</span>
+                        <span id="pwConfirmSpan">*</span>
                     </label>
 
-                    <input type="password" class="normalBtn">
+                    <input type="password" class="normalBtn" id="pwConfirm">
 
                     <label>
                         성명
-                        <span class="required">*</span>
+                        <span id="nameSpan">*</span>
                     </label>
 
-                    <input type="text">
+                    <input type="text" id="name">
 
                     <label>
                         휴대폰 번호
-                        <span class="required">*</span>
+                        <span id="telSpan">*</span>
                     </label>
 
-                    <input type="tel" class="normalBtn">
+                    <input type="tel" class="normalBtn" id="tel">
 
                     선택사항
                     <hr>
@@ -82,7 +92,7 @@
             <section class="checkField">
                 <div class="checkbox_all">
                     <label class="agreeText">
-                        <input type="checkbox" name="" id="" class="all" />
+                        <input type="checkbox" name="" id="check" class="all" />
                       <div class="a">전체 동의</div>
                     </label>
                 </div>
