@@ -6,8 +6,14 @@ const a = document.querySelector("#a");
 
 registerBtn.addEventListener("click", ()=> {
 
-    popupLayer.classList.remove("popup-hidden");
-    a.classList.add("dark");
+    if(loginMember != null){
+        popupLayer.classList.remove("popup-hidden");
+        a.classList.add("dark");
+    }
+    if(loginMember == null){
+        alert("로그인 후 이용해 주세요");
+        location.href="/member/login";
+    }
 
 });
 
@@ -18,3 +24,9 @@ popupClose.addEventListener("click",()=> {
     a.classList.remove("dark");
     popupLayer.classList.add("popup-hidden");
 });
+
+
+
+
+
+

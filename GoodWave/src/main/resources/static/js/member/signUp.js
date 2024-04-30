@@ -81,4 +81,257 @@ $('.checkbox').on('click', '.normal', function () {
 
 
 
+// ======================유효성 검사=====================
 
+const email = document.getElementById("email");
+const pw = document.getElementById("pw");
+const pwConfirm = document.getElementById("pwConfirm");
+const memberName = document.getElementById("name");
+const tel = document.getElementById("tel");
+const check = document.getElementById("check");
+const id = document.getElementById("id");
+
+
+const emailSpan = document.getElementById("emailSpan")
+const pwSpan = document.getElementById("pwSpan");
+const pwConfirmSpan = document.getElementById("pwConfirmSpan");
+const nameSpan = document.getElementById("nameSpan");
+const telSpan = document.getElementById("telSpan");
+const idSpan = document.getElementById("idSpan");
+
+
+const checkobj = {
+
+    "email" : false,
+    "pw" : false,
+    "pwConfirm" : false,
+    "name" : false,
+    "tel" : false,
+    "id" : false
+};
+
+// =======이메일 유효성 검사
+email.addEventListener("input",(e)=> {
+
+    const inputEmail = e.target.value;
+
+    if(inputEmail.trim().length == 0){
+        emailSpan.classList.remove("confirm");
+        emailSpan.classList.add("error");
+        checkobj.email = false;
+        email.value="";
+        return;
+    };
+
+    const regExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if( !regExp.test(inputEmail)){
+        emailSpan.classList.remove("confirm");
+        emailSpan.classList.add("error");
+        checkobj.email = false;
+        return;
+    };
+
+    // ==== 나중에====
+    /////======================= 이메일 중복 검사 추가하기=============
+
+
+    emailSpan.classList.add('confirm');
+    emailSpan.classList.remove('error');
+    checkobj.email = true;
+
+
+})
+
+
+
+//  비밀번호 유효성 검사
+pw.addEventListener("input",(e) => {
+
+    const inputPw = e.target.value;
+
+    if(inputPw.trim().length===0){
+        pwSpan.classList.remove("confirm");
+        pwSpan.classList.add("error");
+        checkobj.pw = false;
+        pw.value="";
+        return;
+    }
+
+    const regExp = /^[a-zA-Z0-9!@#_-]{6,20}$/;
+
+    if(!regExp.test(inputPw)){
+        pwSpan.classList.remove("confirm");
+        pwSpan.classList.add("error");
+        checkobj.pw = false;
+        return;
+    }
+
+    pwSpan.classList.add('confirm');
+    pwSpan.classList.remove('error');
+    checkobj.pw = true;
+})
+
+
+
+// 비밀번호랑 비밀번호 확인 일치하는지 검사 
+
+const checkPw = () => {
+
+    // 같을 경우
+    if(pw.value === pwConfirm.value){
+        checkobj.pwConfirm = true;
+        pwConfirmSpan.classList.add("confirm");
+        pwConfirmSpan.classList.remove("error");
+        return;
+    }
+
+    pwConfirmSpan.classList.add("error");
+    pwConfirmSpan.classList.remove("confirm");
+    checkobj.pwConfirm = false;
+    
+
+
+};
+
+
+
+// 비밀번호 확인 유효성 검사
+pwConfirm.addEventListener("input",(e)=> {
+
+
+    const inputPwConfirm = e.target.value;
+
+    if(inputPwConfirm.trim().length ==0){
+        pwConfirmSpan.classList.remove("confirm");
+        pwConfirmSpan.classList.add("error");
+        pwConfirmSpan="";
+        checkobj.pwConfirm=false;
+        return;
+    }
+
+    if(checkobj.pw){
+        checkPw();
+        return;
+    }
+    
+    checkobj.pwConfirm = false;
+
+})
+
+
+
+// 이름 유효성 검사
+memberName.addEventListener("input",()=> {
+
+    if(memberName.value.trim().length==0){
+        nameSpan.classList.remove("confirm");
+        nameSpan.classList.add('error');
+        nameSpan="";
+        checkobj.name=false;
+        return;
+    };
+
+    const regExp = /^[가-힣\w\d]{2,10}$/;
+    if(!regExp.test(memberName.value)){
+        nameSpan.classList.remove("confirm");
+        nameSpan.classList.add('error');
+        checkobj.name=false;
+        return;
+
+    };
+    nameSpan.classList.remove("error");
+    nameSpan.classList.add('confirm');
+    checkobj.name=true;
+    return;
+
+})
+
+
+tel.addEventListener("input", ()=> {
+
+    if(tel.value.trim().length==0){
+        telSpan.classList.remove("confirm");
+        telSpan.classList.add("error");
+        checkobj.tel=false;
+        return;
+    };
+
+    const regExp = /^01[0-9]{1}[0-9]{3,4}[0-9]{4}$/;
+
+    if(!regExp.test(tel.value)){
+        telSpan.classList.remove("confirm");
+        telSpan.classList.add("error");
+        checkobj.tel=false;
+        return;
+    };
+
+    telSpan.classList.remove("error");
+    telSpan.classList.add("confirm");
+    checkobj.tel=true;
+    return;
+
+})
+
+
+id.addEventListener("input", ()=>{
+
+    if(id.value.trim().length===0){
+        idSpan.classList.remove("confirm");
+        idSpan.classList.add("error");
+        checkobj.id=false;
+        return;
+    };
+
+    const regExp = /^[a-z0-9]{5,15}$/;
+
+    if(!regExp.test(id.value)){
+        idSpan.classList.remove("confirm");
+        idSpan.classList.add("error");
+        checkobj.id=false;
+        return;
+    };
+
+    idSpan.classList.remove("error");
+    idSpan.classList.add("confirm");
+    checkobj.id=true;
+    return;
+
+})
+
+
+// ========== 형식 안 맞으면 제출 막기
+const signUpForm = document.getElementById("signUpForm");
+
+signUpForm.addEventListener("submit",(e)=> {
+
+    for(let key in checkobj){
+        if(!checkobj[key]){
+
+            let str;
+
+            switch(key){
+                case "email" : str = "이메일이 유효하지 않습니다."; break;
+                case "pw" : str = "비밀번호가 인증되지 않았습니다."; break;
+                case "pwConfirm" : str = "비밀번호가 유효하지 않습니다."; break;
+                case "name" : str = "이름이 유효하지 않습니다."; break;
+                case "tel" : str = "전화번호가 유효하지 않습니다."; break;
+                case "id" : str= "아이디가 유효하지 않습니다."; break;
+            }
+            alert(str);
+
+            document.getElementById(key).focus();
+
+            e.preventDefault();
+            return;
+
+        }
+    }
+
+    if(!check.checked){
+        alert("약관에 동의해주세요");
+        e.preventDefault();
+        return;
+    }
+
+});
