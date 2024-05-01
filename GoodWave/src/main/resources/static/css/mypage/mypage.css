@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  *{
+    font-family: 'Pretendard-Regular';
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+  }
+  
+
+.mypage-title-con{
+    position: relative;
+    text-align: center;
+}
+
+.donate-title{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.donate-list{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 12px;
+    color: gray;
+}
+
+.doante-con{
+    height: 200px;
+    width: 200px;
+    border: 1px solid lightgray;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.apply-list{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 12px;
+}
+
+
+.apply-title{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.apply-con{
+    
+    height: 200px;
+    width: 200px;
+    border: 1px solid lightgray;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cancle-btn {
+    position: relative;
+    left: 130px;
+    font-size: 12px;
+}
+
+.list-con{
+    display: flex;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-con{
+    display: flex;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.password-change-btn{
+    position: relative;
+    margin-top: 50px;
+    left: 330px;
+}
+
+.withdrawal-btn{
+    position: relative;
+    margin-top: 50px;
+    left: 348px;
+
+}
