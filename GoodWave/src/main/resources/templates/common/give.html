@@ -1,3 +1,5 @@
+<th:block th:if="${session.loginMember != null}">
+
 <a href="/volunteer/donation" id="volunteer_a">
 
     <div id="give_box">
@@ -10,4 +12,25 @@
 </div>
 
 </a>
+</th:block>
 
+
+
+
+
+
+<th:block th:if="${session.loginMember == null}">
+
+<a href="/member/login" id="volunteer_a">
+
+    <div id="give_box">
+    
+        <img src="/images/heart/free-icon-healthcare-1834852.png" alt="" class="give_box_img">
+    
+   
+
+    <p class="give_box_p">후원하기</p>
+</div>
+
+</a>
+</th:block>

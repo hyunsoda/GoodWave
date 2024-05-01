@@ -33,12 +33,21 @@
     <!-- 오른쪽 -->
     <div class="headerRight">
         
-        <div>
-            <a href="/member/login">
-            <i class="fa-solid fa-user" id="right-icon"></i>
-            </a>
-        </div>
+        <th:block th:if="${session.loginMember == null}">
+            <div>
+             <a href="/member/login">
+                <i class="fa-solid fa-user" id="right-icon"></i>
+                </a>
+            </div>
+        </th:block>
 
+        <th:block th:if="${session.loginMember != null}">
+            <div>
+             <a href="/member/myPage">
+                <i class="fa-solid fa-user" id="right-icon"></i>
+                </a>
+            </div>
+        </th:block>
 
         <div>
             <a>

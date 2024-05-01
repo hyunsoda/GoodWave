@@ -11,7 +11,7 @@
     <th:block th:replace="~{/common/header2}"></th:block>
 
         <main id="talentDonationMain">
-            <img src="/images/volunteer/yeontan.jpg">
+            <img src="/images/volunteer/yeontan.webp">
 
 
           <button id="registerBtn" type="button"> 신청하기 </button>
@@ -23,7 +23,7 @@
           <!-- 버튼 클릭 시 나타나는 후원신청 form -->
           <div id="popupLayer" class="popup-hidden">
 
-            <form action="post">
+            <form action="#" method="post" id="yeontanForm">
             <div class="popup-row"> 
                 <h2>신청하기</h2>
 
@@ -31,7 +31,7 @@
                 <br>
 
                 신청자 이름 <span>*</span>
-                <input type="text" id="TDRegisterName" class="registerInput">
+                <input type="text" id="TDRegisterName2" class="registerInput" name="name">
                 
                 
     
@@ -40,14 +40,14 @@
 
             <div class="popup-row">
                 신청자 전화번호 <span> * </span>  
-                <input type="tel" id="TDRegisterTel" class="registerInput">
+                <input type="tel" id="TDRegisterTel2" class="registerInput">
                 
                 
               </div>
               <div class="popup-row">
                 
                 신청날짜 <span>*</span> 
-                <input type="date" id="TDRegisterDate" class="registerInput"> 
+                <input type="date" id="TDRegisterDate2" class="registerInput"> 
 
               </div>
               <div class="btn-container">
@@ -74,6 +74,6 @@
     </script>
 
 
-    <script src="/js/volunteer/talentDonation.js"></script>
+    <script src="/js/volunteer/yeontan.js"></script>
 </body>
 </html>

@@ -30,7 +30,20 @@
                     </div>
 
                     <div class="bbi right" id="right_1">
-                        <p class="font_p"><a href="/volunteer/donation">후원하기</a></p>
+
+
+
+                        <p class="font_p">  
+
+                            <th:block th:if="${session.loginMember != null}">
+                                <a href="/volunteer/donation" id="donationBtn2">후원하기</a>
+                            </th:block>
+
+                            <th:block th:unless="${session.loginMember != null}">
+                                <a href="/member/login" id="donationBtn2">후원하기</a>
+                            </th:block>
+                        
+                        </p>
                     
                     </div>
                   <div class="bbi right" id="right_baby">
@@ -39,7 +52,7 @@
 
                         <p class="font_p"><a href="/volunteer/yeontan">연탄봉사</a></p>
                         <p class="font_p"><a href="/volunteer/talentDonation">재능기부</a></p>
-                        <p class="font_p"><a href="#">자택방문봉사</a></p>
+                        <p class="font_p"><a href="/volunteer/visit">자택방문봉사</a></p>
 
                     </div>
                     <div class="bbi right" id="right_ba">
@@ -131,3 +144,8 @@
     </div>
 
 </nav>
+
+<script th:inline="javascript">
+    const loginMember = /*[[${session.loginMember}]]*/ "로그인 회원";
+
+  </script>

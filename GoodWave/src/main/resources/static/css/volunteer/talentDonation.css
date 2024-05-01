@@ -1,9 +1,10 @@
-#talentDonationMain{
+main {
     margin: 0 100px 0 100px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    height: auto;
 }
 
 #registerBtn{
@@ -119,17 +120,17 @@
 }
 
 
-#TDRegisterName {
+#TDRegisterName, #TDRegisterName2, #TDRegisterName3{
     width: 367px;
 }
-#TDRegisterTel{
+#TDRegisterTel, #TDRegisterTel2, #TDRegisterTel3{
     width: 333px;
 }
 
 #TDRegisterSort{
     width: 415px;
 }
-#TDRegisterDate{
+#TDRegisterDate, #TDRegisterDate2, #TDRegisterDate3{
     width: 383px;
 }
 
@@ -154,7 +155,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 480%;
+    height: 500%;
 
 
     
@@ -178,3 +179,12 @@
 .popup-row2 > span {
     color: #4C8DC3;
   }
+
+.confirm {
+    color: green;
+}
+
+.error{
+    color: rgb(248, 135, 135);
+    font-size: 20px;
+}  
