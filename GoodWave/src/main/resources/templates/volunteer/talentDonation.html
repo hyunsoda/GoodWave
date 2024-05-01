@@ -11,7 +11,7 @@
     <th:block th:replace="~{/common/header2}"></th:block>
 
         <main id="talentDonationMain">
-            <img src="/images/volunteer/talentDonation.jpg">
+            <img src="/images/volunteer/talentDonation.webp">
 
 
           <button id="registerBtn" type="button"> 신청하기 </button>
@@ -19,10 +19,9 @@
 
 
           <!-- 로그인 했을 때 -->
-          <!-- <th:block th:if="${session.loginMember != null}"> -->
           <!-- 버튼 클릭 시 나타나는 후원신청 form -->
           <div id="popupLayer" class="popup-hidden" >
-            <form action="post">
+            <form action="/volunteer/talentDonation" method="post" id="talentDonationForm">
             <div class="popup-row2">
                 <h2>신청하기</h2>
 
@@ -30,7 +29,7 @@
                 <br>
 
                 신청자 이름 <span>*</span> 
-                <input type="text" id="TDRegisterName" class="registerInput">
+                <input type="text" name="name" id="TDRegisterName" class="registerInput">
                 
                 
     
@@ -49,17 +48,18 @@
 
               <div class="popup-row2">
                 신청날짜 <span>*</span> 
-                <input type="date" id="TDRegisterDate" class="registerInput"> 
+                <input type="date" id="TDRegisterDate" class="registerInput" min=""> 
               </div>
 
 
 
 
               <div class="btn-container">
-                <button id="registerBtn2">신청하기</button>
+                <button id="registerBtn2" type>신청하기</button>
                 
               </div>
             </form>
+            
 
             <div class="logo-container">
              <img src="/images/GOODWAVE.png" id="imglogo">

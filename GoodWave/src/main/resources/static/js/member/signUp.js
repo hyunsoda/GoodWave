@@ -101,13 +101,13 @@ const idSpan = document.getElementById("idSpan");
 
 
 const checkobj = {
-
+    "id" : false,
     "email" : false,
     "pw" : false,
     "pwConfirm" : false,
     "name" : false,
-    "tel" : false,
-    "id" : false
+    "tel" : false
+
 };
 
 // =======이메일 유효성 검사
@@ -205,7 +205,7 @@ pwConfirm.addEventListener("input",(e)=> {
     if(inputPwConfirm.trim().length ==0){
         pwConfirmSpan.classList.remove("confirm");
         pwConfirmSpan.classList.add("error");
-        pwConfirmSpan="";
+        pwConfirm.value="";
         checkobj.pwConfirm=false;
         return;
     }
@@ -227,7 +227,7 @@ memberName.addEventListener("input",()=> {
     if(memberName.value.trim().length==0){
         nameSpan.classList.remove("confirm");
         nameSpan.classList.add('error');
-        nameSpan="";
+        name.value="";
         checkobj.name=false;
         return;
     };
@@ -243,7 +243,7 @@ memberName.addEventListener("input",()=> {
     nameSpan.classList.remove("error");
     nameSpan.classList.add('confirm');
     checkobj.name=true;
-    return;
+
 
 })
 
@@ -253,6 +253,7 @@ tel.addEventListener("input", ()=> {
     if(tel.value.trim().length==0){
         telSpan.classList.remove("confirm");
         telSpan.classList.add("error");
+        tel.value ="";
         checkobj.tel=false;
         return;
     };
@@ -269,7 +270,7 @@ tel.addEventListener("input", ()=> {
     telSpan.classList.remove("error");
     telSpan.classList.add("confirm");
     checkobj.tel=true;
-    return;
+
 
 })
 
@@ -279,6 +280,7 @@ id.addEventListener("input", ()=>{
     if(id.value.trim().length===0){
         idSpan.classList.remove("confirm");
         idSpan.classList.add("error");
+        id.value="";
         checkobj.id=false;
         return;
     };
@@ -295,7 +297,7 @@ id.addEventListener("input", ()=>{
     idSpan.classList.remove("error");
     idSpan.classList.add("confirm");
     checkobj.id=true;
-    return;
+
 
 })
 
@@ -311,12 +313,13 @@ signUpForm.addEventListener("submit",(e)=> {
             let str;
 
             switch(key){
-                case "email" : str = "이메일이 유효하지 않습니다."; break;
-                case "pw" : str = "비밀번호가 인증되지 않았습니다."; break;
-                case "pwConfirm" : str = "비밀번호가 유효하지 않습니다."; break;
-                case "name" : str = "이름이 유효하지 않습니다."; break;
-                case "tel" : str = "전화번호가 유효하지 않습니다."; break;
-                case "id" : str= "아이디가 유효하지 않습니다."; break;
+                case "id" : str= "아이디를 올바른 형식으로 작성해주세요."; break;
+                case "email" : str = "이메일올바른 형식으로 작성해주세요."; break;
+                case "pw" : str = "비밀번호를 올바른 형식으로 작성해주세요."; break;
+                case "pwConfirm" : str = "비밀번호가 일치하지 않습니다."; break;
+                case "name" : str = "이름을 올바른 형식으로 작성해주세요."; break;
+                case "tel" : str = "전화번호를 올바른 형식으로 작성해주세요."; break;
+
             }
             alert(str);
 

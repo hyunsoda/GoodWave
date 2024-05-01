@@ -19,32 +19,32 @@
 
 
         <div>
-            <form action="/volunteer/donation" method="post"> 
-                <fieldset class="loginfield">
+            <form action="/volunteer/donation" method="post" id="donationForm"> 
+                <fieldset class="loginfield" id="donationForm">
                     
                     <label>
                         이름
-                        <span class="required">*</span>
+                        <span class="required" id="nameSpan">*</span>
                     </label>
-                    <input type="text" class="normalBtn" name="donationName">
+                    <input type="text" class="normalBtn" name="donationName" id="name">
 
                     <label>
                         이메일
-                        <span class="required">*</span>
+                        <span class="required" id="emailSpan">*</span>
                     </label>
-                    <input type="text" class="normalBtn">
+                    <input type="text" class="normalBtn" id="email">
 
                     <label>
                          휴대폰 번호
-                        <span class="required">*</span>
+                        <span class="required" id="telSpan">*</span>
                     </label>
-                    <input type="tel" class="normalBtn">
+                    <input type="tel" class="normalBtn" id="tel">
 
                     <label>
                         금액
-                        <span class="required">*</span>
+                        <span class="required" id="amountSpan">*</span>
                     </label>
-                    <input type="number" class="normalBtn" step="10000" min="10000" placeholder="10,000원 이상 입력해주세요.">
+                    <input type="number" class="normalBtn" step="5000" min="10000" placeholder="10,000원 이상 입력해주세요." id="amount">
 
                      <h2>약관 및 개인정보 수집 이용동의</h2>
                     <hr>

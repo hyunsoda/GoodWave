@@ -21,6 +21,13 @@ public class VolunteerController {
 		return "volunteer/talentDonation";
 	}
 	
+	@PostMapping("talentDonation")
+	public String talentDonation(@RequestParam("name") String name ) {
+		
+		return "volunteer/talentDonationComplete";
+	}
+	
+	
 	/** 연탄봉사
 	 * @return
 	 */
@@ -28,6 +35,12 @@ public class VolunteerController {
 	public String yeontan() {
 		
 		return "volunteer/yeontan";
+	}
+	
+	@PostMapping("yeontan")
+	public String yeontan(@RequestParam("name") String name) {
+	
+		return "volunteer/yeontanComplete";
 	}
 	
 	
@@ -47,6 +60,22 @@ public class VolunteerController {
 		
 		return "volunteer/donationComplete";
 		
+	}
+	
+	/** 방문봉사 하기
+	 * @return
+	 */
+	@GetMapping("visit")
+	public String visit() {
+	
+		return "volunteer/visit";
+	}
+	
+	@PostMapping("visit")
+	public String visit(@RequestParam("name") String name) {
+		
+		
+		return "volunteer/visitComplete";
 	}
 	
 	

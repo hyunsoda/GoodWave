@@ -19,7 +19,7 @@
     font-size: 20px;
 }
 
-#searchId {
+#searchId, #searchName {
     margin-bottom: 10px;    
     width: 350px;
     height: 40px;
@@ -27,7 +27,7 @@
     padding: 5px;
 }
 
-#searchPw{
+#searchPw, #searchEmail{
     margin-bottom: 10px;    
     width: 350px;
     height: 40px;
