@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자주묻는질문</title>
+    <th:block th:replace="~{/common/common}"></th:block>
 
-    <link rel="stylesheet" href="/SemiProjectGoodWave/GoodWave/src/main/resources/static/css/community/FAQ.css">
+
+    <link rel="stylesheet" href="/GoodWave/src/main/resources/static/css/community/FAQ.css">
 
 </head>
 <body>
+
+  <th:block th:replace="~{/common/header2}"></th:block>
 
     
  
@@ -40,13 +44,13 @@
       <li class="faq">
         <div class="faq__question">
           <h3 class="faq__title">
-            Q. 후원금은 어떻게 사용되나요?
+            Q. 봉사활동은 어떻게 신청할 수 있나요?
           </h3>
         </div>
         <div class="faq__answer">
           <p class="faq__text">
-            굿웨이브재단은 투명한 회계관리 및 조직운영, 성실한 사업보고에 최선의 노력을 기울이고 있습니다. 연간사업보고서와 소식지 ‘굿웨이브’을 통해 관련 내용을 확인하실 수 있습니다.
-            연 1회 발행되는 연간사업보고서에는 전년도 사업결과 및 회계보고가 포함되어 있고, 연간 분기별로 발행되는 소식지에는 사업 내용과 나눔 참여활동 정보가 담겨 있습니다.
+            굿웨이브는 회원제로 봉사활동을 진행하고 있어 먼저 회원가입을 진행해주셔야합니다. 가입 후 참여 페이지에서 활동하고 싶은 분야를 선택하여 하단에 있는 신청폼으로 활동 참여가 가능합니다.
+            관련 사항에 대해 궁금한 점이 있으시다면 굿웨이브 재단 02-1234-1234로 문의 바랍니다. ( 평일 09:00 - 17:00 / 주말 및 공휴일 휴무 )
           </p>
         </div>
         <button class="faq__btn">
@@ -57,13 +61,13 @@
       <li class="faq">
         <div class="faq__question">
           <h3 class="faq__title">
-            Q. 후원금은 어떻게 사용되나요?
+            Q. 후원은 어떻게 하나요?
           </h3>
         </div>
         <div class="faq__answer">
           <p class="faq__text">
-            굿웨이브재단은 투명한 회계관리 및 조직운영, 성실한 사업보고에 최선의 노력을 기울이고 있습니다. 연간사업보고서와 소식지 ‘굿웨이브’을 통해 관련 내용을 확인하실 수 있습니다.
-            연 1회 발행되는 연간사업보고서에는 전년도 사업결과 및 회계보고가 포함되어 있고, 연간 분기별로 발행되는 소식지에는 사업 내용과 나눔 참여활동 정보가 담겨 있습니다.
+           회원이 아니시라면 먼저 회원가입을 진행하시고 이미 굿웨이브 회원이시라면<br>
+           후원 페이지로 넘어가서 간단한 후원 정보 및 금액을 입력하시면 됩니다.
           </p>
         </div>
         <button class="faq__btn">
@@ -74,13 +78,14 @@
       <li class="faq">
         <div class="faq__question">
           <h3 class="faq__title">
-            Q. 후원금은 어떻게 사용되나요?
+            Q. 후원 내역 및 활동 신청내역을 확인하고 싶어요
           </h3>
         </div>
         <div class="faq__answer">
           <p class="faq__text">
-            굿웨이브재단은 투명한 회계관리 및 조직운영, 성실한 사업보고에 최선의 노력을 기울이고 있습니다. 연간사업보고서와 소식지 ‘굿웨이브’을 통해 관련 내용을 확인하실 수 있습니다.
-            연 1회 발행되는 연간사업보고서에는 전년도 사업결과 및 회계보고가 포함되어 있고, 연간 분기별로 발행되는 소식지에는 사업 내용과 나눔 참여활동 정보가 담겨 있습니다.
+            로그인 후 마이페이지에 들어가시면 후원내역과 신청내역을 확인 할 수 있으며,<br>
+            신청내역에서는 참여하신 활동을 변경하거나 취소하실 수 있습니다. <br>
+            후원내역 및 신청내역에 관련하여 이상이 있다면 굿웨이브 재단 02-1234-1234로 문의 바랍니다. ( 평일 09:00 - 17:00 / 주말 및 공휴일 휴무 )
           </p>
         </div>
         <button class="faq__btn">
@@ -90,9 +95,13 @@
       </li>
     </ul>
      <!-- 질문 / 답변 -->
+
+
+     <!--푸터-->
+     <th:block th:replace="~{/common/footer}"></th:block>
     
 
-    <script src="/SemiProjectGoodWave/GoodWave/src/main/resources/static/js/community/FAQ.js"></script>
+    <script src="/GoodWave/src/main/resources/static/js/community/FAQ.js"></script>
     
 </body>
 </html>
