@@ -6,6 +6,7 @@
     <title>GOODWAVE Main</title>
 
    <th:block th:replace="~{/common/common}"></th:block>
+   <th:block th:replace="~{/common/jsConnect}"></th:block>
 </head>
 <body>
 
@@ -30,10 +31,10 @@
 <!-- middle_main -->
 
     
-    <div><img src="/images/middle_main_img/1.jpg" alt=""></div>
-    <div><img src="/images/middle_main_img/2.jpg" alt=""></div>
-    <div><img src="/images/middle_main_img/3.jpg" alt=""></div>
-    <div><img src="/images/middle_main_img/4.jpg" alt=""></div>
+    <div><img src="/images/middle_main_img/1.webp" alt=""></div>
+    <div><img src="/images/middle_main_img/2.webp" alt=""></div>
+    <div><img src="/images/middle_main_img/3.webp" alt=""></div>
+    <div><img src="/images/middle_main_img/4.webp" alt=""></div>
 
 
 
@@ -67,7 +68,7 @@
 <div class="story_div_box_box_first">
 
      <div class="story_first_img_div">
-         <img src="/images/story_img/story_img_1.jpg" alt="이미지" class="story_first_img_div_img">
+         <img src="/images/story_img/story_img_1.webp" alt="이미지" class="story_first_img_div_img">
      </div>
 
      <div class="story_first_font_div">
@@ -100,7 +101,7 @@
         <div class="story_flex_box" id="story_flex_box_1">
 
             <div class="story_flex_box_transition_box">
-                <img src="/images/story_img/story_img_2.jpg" alt="이미지" id="img_1" class="img_class_story">
+                <img src="/images/story_img/story_img_2.webp" alt="이미지" id="img_1" class="img_class_story">
             </div>
             
 
@@ -111,7 +112,7 @@
         </div>
         <div class="story_flex_box" id="story_flex_box_2">
             <div class="story_flex_box_transition_box">
-                <img src="/images/story_img/story_img_3.jpg" alt="이미지" id="fix_img" class="img_class_story img_2">
+                <img src="/images/story_img/story_img_3.webp" alt="이미지" id="fix_img" class="img_class_story img_2">
             </div>
             
         
@@ -122,7 +123,7 @@
         <div class="story_flex_box" id="story_flex_box_3">
             
             <div class="story_flex_box_transition_box">
-                <img src="/images/story_img/story_img_6.jpg" alt="이미지" id="img_3" class="img_class_story">
+                <img src="/images/story_img/story_img_6.webp" alt="이미지" id="img_3" class="img_class_story">
             </div>
             
 
@@ -132,7 +133,7 @@
         </div>
         <div class="story_flex_box" id="story_flex_box_4">
             <div class="story_flex_box_transition_box">
-                <img src="/images/story_img/story_img_7.jpg" alt="이미지" id="img_4" class="img_class_story">
+                <img src="/images/story_img/story_img_7.webp" alt="이미지" id="img_4" class="img_class_story">
             </div>
             
         
@@ -303,7 +304,7 @@
             <div class="volunteer_box_1">
               <!-- box1 -->
                     <div class="blur_img">
-                        <img src="/images/volunteer/volunteer_3.jpg" alt="이미지" class="blur_img">
+                        <img src="/images/volunteer/volunteer_3.webp" alt="이미지" class="blur_img">
                     </div>
 
                     <div class="volunteer_box_1_font">
@@ -326,7 +327,7 @@
    
                      
                     <div class="blur_img">
-                        <img src="/images/volunteer/volunteer_1.jpg" alt="">
+                        <img src="/images/volunteer/volunteer_1.webp" alt="">
                     </div>
 
                     <div class="volunteer_box_1_font volunteer_box_1_font_sujeong">
@@ -345,7 +346,7 @@
                 
                 <div class="volunteer_box_3">
                     <div class="blur_img">
-                        <img src="/images/volunteer/volunteer_3_3.jpg" alt="">
+                        <img src="/images/volunteer/volunteer_3_3.webp" alt="">
                     </div>
 
                     <div class="volunteer_box_1_font volunteer_box_1_font_sujeong">
@@ -375,10 +376,43 @@
 <div id="gongji_wrap">
 <!-- gongji  -->
 
+<div>
+    <h2 class="gongji_h2">다양한 소식을 만나보세요</h2>
+     <a href="#" class="gongji_h2_a">
 
-<h2 class="gongji_h2">다양한 소식을 만나보세요</h2>
+        <p class="gongi_div_p">더보기<span class="plus_span">+</span></p>
+
+     </a>
+    
+</div>
 
 
+<div id="gongji_grid_box">
+    <div class="gongi_div_1 gongji_div">
+        <a href="#">
+            <p class="gongji_p gongji_p1">공지내용</p>
+        </a>
+        
+    </div>
+
+    <div class="gongi_div_2 gongji_div">
+        <a href="#">
+            <p class="gongji_p gongji_p2">공지내용</p>
+        </a>
+    </div>
+
+    <div class="gongi_div_3 gongji_div">
+        <a href="#">
+            <p class="gongji_p gongji_p3">공지내용</p>
+        </a>
+    </div>
+
+    <div class="gongi_div_4 gongji_div">
+        <a href="#">
+            <p class="gongji_p gongji_p4">공지내용</p>
+        </a>
+    </div>
+</div>
 
 
 
@@ -391,13 +425,17 @@
 <!-- gongji  -->
 
 
+
+
+
+
 <!-- wrap -->
     </div>
 <!-- wrap -->
 
 
 
-  <!-- <th:block th:replace="~{/common/header2}"></th:block>  -->
+ 
 
 
 
@@ -407,14 +445,10 @@
 
    
 
-<!-- <th:block th:replace="~{/common/footer}"></th:block> -->
-   <th:block th:replace="~{/common/scroll}"></th:block>
+<th:block th:replace="~{/common/footer}"></th:block>
+  <th:block th:replace="~{/common/scroll}"></th:block>
    <th:block th:replace="~{/common/give}"></th:block>
 
-
-
-
-<div id="scroll" style="height:1000px"></div>
 
 <script src="/js/main.js"></script>
 </body>

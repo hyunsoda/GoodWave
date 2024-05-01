@@ -1,0 +1,165 @@
+@charset "utf-8";
+
+#bb{
+    background-color: WHITE;
+}
+
+#bb{
+    color:black;
+    border-bottom: 1px white
+}
+
+.introduce_img_box{
+    margin-top: 100px;
+    height: 760px;
+
+
+}
+
+.introducePage_h2_font2{
+    color:#63A3D0;
+}
+
+.introduce_h2_font_box{
+    position: relative;
+    bottom: 270px;
+    left: 100px;
+    line-height: 80px;
+}
+
+.introducePage_h2_font1, .introducePage_h2_font2{
+    transition: 0.5s linear;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.introducePage_h2_font1{
+    font-size:50px;
+}
+
+.introducePage_h2_font2{
+    font-size:55px;
+   
+}
+
+#introduce_middle_main_box{
+    margin-top: 90px;
+}
+
+#introduce_middle_main_box > div{
+    width: 40%;
+    height: 490px;
+    margin: 0 auto;
+}
+
+
+
+.introduce_h2_font_introdroduce{
+        font-size: 50px;
+        text-align: center;
+        margin-top: 100px;
+        opacity: 0;
+        transition: 0.5s linear;
+    }
+
+    .font_good_wave{
+        color:#4C8DC3;
+        font-weight:900;
+    }
+
+.introduce_div_2_box{
+        transition: 0.5s linear;
+        transform: translateY(100px);
+        opacity: 0;
+}
+
+
+
+
+.introduce_middle_main_font_box{
+        text-align: center;
+        margin-top: 70px;
+        font-size: 25px;
+}
+
+
+
+
+
+.introduce_middle_main_font_box > p:nth-of-type(2){
+    margin-top: 50px;
+}
+
+.introduce_middle_main_font_p1, .introduce_middle_main_font_p2{
+    opacity: 0;
+    transition: 0.5s linear;
+    
+}
+
+.introduce_middle_main_font_p1{
+    transform: translateX(-100px);
+}
+.introduce_middle_main_font_p2{
+    transform: translateX(100px);
+}
+
+.transition{
+    /* opacity: 0; */
+    transition: 0.5s linear;
+}
+
+#introduce_main_six_div_wrap{
+    width: 65%;
+    margin:140px auto;
+}
+
+
+
+.introduce_main_six_div_p1{
+   
+    font-size: 35px;
+    
+}
+
+
+
+
+ .introduce_main_six_div_p2{
+    margin-top: 30px;
+    font-size: 20px;
+    color: grey;
+ }   
+
+ #introduce_main_six_div{
+    height:550px;
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    column-gap: 20px;
+    
+ }
+
+ .introduce_grid_box{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2,1fr);
+    row-gap: 20px;
+ }
+
+ .introduce_history_wrap{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+    margin-top:150px;
+ }
+
+ .introduce_history_wrap_box2{
+    background-color: #63A3D0;
+ }
+
+
+ .introduce_history_wrap{
+    width: 80%;
+    margin: 150px auto;
+ }

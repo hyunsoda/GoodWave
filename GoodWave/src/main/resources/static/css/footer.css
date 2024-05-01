@@ -5,7 +5,7 @@ li{
 }
 
 #footer{
-    width:1920px;
+    
     height:290px;
     grid-template-columns: auto;
     display:grid;
