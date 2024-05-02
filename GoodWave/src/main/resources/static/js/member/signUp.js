@@ -56,6 +56,7 @@ function onBoxClick() {
         is_checked = box.checked && is_checked;
     });
     checkAll.checked = is_checked;
+    
 }
 checkAll.addEventListener('click', onCheckAllClick);
 checkBoxesNormal.forEach((checkbox) => checkbox.addEventListener('click', onBoxClick));
@@ -77,7 +78,6 @@ $(".checkbox").on("click", "normal", function(){
     });
     $(".checkbox_all .all").prop("checked", is_checked);
 });
-
 
 
 
@@ -141,8 +141,8 @@ email.addEventListener("input",(e)=> {
     emailSpan.classList.remove('error');
     checkobj.email = true;
 
-
 })
+
 
 
 

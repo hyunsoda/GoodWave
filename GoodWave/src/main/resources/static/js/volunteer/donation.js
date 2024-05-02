@@ -172,7 +172,7 @@ amount.addEventListener("input",(e)=>{
         checkobj.amount=false;
         return;
     };
-
+    
 
     if(amount.value % 5000!=0){
         amountSpan.innerText="5000원 단위로 입력해주세요";
@@ -180,30 +180,20 @@ amount.addEventListener("input",(e)=>{
         amountSpan.classList.add("error");
         checkobj.amount=false;
         return;
-    }
+    };
 
 
-    if(amount.value >=10000 & amount.value % 5000 == 0){
+    
         amountSpan.innerText="*";
         amountSpan.classList.remove("error");
         amountSpan.classList.add("confirm");
-        return;
+        checkobj.amount=true;
+    
 
-    };
 
 
-    const regExp = /^[0-9]{5,}$/;
 
-    if(!regExp.test(amount.value)){
-        amountSpan.classList.remove("confirm");
-        amountSpan.classList.add("error");
-        checkobj.amount=false;
-        return;
-    };
-
-    amountSpan.classList.remove("error");
-    amountSpan.classList.add("confirm");
-    checkobj.amount=true;
+  
 })
 
 
