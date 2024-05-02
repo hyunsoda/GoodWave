@@ -1,16 +1,29 @@
-package edu.kh.goodWave.board.controller;
+package edu.kh.goodWave.volunteer.controller;
+
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import edu.kh.goodWave.member.model.dto.Member;
+import edu.kh.goodWave.volunteer.model.service.VolunteerService;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+@SessionAttributes({"loginMember"})
 @Controller
 @RequestMapping("volunteer")
+@RequiredArgsConstructor
+@Slf4j
 public class VolunteerController {
 
-	
+	private final VolunteerService service;
 	
 	/** 재능 기부
 	 * @return
@@ -55,10 +68,29 @@ public class VolunteerController {
 	
 	
 	@PostMapping("donation")
-	public String donation(@RequestParam("donationName") String donationName) {
+	public String donation(@RequestParam Map<String, Object> paramMap,
+							@SessionAttribute("loginMember") Member loginMember,
+							RedirectAttributes ra) {
 		
 		
-		return "volunteer/donationComplete";
+		paramMap.put("memberNo", loginMember.getMemberNo() );
+		
+		
+		
+		int result = service.moneyDonation(paramMap);
+
+		
+		if(result > 0) {
+			return "volunteer/donationComplete";
+		} else {
+			ra.addFlashAttribute("message","후원하기 실패");
+			
+			return "redirect:/volunteer/donation";
+		}
+		
+		
+		
+
 		
 	}
 	

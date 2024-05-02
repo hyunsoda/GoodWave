@@ -121,30 +121,30 @@ main {
 
 
 #TDRegisterName, #TDRegisterName2, #TDRegisterName3{
-    width: 367px;
+    width: 350px;
 }
 #TDRegisterTel, #TDRegisterTel2, #TDRegisterTel3{
-    width: 333px;
+    width: 310px;
 }
 
 #TDRegisterSort{
     width: 415px;
 }
 #TDRegisterDate, #TDRegisterDate2, #TDRegisterDate3{
-    width: 383px;
+    width: 375px;
 }
 
 #imglogo {
     width: 80px;
     height: 50px;
+
 }
 
 .logo-container{
-    flex-grow: 1; 
+
     display: flex;
     justify-content: center;
     align-items: center;
-
     margin-bottom: 35px;
 
 }

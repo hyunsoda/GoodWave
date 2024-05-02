@@ -1,4 +1,4 @@
-package edu.kh.goodWave.board.controller;
+package edu.kh.goodWave.volunteer.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
