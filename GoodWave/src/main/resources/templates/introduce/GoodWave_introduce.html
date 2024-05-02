@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,7 +81,72 @@
     
     
     <div class="introduce_history_wrap_box1"><img src="/images/introducePage/8.webp" alt=""></div>
-    <div class="introduce_history_wrap_box2"></div>
+
+
+    <div class="introduce_history_wrap_box2">
+
+            <div id="history_wrap_box2">
+                  <div id="border_box"></div>
+
+                  <div id="history_wrap_box3">
+                        <!-- 1978
+
+                        1999
+
+                        2007
+
+                        2010
+
+                        2015
+
+                        2020 -->
+
+
+                        <div class="histroy_wrap_box_flex_box">
+                            <span class="history_flex_span">●</span> <p class="history_flex_p">2020</p> 
+                            <p class="history_flex_p2">코로나19 펜데믹 긴급구호 및 <br> 국내외 취약계층 지원
+                                </p>
+                        </div>
+
+                        <div class="histroy_wrap_box_flex_box">
+                            <span class="history_flex_span">●</span> <p class="history_flex_p">2015</p> 
+                            <p class="history_flex_p2">한국 최초 노인복지시설계획 <br> 공식 파트너 기관 선정 
+                                </p>
+                        </div>
+
+                        <div class="histroy_wrap_box_flex_box">
+                            <span class="history_flex_span">●</span> <p class="history_flex_p">2010</p> 
+                            <p class="history_flex_p2">UN MDGs Award 수상 <br>
+                                보편적 노인교육 달성 기여 
+                                </p>
+                        </div>
+
+                        <div class="histroy_wrap_box_flex_box">
+                            <span class="history_flex_span">●</span> <p class="history_flex_p">2007</p> 
+                            <p class="history_flex_p2">노인보호체계 법 추진 및 노인학대<br> 예방캠페인 전개 노인복지법 전면 개정
+                             
+                                </p>
+                        </div>
+
+                        <div class="histroy_wrap_box_flex_box">
+                            <span class="history_flex_span">●</span> <p class="history_flex_p">1999</p> 
+                            <p class="history_flex_p2">UN 경제사회이사회(ECOSOC)로 부터 <br> NGO 최상위 지위 포괄적협의지위 흭득
+                             
+                                </p>
+                        </div>
+
+                        <div class="histroy_wrap_box_flex_box">
+                            <span class="history_flex_span">●</span> <p class="history_flex_p">1978</p> 
+                            <p class="history_flex_p2">노인들의 사회적 참여와 복지를 증진하기 위한 비영리 기관으로 출발 
+                                <span style="font-weight:900;color:#1270b1;;">굿웨이브</span> 설립</p>
+                        </div>
+
+
+                        <!-- history_wrap_box3-->
+                  </div>
+            </div>
+
+    </div>
     
     
     
@@ -129,8 +194,8 @@
     <!-- grid-1 -->
         <div class="introduce_grid_box">
 
-                <div class="transition introduce_grid_box_div1"><img src="/images/introducePage/4.webp" alt=""></div>
-                <div class="transition introduce_grid_box_div2"><img src="/images/introducePage/5.webp" alt=""></div>
+                <div class="transition introduce_grid_box_div1 box_shadow_img_box"><img src="/images/introducePage/4.webp" alt=""></div>
+                <div class="transition introduce_grid_box_div2 box_shadow_img_box"><img src="/images/introducePage/5.webp" alt=""></div>
 
 
         </div>
@@ -139,7 +204,7 @@
      <!-- grid-2 -->
         <div>
 
-            <div class="transition introduce_grid_box_div3"><img src="/images/introducePage/3.webp" alt=""></div>
+            <div class="transition introduce_grid_box_div3 box_shadow_img_box"><img src="/images/introducePage/3.webp" alt=""></div>
 
         </div>
     <!-- grid-2 -->   
@@ -147,8 +212,8 @@
     <!-- grid-3 -->
         <div class="introduce_grid_box">
 
-            <div class="transition introduce_grid_box_div4"><img src="/images/introducePage/6.webp" alt=""></div>
-            <div class="transition introduce_grid_box_div5"><img src="/images/introducePage/7.webp" alt=""></div>
+            <div class="transition introduce_grid_box_div4 box_shadow_img_box"><img src="/images/introducePage/6.webp" alt=""></div>
+            <div class="transition introduce_grid_box_div5 box_shadow_img_box"><img src="/images/introducePage/7.webp" alt=""></div>
 
         </div>
      <!-- grid-3 -->
@@ -173,13 +238,14 @@
 
 
 
+
 <!-- wrap -->
 </div>
 <!-- wrap -->
 
-<div id="scroll" style="height:1000px;">
-    
-</div>
+<th:block th:replace="~{/common/footer}"></th:block>
+<th:block th:replace="~{/common/give}"></th:block>
+<th:block th:replace="~{/common/scroll}"></th:block> 
 
 </body>
 </html>

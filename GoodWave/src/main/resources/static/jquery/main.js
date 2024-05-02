@@ -8,6 +8,14 @@ $(window).on('beforeunload', function() {
    $(window).scrollTop(0);
 });
 
+$(function(){
+   $(".middle_main").slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+    });
+})
 
 $(function(){
 
@@ -71,20 +79,11 @@ $(function(){
       $(".stick4").css("border", "0px solid black");
       $(".stick4").css("width", "0px");
    })
-   $(".middle_main").slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-    });
+ 
 
   
-
+    
    
-
-   $(".scrollTop_div").click(function(){
-      $("html").animate({"scrollTop":"0"}, 100);
-   })
 
    $(".story_div_box_box_first").mouseover(function(){
       $(".story_first_img_div_img").css("transform", "scale(1.2)");
@@ -214,9 +213,13 @@ $(window).scroll(function(){
       if(windowScrollTop > 1){
          $("#bb").css("backgroundColor","white");
          $("#bb").css("color","black");
+         $(".donation_124213").css("color", "black");
+         $(".donation_124213").css("border-color", "black");
       }else{
          $("#bb").css("backgroundColor","transparent");
          $("#bb").css("color","white");
+         $(".donation_124213").css("color", "white");
+         $(".donation_124213").css("border-color", "white");
       }
 
       if(windowScrollTop > 130){
@@ -351,9 +354,23 @@ $(function(){
    });
 
 
-   
+   $(window).scroll(function(){
+      if($(this).scrollTop() > 200){
+         $(".scrollTop_div").css("display","block");
+         $("#volunteer_a").css("diplay","block");
+      }else{
+         $(".scrollTop_div").css("display","none");
+         $("#volunteer_a").css("diplay","none");
+      }
+   })
+
+   $(".scrollTop_div").click(function(){
+      $("html").animate({"scrollTop":"0"}, 100);
+   })
 
 })
+
+
 
 
 
