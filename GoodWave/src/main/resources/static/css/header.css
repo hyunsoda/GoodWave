@@ -113,7 +113,10 @@ nav button {
   /* border-color: white; */
   border: 1px solid white;
   cursor: pointer;
+  
 }
+/* color: black;
+border-color: black; */
 
 #right-icon {
   font-size: 30px;
