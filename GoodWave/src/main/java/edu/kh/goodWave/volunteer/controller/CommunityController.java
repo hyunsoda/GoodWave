@@ -17,5 +17,10 @@ public class CommunityController {
 		return "/community/FAQ";
 	}
 	
+	@GetMapping("QNA")
+	public String QNA() {
+		return "/community/qnaboard";
+	}
+	
 	
 }

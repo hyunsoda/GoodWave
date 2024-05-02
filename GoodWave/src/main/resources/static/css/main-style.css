@@ -455,7 +455,7 @@ img{
     #volunteer_a{
         text-decoration: none;
         color: inherit;
-        display: block;
+        
         width: 120px;
         border-radius: 100px;
         height: 120px;
@@ -521,6 +521,12 @@ img{
         bottom: 9px;
       
 
+}
+
+.histroy_wrap_box_flex_box{
+    transition: 0.5s linear;
+    opacity:0;
+    transform: translateY(100px);
 }
 
 

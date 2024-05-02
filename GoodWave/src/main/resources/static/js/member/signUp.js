@@ -14,7 +14,7 @@ function execDaumPostcode() {
                 addr = data.roadAddress;
             } else { // 사용자가 지번 주소를 선택했을 경우(J)
                 addr = data.jibunAddress;
-            }
+            } 
 
             // 우편번호와 주소 정보를 해당 필드에 넣는다.
             document.getElementById('postcode').value = data.zonecode;
@@ -63,19 +63,20 @@ checkBoxesNormal.forEach((checkbox) => checkbox.addEventListener('click', onBoxC
 
 
 
-$('.checkbox_all .all').click(function () {
-    if ($(this).prop('checked')) {
-        $('.checkbox .normal').prop('checked', true);
+$(".checkbox_all .all").click(function(){
+    if ($(".checkbox_all").prop("checked")) {
+        $().prop("checked", true);
     } else {
-        $('.checkbox .normal').prop('checked', false);
+        $(".checkbox .normal").prop("checked", false);
     }
 });
-$('.checkbox').on('click', '.normal', function () {
+
+$(".checkbox").on("click", "normal", function(){
     var is_checked = true;
-    $('.checkbox .normal').each(function () {
-        is_checked = is_checked && $(this).is(':checked');
+    $(".checkbox .normal").each(function () {
+        is_checked = is_checked && $(this).is(":checked");
     });
-    $('.checkbox_all .all').prop('checked', is_checked);
+    $(".checkbox_all .all").prop("checked", is_checked);
 });
 
 

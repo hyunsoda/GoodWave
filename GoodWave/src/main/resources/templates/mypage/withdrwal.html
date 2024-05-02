@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원탈퇴</title>
 
-    <link rel="stylesheet" href="/GoodWave/src/main/resources/static/css/mypage/withdrwal.css">
-    <link rel="stylesheet" href="/GoodWave/src/main/resources/static/css/member/agreement.css">
+    <link rel="stylesheet" href="/css/mypage/withdrwal.css">
+    <link rel="stylesheet" href="/css/member/agreement.css">
 
 </head>
 <body>
@@ -33,23 +33,25 @@
               <h4 class="member">회원탈퇴약관</h4>
               <div class="line"></div>
 
-              <label for="agree_all">
-                <input type="checkbox" name="agree_all" id="agree_all" class="agree-box">
-                <span>모두 동의합니다</span>
-              </label>
-              <label for="agree">
-                <input type="checkbox" name="agree" value="1" class="agree-box">
-                <span>이용약관 동의<strong>(필수)</strong></span>
-              </label>
-              <label for="agree">
-                <input type="checkbox" name="agree" value="2" class="agree-box">
-                <span>개인정보 수집, 이용 동의<strong>(필수)</strong></span>
+              <label for="agree_all" class="checkInput">
+                모두 동의합니다
+                <input type="checkbox" name="agree_all" id="agree_all" class="agree-box" style="width: 100px;">
+                
               </label>
 
+              <label for="agree">
+                이용약관 동의<strong>(필수)</strong>
+                <input type="checkbox" name="agree" value="1" class="agree-box" style="width: 780px;">
+                
+              </label>
+
+              <label for="agree">
+                개인정보 수집, 이용 동의<strong>(필수)</strong>
+                <input type="checkbox" name="agree" value="2" class="agree-box" style="width: 200px;">
+                
+              </label>
    
           
-
-
 
               <div class="mypage-element">
                 <button id="submit-btn">탈퇴하기</button>
@@ -59,7 +61,7 @@
             </div>
           </div>
 
-          <script src="/GoodWave/src/main/resources/static/js/mypage/withdrawl.js"></script>
+          <script src="/js/mypage/withdrawl.js"></script>
     
 </body>
 </html>
