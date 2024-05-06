@@ -19,15 +19,21 @@ $(function(){
 
 $(function(){
 
-      
-   $(".nav_ul").mouseover(function(){
-      $(".section1").stop().slideDown(150);
-      $(".section1").css("display", "grid");
-   })
+    
+         $(".nav_ul").mouseover(function(){
+            $(".section1").stop().slideDown(150);
+            $(".section1").css("display", "grid");
+        
+          
+         })
+     
+ 
    
-  $(".nav_ul").mouseout(function(){
-   $(".section1").stop().slideUp(50);
-})
+    $(".nav_ul").mouseout(function(){
+     $(".section1").stop().slideUp(50);
+  
+    
+   })
 
 
 
@@ -40,6 +46,8 @@ $(function(){
       $(".stick").css("transform", ": scale(1.5)");
       $(".stick").css("width", "150px");
       $(".stick").css("transform-origin", "50% 50%");
+      $(".stick2 .stick3 .stick4").css("border","0px solid black");
+      $(".stick2 .stick3 .stick4").css("width", "0px");
    });
    $(".li_1").mouseout(function(){
       $(".stick").stop().css("transform", ": scale(0)");
@@ -51,6 +59,8 @@ $(function(){
       $(".stick2").css("transform", ": scale(1.5)");
       $(".stick2").css("width", "150px");
       $(".stick2").css("transform-origin", "50% 50%");
+      $(".stick1 .stick3 .stick4").css("border","0px solid black");
+      $(".stick1 .stick3 .stick4").css("width", "0px");
    });
    $(".li_2").mouseout(function(){
       $(".stick2").stop().css("transform", ": scale(0)");
@@ -62,6 +72,8 @@ $(function(){
       $(".stick3").css("transform", ": scale(1.5)");
       $(".stick3").css("width", "150px");
       $(".stick3").css("transform-origin", "50% 50%");
+      $(".stick1 .stick2 .stick4").css("border","0px solid black");
+      $(".stick1 .stick2 .stick4").css("width", "0px");
    });
    $(".li_3").mouseout(function(){
       $(".stick3").css("transform", ": scale(0)");
@@ -73,6 +85,8 @@ $(function(){
       $(".stick4").css("transform", ": scale(1.5)");
       $(".stick4").css("width", "150px");
       $(".stick4").css("transform-origin", "50% 50%");
+      $(".stick1 .stick2 .stick3").css("border","0px solid black");
+      $(".stick1 .stick2 .stick3").css("width", "0px");
    });
    $(".li_4").mouseout(function(){
       $(".stick4").css("transform", ": scale(0)");

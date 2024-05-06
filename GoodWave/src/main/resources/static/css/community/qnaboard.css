@@ -13,10 +13,12 @@
   }
   
 
+ .qna_borad_dd{
+  position: relative;
+    top: 180px;
+    left: 320px;
+ }
 
-body {
-    padding:5em;
-  }
   
   table {
     position: relative;
