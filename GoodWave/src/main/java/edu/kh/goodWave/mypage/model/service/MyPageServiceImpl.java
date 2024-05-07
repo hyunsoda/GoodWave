@@ -75,4 +75,21 @@ private final MypageMapper mapper;
 	
 	}
 
+	
+	//회원탈퇴
+	@Override
+	public int secession(String memberPw, int memberNo) {
+		
+		// 현재 로그인한 회원의 암호화된 비밀번호를 DB에서 조회
+				String originPw = mapper.selectPw(memberNo);
+
+				// 다를 경우
+				if (!bcrypt.matches(memberPw, originPw)) {
+					return 0;
+				}
+
+				return mapper.secession(memberNo);
+	
+	}
+
 }

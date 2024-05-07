@@ -26,15 +26,13 @@
             <div class="mypage-elements">
               <div class="mypage-element">
 
+              
+               <form action="withdrawal" method="POST" name="myPageFrm" id="withdrawal">
                <!--비밀번호 입력--> 
-                <h4>비밀번호</h4>
-                <input type="password" placeholder="Password">
+                <h4>비밀번호 입력</h4>
+                <input type="password"  name="memberPw" id="memberPw" placeholder="Password">
               </div>
 
-              <div class="mypage-element">
-                <h4>비밀번호 확인</h4>
-                <input type="password" placeholder="Confirm password">
-              </div>
                <!--비밀번호 입력--> 
 
               <!--탈퇴약관-->
@@ -50,24 +48,26 @@
 
               <label for="agree">
                 <div class="agree-con">이용약관 동의<strong>(필수)</strong></div>
-                <input type="checkbox" name="agree" value="1" class="agree-box">
+                <input type="checkbox" name="agree" id="agree" value="1" class="agree-box">
               </label>
 
               
 
               <label for="agree">
                 <div class="agree-con">개인정보 수집, 이용 동의<strong>(필수)</strong></div>
-                <input type="checkbox" name="agree" value="2" class="agree-box">
+                <input type="checkbox" name="agree" id="agree" value="2" class="agree-box">
                 
               </label>
              <!--탈퇴약관-->
           
               <!--탈퇴버튼-->
               <div class="mypage-element">
-                <button id="submit-btn">탈퇴하기</button>
+                <button id="submit-btn" class="myPage-submit">탈퇴하기</button>
               </div>
                <!--탈퇴버튼-->
               
+              </form>
+
             </div>
           </div>
 

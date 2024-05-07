@@ -22,5 +22,19 @@ public class CommunityController {
 		return "/community/qnaboard";
 	}
 	
+	@GetMapping("QNAwrite")
+	public String QNAwrite() {
+		return "/community/QNAwrite";
+	}
+	
+	@GetMapping("Comment")
+	public String Comment() {
+		return "/community/Comment";
+	}
+	
+	@GetMapping("QNAupdate")
+	public String QNAupdate() {
+		return "/community/QNAupdate";
+	}
 	
 }
