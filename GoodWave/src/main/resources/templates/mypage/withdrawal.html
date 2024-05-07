@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원탈퇴</title>
+    <th:block th:replace="~{/common/common}"></th:block>
 
-    <link rel="stylesheet" href="/css/mypage/withdrwal.css">
-    <link rel="stylesheet" href="/css/member/agreement.css">
+    <link rel="stylesheet" href="/css/mypage/withdrawal.css">
 
 </head>
 <body>
+
+   <!--헤더-->
+   <th:block th:replace="~{/common/header2}"></th:block>
+   <!--헤더-->
+
 
     <div class="mypage-title-con">
         <section class="mypage-title-sub"><h2>회원탈퇴</h2></section>
@@ -20,7 +25,8 @@
             <div class="arrow"></div>
             <div class="mypage-elements">
               <div class="mypage-element">
-                
+
+               <!--비밀번호 입력--> 
                 <h4>비밀번호</h4>
                 <input type="password" placeholder="Password">
               </div>
@@ -29,39 +35,54 @@
                 <h4>비밀번호 확인</h4>
                 <input type="password" placeholder="Confirm password">
               </div>
+               <!--비밀번호 입력--> 
 
+              <!--탈퇴약관-->
               <h4 class="member">회원탈퇴약관</h4>
               <div class="line"></div>
 
               <label for="agree_all" class="checkInput">
-                모두 동의합니다
-                <input type="checkbox" name="agree_all" id="agree_all" class="agree-box" style="width: 100px;">
+                <div class="agree-con">모두 동의합니다</div>
+                <input type="checkbox" name="agree_all" id="agree_all" class="agree-box">
                 
               </label>
-
-              <label for="agree">
-                이용약관 동의<strong>(필수)</strong>
-                <input type="checkbox" name="agree" value="1" class="agree-box" style="width: 780px;">
-                
-              </label>
-
-              <label for="agree">
-                개인정보 수집, 이용 동의<strong>(필수)</strong>
-                <input type="checkbox" name="agree" value="2" class="agree-box" style="width: 200px;">
-                
-              </label>
-   
           
 
+              <label for="agree">
+                <div class="agree-con">이용약관 동의<strong>(필수)</strong></div>
+                <input type="checkbox" name="agree" value="1" class="agree-box">
+              </label>
+
+              
+
+              <label for="agree">
+                <div class="agree-con">개인정보 수집, 이용 동의<strong>(필수)</strong></div>
+                <input type="checkbox" name="agree" value="2" class="agree-box">
+                
+              </label>
+             <!--탈퇴약관-->
+          
+              <!--탈퇴버튼-->
               <div class="mypage-element">
                 <button id="submit-btn">탈퇴하기</button>
               </div>
-
+               <!--탈퇴버튼-->
               
             </div>
           </div>
 
-          <script src="/js/mypage/withdrawl.js"></script>
+          <div class="con"></div>
+
+
+
+          
+
+
+             <!--푸터-->
+             <th:block th:replace="~{/common/footer}"></th:block>
+             <!--푸터-->
+ 
+          <script src="/js/mypage/withdrawal.js"></script>
     
 </body>
 </html>

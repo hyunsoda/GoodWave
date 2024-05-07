@@ -1,93 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>마이페이지</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
+    <th:block th:replace="~{/common/common}"></th:block>
 
-   <link rel="stylesheet" href="/css/mypage/mypage.css">
+    <link rel="stylesheet" href="/css/mypage/mypage.css">
+
 
 </head>
-<body>
-   
-   <div class="mypage-title-con">
-   <section class="mypage-title-sub"><h2>굿웨이브의 선한 물결,<br>000님 반갑습니다.</h2></section>
-   </div>
-   
+<body id="mypage">
  
-   <div>
-      
-   </div>
+  <!--헤더-->
+  <th:block th:replace="~{/common/header2}"></th:block>
+ <!--헤더-->
 
-   <!--내정보-->
-   <div class="mypage info">
-       <div class="mypage-header">
-         <div class="show-info">내정보</div>
-         <div class="show-dlist">후원내역</div>
-         <div class="show-alist">신청내역</div>
-       </div>
+<div class="main">
+  <input type="radio" id="tab-1" name="show" checked/>
+  <input type="radio" id="tab-2" name="show" />
+  <input type="radio" id="tab-3" name="show" />
+
+  <div class="tab">
+    <label for="tab-1">내정보</label> 
+    <label for="tab-2">후원내역</label> 
+    <label for="tab-3">신청내역</label>
+  </div>
+
+  <div class="content">
+    <div class="content-dis">
+         <!--마이페이지-->
+           <div class="mypage info">
+            <div class="mypage-elements">
+              <h4 class="info-title">닉네임</h4>
+              <div class="mypage-element">
+                <div class="nickname">회원1</div>
+              </div>
      
-       <div class="mypage-elements">
-         <h4 class="info-title">닉네임</h4>
-         <div class="mypage-element">
-           <div class="nickname">회원1</div>
-         </div>
+              <h4 class="info-title">전화번호</h4>
+              <div class="mypage-element">
+                <div class="phone">010-1234-1234</div>
+              </div>
+     
+              <h4 class="info-title">주소</h4>
+              <div class="mypage-element">
+                <div class="address">서울시 00구 00동 </div>
+              </div>
+     
+              
+              <div class="mypage-element">
+                <button id="submit-btn">수정하기</button>
+              </div>
+            </div>
+            <!--마이페이지-->
+     
+            <!--비밀번호변경 / 회원탈퇴 -->
+            <div class="passwordwithdrwalcon">
+            <button id="password-edit-btn"><a href="/mypage/passwordchange">비밀번호 변경</a></button>
+            <button id="withdrwal-btn"><a href="/mypage/withdrawal">회원탈퇴</a></button>
+            </div>
+            <!--비밀번호변경 / 회원탈퇴 -->
+           </div>
+    </div>
 
-         <h4 class="info-title">전화번호</h4>
-         <div class="mypage-element">
-           <div class="phone">010-1234-1234</div>
-         </div>
+     <!--후원내역-->
+        <div class="content-dis">
+   
+        <div class="donate-list">
+        <div class="donate-none">후원 내역이 없습니다.</div> 
+          <!-- <div class="donate">2024.04.08 20,000원</div> -->
+        </div> 
 
-         <h4 class="info-title">주소</h4>
-         <div class="mypage-element">
-           <div class="address">서울시 00구 00동 </div>
-         </div>
-
-         
-         <div class="mypage-element">
-           <button id="submit-btn">수정하기</button>
-         </div>
-       </div>
-
-<!--비밀번호변경 / 회원탈퇴 -->
-<div class="passwordwithdrwalcon">
- <button id="password-edit-btn"><a href="/GoodWave/src/main/resources/templates/mypage/passwordchange.html">비밀번호 변경</a></button>
- <button id="withdrwal-btn"><a href="/GoodWave/src/main/resources/templates/mypage/withdrwal.html">회원탈퇴</a></button>
-</div>
-<!--비밀번호변경 / 회원탈퇴 -->
-
-
-     </div>
-     <!--내정보-->
-
-        <!--후원내역-->
-        <!-- <div class="donate-list">
-         <div class="donate-none">후원 내역이 없습니다.</div> -->
-         <!--<div class="donate">2024.04.08 20,000원</div>--> 
-        <!-- </div> -->
-       <!--후원내역-->
+        </div>
+      <!--후원내역-->
 
 
-       <!-- 신청내역 -->
-      <!-- <div class="apply-list"> -->
-       <!--<div class="apply-none">신청 내역이 없습니다.</div>--> 
-       <!-- <div class="applt-area">
-       <div class="apply">2024.11.25 연탄봉사활동</div>
+
+      <!-- 신청내역 -->
+        <div class="content-dis">
+
+      <div class="apply-list"> 
+       <!-- <div class="apply-none">신청 내역이 없습니다.</div>  -->
+        <div class="apply-area">
+       <div class="apply">2024.11.25 연탄봉사활동</div> 
        </div> 
 
+       <!--수정/취소-->
         <div class="btn-area">
-        <button class="edit-btn">수정</button> &nbsp;
+        <button class="edit-btn" id="editbtn">수정</button> &nbsp;
         <button class="cancle-btn">취소하기</button> 
        </div>
-      </div> -->
+       <!--수정/취소-->
+      </div> 
+      
+        </div>
       <!-- 신청내역 -->
 
+        <div></div>
+   </div>
 
-   
+</div>
 
 
-  
-     <script src="/js/mypage/mypage.js"></script>
+
+          <!-- <th:block th:if="${session.loginMember != null}"> -->
+          <!-- 수정버튼 클릭 시 나타나는 form -->
+          <div id="popupLayer" class="popup-hidden">
+
+            <form action="#" method="post" id="yeontanForm">
+            <div class="popup-row"> 
+                <h2>수정하기</h2>
+
+                <hr>
+                <br>
+
+                신청자 이름 <span>*</span>
+                <input type="text" id="TDRegisterName2" class="registerInput" name="name">
+                
+                
+    
+                <span id="popupClose">&times;</span>
+            </div>
+
+            <div class="popup-row">
+                신청자 전화번호 <span> * </span>  
+                <input type="tel" id="TDRegisterTel2" class="registerInput">
+                
+                
+              </div>
+              <div class="popup-row">
+                
+                신청날짜 <span>*</span> 
+                <input type="date" id="TDRegisterDate2" class="registerInput"> 
+
+              </div>
+              <div class="btn-container">
+                <button id="registerBtn2">수정하기</button>
+                
+              </div>
+            </form>
+
+            <div class="logo-container">
+             <img src="/images/GOODWAVE.png" id="imglogo">
+            </div>
+        </div>
+        <div id="a"></div>
+        <!-- 수정버튼 클릭 시 나타나는  form -->
        
+
+
+
+
+
+
+
+
+  <!--푸터-->
+  <th:block th:replace="~{/common/footer}"></th:block>
+  <!--푸터-->
+
+
+<script src="/js/mypage/applyedit.js"></script>
+    
 </body>
 </html>

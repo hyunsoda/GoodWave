@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>작성 글 수정</title>
+    <th:block th:replace="~{/common/common}"></th:block>
 
     <link rel="stylesheet" href="/css/community/qnawrite.css">
 
 </head>
 <body>
+
+  <!--헤더-->
+  <th:block th:replace="~{/common/header2}"></th:block>
+  <!--헤더-->
+ 
     
-<div class="board-wrqp">
-    <div class="board-title">
-       <strong>질문 게시판</strong>
-       <h4 style="color: #666666;">굿웨이브 회원들의 질문 게시판입니다. <br>
-           굿웨이브는 후원자님과의 소통으로 더 밝은 미래를 만들어갑니다<h4></h4>
-   </div>
+  <div class="board-wrqp">
+    <h1>질문 게시판</h1>
+    <h4 style="color: #666666;">굿웨이브 회원들의 질문 게시판입니다. <br>
+        굿웨이브는 후원자님과의 소통으로 더 밝은 미래를 만들어갑니다
+    </h4>
 
 
    <div class="qnawrite-content">
@@ -36,13 +41,17 @@
     
         <!-- 버튼 -->
         <div class="board_btn-area">
-            <button type="submit" id="update-btn" class=>수정</button>
-            <button type="submit" id="cancle-btn" class=>취소</button>
+            <button type="submit" id="update-btn" class=><a href="/community/QNA">수정</a></button>
+            <button type="submit" id="cancle-btn" class=><a href="/community/QNA">취소</a></button>
         </div>
        <!-- 버튼 -->
 
    
 </div> 
+
+  <!--푸터-->
+  <th:block th:replace="~{/common/footer}"></th:block>
+  <!--푸터-->
     
 </body>
 </html>
