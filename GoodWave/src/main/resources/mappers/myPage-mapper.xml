@@ -32,6 +32,11 @@
 		WHERE MEMBER_NO = #{memberNo}
 	</update>
 	
-
+	<select id="selectActivityList">
+		SELECT ACT_NAME, TO_CHAR(REGISTRY_DATE,'YYYY-MM-DD') REGISTRY_DATE, FIELD FROM VOLUNTEERLIST 
+		LEFT JOIN ACTIVITY ON (ACT_NO = VOLUNTEER_NO)
+		WHERE MEMBER_NO = #{memberNo}
+		ORDER BY REGISTRY_DATE ASC
+	</select>
 
 </mapper>

@@ -27,11 +27,18 @@ public interface MypageMapper {
 	 */
 	int changePw(Map<String, Object> paramMap);
 
+
 	/** 회원탈퇴
 	 * @param memberNo
 	 * @return result
 	 */
 	int secession(int memberNo);
+
+	/** 활동내역 조회
+	 * @return
+	 */
+	Map<String, Object> selectActivityList();
+
 	
 	
 }

@@ -1,12 +1,11 @@
 @charset "utf-8";
 
-#bb{
-    background-color: WHITE;
-}
 
 #bb{
     color:black;
-    border-bottom: 1px white
+    border-bottom: 1px white;
+    top:0px;
+    background-color: white;
 }
 
 .introduce_img_box{
