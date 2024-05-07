@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="edu.kh.goodWave.member.model.mapper.MemberMapper">
-
+  
+   
+   <!--  로그인  -->
 	<select id="login" resultType="Member">
 		SELECT MEMBER_NO, MEMBER_ID, MEMBER_NAME, MEMBER_EMAIL, MEMBER_PW, MEMBER_TEL,
 		MEMBER_ADDRESS, TO_CHAR(ENROLL_DATE,'YYYY"년" MM"월" DD"일" HH24"시" MI"분" SS"초"')ENROLL_DATE,
@@ -9,5 +11,22 @@
 		WHERE MEMBER_ID = #{memberId}
 		AND MEMBER_DEL_FL ='N'
 	</select>
+	
+	
+	<!--  회원가입  -->
+	
+<insert id="signup">
+	 INSERT INTO "MEMBER" 
+	 VALUES(SEQ_MEMBER_NO.NEXTVAL ,#{memberId}, #{memberName}, 
+	 #{memberEmail},#{memberPw},#{memberTel}, 
+	 #{memberAddress},DEFAULT,DEFAULT, DEFAULT)
+</insert>
+
+
+<select id="checkEmail" resultType="_int" parameterType="string"> 
+SELECT COUNT(*) FROM "MEMBER"
+WHERE MEMBER_EMAIL = #{memberEmail}
+</select>
+	
 
 </mapper>

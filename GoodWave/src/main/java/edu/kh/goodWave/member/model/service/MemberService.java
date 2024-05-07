@@ -10,4 +10,17 @@ public interface MemberService {
 	 */
 	Member loginMember(Member inputMember);
 
+	/** 회원가입
+	 * @param inputMember
+	 * @param member
+	 * @return
+	 */
+	int signup(Member inputMember, String[] member);
+
+	/** 이메일 중복체크
+	 * @param email
+	 * @return
+	 */
+	int checkEmail(String email);
+
 }

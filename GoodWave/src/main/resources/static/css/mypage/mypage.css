@@ -12,6 +12,9 @@
     box-sizing: border-box;
   }
   
+  #bb{
+    top:0px;
+  }
 
 
   /* ****************************************************************************************  */
@@ -41,13 +44,13 @@
   }
   .mypage {
   
-    position:absolute;
-    top:850px;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:400px;
-    height:600px;
-    padding:10px;
+    position: absolute;
+    top: 624px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 600px;
+    padding: 10px;
   }
   .mypage .mypage-header {
     height:150px;
@@ -138,13 +141,13 @@
    /* 후원내역 */  
 
   .donate-list{
-  position:absolute;
-  top:650px;
-  left:50%;
-  transform:translate(-50%,-50%);
-  width:400px;
-  height:600px;
-  padding:10px;
+    position: absolute;
+    top: 430px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 600px;
+    padding: 10px;
   }
   
   .donate-list{
@@ -177,13 +180,13 @@
 
 
   .apply-list{
-    position:absolute;
-    top:650px;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:400px;
-    height:600px;
-    padding:10px;
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 600px;
+    padding: 10px;
   }
   
   .apply-list{
@@ -305,11 +308,11 @@
   display: block;
   }
   .main {
-  margin: 0 auto;
-  text-align: center;
-  padding: 4% 0px;
-  margin-top: 50px;
-  width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4% 0px;
+    margin-top: 120px;
+    width: 500px;
   
   }
   .tab {

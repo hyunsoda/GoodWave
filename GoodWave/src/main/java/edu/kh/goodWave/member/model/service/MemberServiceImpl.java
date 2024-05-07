@@ -4,12 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 //import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 
 import edu.kh.goodWave.member.model.dto.Member;
 import edu.kh.goodWave.member.model.mapper.MemberMapper;
 import lombok.extern.slf4j.Slf4j;
 
-//@Transactional(rollbackFor=Exception.class)
+@Transactional(rollbackFor=Exception.class)
 @Service
 @Slf4j
 public class MemberServiceImpl implements MemberService{
@@ -44,5 +45,45 @@ public class MemberServiceImpl implements MemberService{
 		
 		
 		return loginMember;
+	}
+	
+	
+
+	/**
+	 * 회원가입
+	 */
+	@Override
+	public int signup(Member inputMember, String[] member) {
+		
+		
+		if(!inputMember.getMemberAddress().equals(",,")) {
+			String address = String.join("^^^", member);
+			
+			inputMember.setMemberAddress(address);
+		}else {
+			inputMember.setMemberAddress(null);
+		}
+		
+		String encPw = bcrypt.encode(inputMember.getMemberPw());
+		
+		inputMember.setMemberPw(encPw);
+		
+		log.debug("inputMember : " + inputMember);
+		
+		int result = mapper.signup(inputMember);
+	
+		
+		return result;
+	}
+
+
+
+	/**
+	 * 맴버 이메일 중복확인검사
+	 */
+	@Override
+	public int checkEmail(String email) {
+		
+		return mapper.checkEmail(email);
 	}
 }
