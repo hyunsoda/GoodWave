@@ -232,6 +232,25 @@ $(function(){
    }
  })
 
+
+ $(function(){
+
+   let a = 0;
+   let b = 0;
+
+   $(".userMyPage").click(function(){
+        a++;
+        b = a % 2;
+
+        if(b == 1){
+         $("#myPageForm").css("display","grid");
+        }else{
+         $("#myPageForm").css("display","none");
+        }
+   }) 
+
+})
+
 //  $(window).scroll(function(){
 //     alert($(this).scrollTop());
 //   })
