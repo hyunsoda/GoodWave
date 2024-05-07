@@ -30,27 +30,63 @@
   <div class="content">
     <div class="content-dis">
          <!--마이페이지-->
+         <form  action="mypage" method="POST" name="myPageFrm" 
+         id="updateInfo"></form>
            <div class="mypage info">
             <div class="mypage-elements">
-              <h4 class="info-title">닉네임</h4>
-              <div class="mypage-element">
-                <div class="nickname">회원1</div>
+              <label class="info-title">닉네임</label>
+              <div class="mypage-element1">
+                <!-- <div class="nickname">회원1</div> -->
+                <input type="text" name="memberName" 
+                maxlength="10" id="memberName"
+                th:value="${session.loginMember.memberName}" class="nickname"
+                >
               </div>
      
-              <h4 class="info-title">전화번호</h4>
-              <div class="mypage-element">
-                <div class="phone">010-1234-1234</div>
+              <label class="info-title">전화번호</label>
+              <div class="mypage-element2">
+                <!-- <div class="phone">010-1234-1234</div> -->
+                <input type="text" name="memberTel" 
+                maxlength="11" id="memberTel"
+                th:value="${session.loginMember.memberTel}" class="phone"
+                >
               </div>
      
-              <h4 class="info-title">주소</h4>
+              <label class="info-title" id="address-title">주소</label>
               <div class="mypage-element">
-                <div class="address">서울시 00구 00동 </div>
+               
+              <div class="address">
+                <div class="myPage-row info-address">
+                  <input type="text" name="memberAddress"
+                    placeholder="우편번호" id="postcode"
+                    th:value="${postcode}"
+                    >
+                  
+                  <button type="button" class="search">검색</button>
+
+                </div>
+      
+                <div class="myPage-row info-address">
+                  <input type="text" name="memberAddress"
+                    placeholder="도로명/지번 주소" id="address"
+                    th:value="${address}"
+                    >
+                </div>
+      
+                <div class="myPage-row info-address">
+                  <input type="text" name="memberAddress"
+                    placeholder="상세 주소" id="detailAddress"
+                    th:value="${detailAddress}"
+                    >
+                </div>
+                      
+                </div>
               </div>
-     
               
               <div class="mypage-element">
                 <button id="submit-btn">수정하기</button>
               </div>
+
             </div>
             <!--마이페이지-->
      

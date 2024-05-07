@@ -32,7 +32,7 @@
   }
   
   .content{
-    height: 500px;
+    height: 800px;
   }
 
 
@@ -42,7 +42,7 @@
   .mypage {
   
     position:absolute;
-    top:850px;
+    top:800px;
     left:50%;
     transform:translate(-50%,-50%);
     width:400px;
@@ -76,7 +76,7 @@
     margin-top:15px;
   }
   .mypage .mypage-elements .mypage-element {
-    height:50px;
+    height:250px;
     opacity:1;
     overflow:hidden;
     transition:all 500ms ease-in-out;
@@ -96,7 +96,6 @@
     padding:10px;
     font-size:16px;
     font-weight:600;
-    margin-top:10px;
     border-radius:10px;
     background:#7ABEDD;
     color:white;
@@ -130,8 +129,6 @@
   margin-top: 15px;
   border-bottom: 1px solid lightgray;
   }
-
-
 
 
   /*******************************************************************************************************************/
@@ -214,7 +211,7 @@
 
   .btn-area{
   width: 30%;
-  border: noness;
+  border: none;
   text-align: right;
   margin-top: -25px;
   margin-left: 250px;
@@ -246,7 +243,7 @@
   width: 150px;
   text-align: right;
   position:absolute;
-  top:330px;
+  top:520px;
   left:310px;
   transform:translate(-50%,-50%);
   }
@@ -341,7 +338,10 @@
    font-size: 17px;
   }
   
-  
+  #address-title{
+    position: relative;
+    top: 10px;
+  }
   
   
   

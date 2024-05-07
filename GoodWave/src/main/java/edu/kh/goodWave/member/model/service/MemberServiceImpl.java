@@ -35,9 +35,13 @@ public class MemberServiceImpl implements MemberService{
 		
 		if(loginMember == null) return null;
 		
+
+		
 		if(!bcrypt.matches(inputMember.getMemberPw(), loginMember.getMemberPw())) {
 			return null;
 		}
+		
+		
 		
 		loginMember.setMemberPw(null);
 		

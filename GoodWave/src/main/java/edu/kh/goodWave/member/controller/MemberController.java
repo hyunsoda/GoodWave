@@ -1,6 +1,7 @@
 package edu.kh.goodWave.member.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +23,10 @@ public class MemberController {
 
 	@Autowired
 	private MemberService service;
+	
+	// Bcrpt 암호화 객체 의존성 주입 (SecurityConfig 참고)
+	@Autowired
+	private BCryptPasswordEncoder bcrypt;
 	
 	/** 로그인 페이지 이동
 	 * @return
@@ -80,6 +85,8 @@ public class MemberController {
 		return "member/pwSearch";
 	}
 	
+	
+
 	
 	
 	
