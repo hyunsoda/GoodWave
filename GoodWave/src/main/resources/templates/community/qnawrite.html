@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>질문게시판-글쓰기</title>
+    <th:block th:replace="~{/common/common}"></th:block>
 
     <link rel="stylesheet" href="/css/community/qnawrite.css">
 
 </head>
 <body>
+
+  <!--헤더-->
+  <th:block th:replace="~{/common/header2}"></th:block>
+  <!--헤더-->
 
 <div class="board-wrqp">
     <h1>질문 게시판</h1>
@@ -34,12 +39,16 @@
 
         <!-- 버튼 영역 -->
         <div class="board-btn-area">
-        <button type="submit" id="writebtn">등록</button>
+        <button type="submit" id="writebtn"><a href="/community/QNA">등록</a></button>
         </div>
         <!-- 버튼 영역 -->
 
     
 </div> 
+
+ <!--푸터-->
+ <th:block th:replace="~{/common/footer}"></th:block>
+ <!--푸터-->
 
 </body>
 </html>
