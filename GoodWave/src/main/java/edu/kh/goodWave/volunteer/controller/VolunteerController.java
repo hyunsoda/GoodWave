@@ -45,18 +45,30 @@ public class VolunteerController {
 	
 	@PostMapping("talentDonation")
 	public String talentDonation(@RequestParam Map<String, Object> paramMap,
+			@RequestParam("talentDonationDate")  @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date,
 			@SessionAttribute("loginMember") Member loginMember,
-			RedirectAttributes ra) {
+			RedirectAttributes ra,
+			Model model) {
 		
-	paramMap.put("memberNo", loginMember.getMemberNo());
+		String talentDonationDate2 = date.toString();
+		paramMap.put("date2", talentDonationDate2);
+		paramMap.put("memberNo", loginMember.getMemberNo());
+		
+		int volunteerNo = 2;
+		paramMap.put("volunteerNo", volunteerNo);
 		
 		int result = service.talent(paramMap);
 		
+		
+		
 		if(result >0) {
-			return "volunteer/talentComplete";
+			
+			model.addAttribute("registerName",paramMap.get("talentDonationName"));
+			return "volunteer/talentDonationComplete";
+			
 		} else {
-			ra.addFlashAttribute("message","다시 신청해주세요");
-			return "redirect:/volunteer/talent"; 
+			ra.addFlashAttribute("message","이미 신청한 활동입니다.");
+			return "redirect:/volunteer/talentDonation"; 
 		}
 		
 	}
@@ -74,31 +86,26 @@ public class VolunteerController {
 	
 	@PostMapping("yeontan")
 	public String yeontan(@RequestParam Map<String, Object> paramMap,
+						@RequestParam("yeontanDate")  @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date,
 							@SessionAttribute("loginMember") Member loginMember,
-							RedirectAttributes ra) {
+							RedirectAttributes ra,
+							Model model) {
 		
 		paramMap.put("memberNo", loginMember.getMemberNo());
+
+		String date2 = date.toString();
+		paramMap.put("date2", date2);
 		
-//		DateTimeFormatter formatter  = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-//		String yeontanDate2 = yeontanDate.format(formatter);
-//		Volunteer volunteer = new Volunteer();
-		
-//		volunteer.setMemberNo(loginMember.getMemberNo());
-//		volunteer.setYeontanDate(yeontanDate2);
-		
-//		Map<String, Object> yeontanMap = new HashMap<>();
-//		yeontanMap.put("yeontanDate", yeontanDate);
-//		yeontanMap.put("memberNo", loginMember.getMemberNo());
-//		yeontanMap.put("yeontanName", yeontanName);
-//		yeontanMap.put("yeontanTel", yeontanTel);
+		paramMap.put("volunteerNo", 1);
 		
 		
 		int result = service.yeontan(paramMap);
 		
 		if(result >0) {
+			model.addAttribute("registerName",paramMap.get("yeontanName"));
 			return "volunteer/yeontanComplete";
 		} else {
-			ra.addFlashAttribute("message","다시 신청해주세요");
+			ra.addFlashAttribute("message","이미 신청한 활동입니다.");
 			return "redirect:/volunteer/yeontan"; 
 		}
 		
@@ -119,7 +126,8 @@ public class VolunteerController {
 	@PostMapping("donation")
 	public String donation(@RequestParam Map<String, Object> paramMap,
 							@SessionAttribute("loginMember") Member loginMember,
-							RedirectAttributes ra) {
+							RedirectAttributes ra,
+							Model model) {
 		
 		
 		paramMap.put("memberNo", loginMember.getMemberNo() );
@@ -130,6 +138,7 @@ public class VolunteerController {
 
 		
 		if(result > 0) {
+			model.addAttribute("registerName", paramMap.get("donationName"));
 			return "volunteer/donationComplete";
 		} else {
 			ra.addFlashAttribute("message","후원하기 실패");
@@ -154,17 +163,25 @@ public class VolunteerController {
 	
 	@PostMapping("visit")
 	public String visit(@RequestParam Map<String, Object> paramMap,
+			@RequestParam("visitDate")  @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date,
 			@SessionAttribute("loginMember") Member loginMember,
-			RedirectAttributes ra) {
+			RedirectAttributes ra,
+			Model model) {
 		
 		paramMap.put("memberNo", loginMember.getMemberNo());
+		String date2 = date.toString();
+		paramMap.put("date2", date2);
+		paramMap.put("volunteerNo", 3);
+		
+		
 		
 		int result = service.visit(paramMap);
 		
 		if(result >0) {
+			model.addAttribute("registerName",paramMap.get("visitName"));
 			return "volunteer/visitComplete";
 		} else {
-			ra.addFlashAttribute("message","다시 신청해주세요");
+			ra.addFlashAttribute("message","이미 신청한 활동입니다.");
 			return "redirect:/volunteer/visit"; 
 		}
 		

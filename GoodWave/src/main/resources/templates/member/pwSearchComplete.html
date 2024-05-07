@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>후원완료</title>
+    <title>Document</title>
     <th:block th:replace="~{/common/common}"></th:block>
 
-    <link rel="stylesheet" href="/css/volunteer/donation.css">
+    <link rel="stylesheet" href="/css/member/member.css"> 
+    <link rel="stylesheet" href="/css/member/search.css">
 </head>
 <body>
     <th:block th:replace="~{/common/header2}"></th:block>
@@ -14,33 +15,34 @@
     <main id="complete">
 
         <div>
-            <div id="x">
+            <div id="x1">
                 <div></div>
-                <h1>Thank You</h1>
+                <h1 id="searchIdTitle2">비밀번호 찾기</h1>
                 <div></div>
             </div>
 
             <div id="y">
                 
-                <h1 th:text="|${registerName}님의|"></h1>
-                <h1> 연탄봉사 신청 감사합니다.</h1>
-                <br>
-                <h3 id="completeComment">확인 후 연락드리겠습니다.😊</h3>
+                <h2 th:text="|${searchName}님의 새로운 비밀번호를|"></h2>
+                <h2>입력하신 이메일로 전송하였습니다.</h2>
+
+                <h3>로그인 후 비밀번호 변경바랍니다.</h3>
+                
                 
             </div>
 
         </div>
-
+    </main>
+    
             <div id="z">
-                <a href="/">메인으로</a>
+                <a href="/member/login">로그인하기</a>
             </div>
             
 
 
-    </main>
-
-
+    
 
     <th:block th:replace="~{/common/footer}"></th:block>
+
 </body>
 </html>

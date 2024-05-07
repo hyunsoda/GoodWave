@@ -33,4 +33,10 @@ public interface VolunteerMapper {
 	 */
 	int talent(Map<String, Object> paramMap);
 
+	/** 중복 신청 확인 서비스
+	 * @param paramMap
+	 * @return
+	 */
+	int check(Map<String, Object> paramMap);
+
 }

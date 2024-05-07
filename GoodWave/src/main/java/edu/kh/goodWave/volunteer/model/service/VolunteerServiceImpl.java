@@ -25,25 +25,42 @@ public class VolunteerServiceImpl implements VolunteerService{
 	}
 	
 	
-	
+	// 연탄 봉사 활동 신청
 	@Override
 	public int yeontan(Map<String, Object> paramMap) {
 		
+		int result = mapper.check(paramMap);
+		
+		if(result > 0) {
+			return 0;
+		}
 		
 		return mapper.yeontan(paramMap);
 	}
 	
-	
+	// 방문 봉사 활동 신청
 	@Override
 	public int visit(Map<String, Object> paramMap) {
 
+		int result = mapper.check(paramMap);
+		
+		if(result > 0) {
+			return 0;
+		}
+		
 		return mapper.visit(paramMap);
 	}
 
-	
+	// 재능 기부 봉사 활동 신청
 	@Override
 	public int talent(Map<String, Object> paramMap) {
 
+		int result = mapper.check(paramMap);
+		
+		if(result > 0) {
+			return 0;
+		}
+		
 		return mapper.talent(paramMap);
 	}
 }
