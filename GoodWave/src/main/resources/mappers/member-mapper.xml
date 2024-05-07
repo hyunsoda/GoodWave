@@ -10,4 +10,31 @@
 		AND MEMBER_DEL_FL ='N'
 	</select>
 
+
+	<select id="idSearch">
+		SELECT MEMBER_ID FROM "MEMBER"
+		WHERE MEMBER_NAME = #{searchName}
+		AND MEMBER_EMAIL = #{searchEmail}
+	</select>
+	
+	<select id="idCheck">
+		SELECT COUNT(*) FROM "MEMBER"
+		WHERE MEMBER_NAME = #{searchName}
+		AND MEMBER_EMAIL = #{searchEmail}
+	</select>
+	
+	<select id="pwCheck">
+		SELECT COUNT(*) FROM "MEMBER"
+		WHERE MEMBER_ID = #{search2Id}
+		AND MEMBER_NAME = #{search2Name}
+		AND MEMBER_EMAIL = #{search2Email}
+	</select>
+	
+	<update id="updateRandomPw">
+		UPDATE "MEMBER" SET MEMBER_PW = #{bcryptPassword}
+		WHERE MEMBER_ID = #{search2Id}
+		AND MEMBER_NAME = #{search2Name}
+		AND MEMBER_EMAIL = #{search2Email}
+	</update>
+	
 </mapper>
