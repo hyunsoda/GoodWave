@@ -142,3 +142,23 @@ yeontanForm.addEventListener("submit",(e)=> {
 
 
 });
+
+
+
+const activityList = document.getElementById("tab-3");
+
+activityList.addEventListener("click",()=> {
+
+    fetch("/mypage/activityList")
+    .then(resp =>resp.text())
+    .then(result=>{
+        
+        const apply = document.getElementById("apply-area");
+
+        for(let i = 0; i<map.length();i++){
+            
+        }
+
+    })
+
+})

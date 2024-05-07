@@ -26,6 +26,11 @@ public interface MypageMapper {
 	 * @return
 	 */
 	int changePw(Map<String, Object> paramMap);
+
+	/** 활동내역 조회
+	 * @return
+	 */
+	Map<String, Object> selectActivityList();
 	
 	
 }
