@@ -1,10 +1,12 @@
 main {
-    margin: 0 100px 0 100px;
+    margin: 0px 100px 0 100px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     height: auto;
+    position: relative;
+    top: 170px;
 }
 
 #registerBtn{
@@ -37,6 +39,10 @@ main {
     display: flex;
     flex-direction: column;
 
+  }
+
+  #footer{
+    margin-top:150px;
   }
 
 /* popup layer 행 */

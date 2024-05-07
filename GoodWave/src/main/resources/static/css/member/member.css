@@ -4,13 +4,19 @@
 }
 
 
+#footer{
+    margin-top:150px;
 
+}
 .second {
-    display: flex;
+   display: flex;
     flex-direction: column;
     justify-content: center;
     height: 500px;
     align-items: center;
+    /* margin-top: 150px; */
+    position: relative;
+    top: 200px;
     
 }
 

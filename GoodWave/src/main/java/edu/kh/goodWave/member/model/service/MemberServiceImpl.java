@@ -3,13 +3,13 @@ package edu.kh.goodWave.member.model.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+//import org.springframework.transaction.annotation.Transactional;
 
 import edu.kh.goodWave.member.model.dto.Member;
 import edu.kh.goodWave.member.model.mapper.MemberMapper;
 import lombok.extern.slf4j.Slf4j;
 
-@Transactional(rollbackFor=Exception.class)
+//@Transactional(rollbackFor=Exception.class)
 @Service
 @Slf4j
 public class MemberServiceImpl implements MemberService{

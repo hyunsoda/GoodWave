@@ -12,7 +12,47 @@
     <!-- 기본 메뉴 -->
     <ul class="nav_ul">
 
-
+        <section class="section1">    
+    
+            <div class="bbi right" id="bbi_right">
+                <p class="font_p  font_p1 "><a href="/introduce/introduce">굿웨이브</a></p>
+                <p class="font_p  font_p1"><a href="/introduce/mental">굿웨이브 정신</a></p>
+                <p class="font_p  font_p1"><a href="/introduce/greeting">인사말</a></p>
+            </div>
+    
+            <div class="bbi right" id="right_1">
+    
+    
+    
+                <p class="font_p rela_2  font_p2">  
+    
+                    <th:block th:if="${session.loginMember != null}">
+                        <a href="/volunteer/donation" id="donationBtn2">후원하기</a>
+                    </th:block>
+    
+                    <th:block th:unless="${session.loginMember != null}">
+                        <a href="/member/login" id="donationBtn2">후원하기</a>
+                    </th:block>
+                
+                </p>
+            
+            </div> 
+          <div class="bbi right" id="right_baby">
+    
+       
+    
+                <p class="font_p rela3 font_p3"><a href="/volunteer/yeontan">연탄봉사</a></p>
+                <p class="font_p rela3 font_p3"><a href="/volunteer/talentDonation">재능기부</a></p>
+                <p class="font_p rela3 font_p3"><a href="/volunteer/visit">자택방문봉사</a></p>
+    
+            </div>
+            <div class="bbi right" id="right_ba">
+                <p class="font_p rela4 font_p4"><a href="/community/FAQ">자주 묻는 질문</a></p>
+                <p class="font_p rela4 font_p4"><a href="/community/QNA">Q&A</a></p>
+                
+            </div> 
+        <!-- section -->        
+        </section>
         <!-- li1 -->
         <li class="li_1">
             <!-- li1 -->  
@@ -20,47 +60,7 @@
             <!-- introduce -->
             <div class="introduce"><span class="span_class">소개</span>
                 <div class="stick"></div>
-                <section class="section1">    
-    
-                    <div class="bbi right" id="bbi_right">
-                        <p class="font_p"><a href="/introduce/introduce">굿웨이브</a></p>
-                        <p class="font_p"><a href="/introduce/mental">굿웨이브 정신</a></p>
-                        <p class="font_p"><a href="/introduce/greeting">인사말</a></p>
-                    </div>
-
-                    <div class="bbi right" id="right_1">
-
-
-
-                        <p class="font_p">  
-
-                            <th:block th:if="${session.loginMember != null}">
-                                <a href="/volunteer/donation" id="donationBtn2">후원하기</a>
-                            </th:block>
-
-                            <th:block th:unless="${session.loginMember != null}">
-                                <a href="/member/login" id="donationBtn2">후원하기</a>
-                            </th:block>
-                        
-                        </p>
-                    
-                    </div>
-                  <div class="bbi right" id="right_baby">
-
-               
-
-                        <p class="font_p"><a href="/volunteer/yeontan">연탄봉사</a></p>
-                        <p class="font_p"><a href="/volunteer/talentDonation">재능기부</a></p>
-                        <p class="font_p"><a href="/volunteer/visit">자택방문봉사</a></p>
-
-                    </div>
-                    <div class="bbi right" id="right_ba">
-                        <p class="font_p"><a href="/community/FAQ">자주 묻는 질문</a></p>
-                        <p class="font_p"><a href="/community/QNA">Q&A</a></p>
-                        
-                    </div> 
-                <!-- section -->        
-                </section>
+             
             </div>
             <!-- introduce -->
 
@@ -141,8 +141,10 @@
 
 
     </div>
-
+  
 </nav>
+
+
 
 <script th:inline="javascript">
     const loginMember = /*[[${session.loginMember}]]*/ "로그인 회원";

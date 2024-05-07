@@ -165,11 +165,76 @@ $(function(){
       },800)
       
    }
+
+   if(scrollTopWindow > 1150){
+      $(".purpose_p").css("opacity","1");
+      $(".purpose_p").css("transform","translateY(0px)");
+
+      setTimeout(function(){
+         $(".purpose_p_span").css("opacity","1");
+         $(".purpose_p_span").css("transform","translateY(0px)");
+      },200)
+
+      setTimeout(function(){
+         $(".mental_p2").css("opacity","1");
+         $(".mental_p2").css("transform","translateY(0px)");
+      },400)
+   }
+
+   if(scrollTopWindow  > 1600){
+      $(".core_font_h2").css("opacity","1");
+      $(".core_font_h2").css("transform","translateY(0px)");
+
+      setTimeout(function(){
+         $(".core_font_span").css("opacity","1");
+         $(".core_font_span").css("transform","translateY(0px)")
+      },300)
+   }
+
+   if(scrollTopWindow > 2500){
+      $(".core_box_values_box1").css("opacity","1");
+      $(".core_box_values_box1").css("transform","translateX(0px)");
+
+      setTimeout(function(){
+         $(".core_box_values_box2").css("opacity","1");
+         $(".core_box_values_box2").css("transform","translateY(0px)");
+      },200)
+
+      setTimeout(function(){
+         $(".core_box_values_box3").css("opacity","1");
+         $(".core_box_values_box3").css("transform","translateX(0px)");
+      },400)
+
+      setTimeout(function(){
+         $(".core_box_values_box4").css("opacity","1");
+         $(".core_box_values_box4").css("transform","translateY(0px)");
+      },600)
+
+      setTimeout(function(){
+         $(".core_box_values_box5").css("opacity","1");
+         $(".core_box_values_box5").css("transform","translateX(0px)");
+      },800)
+      
+      setTimeout(function(){
+         $(".core_box_values_box6").css("opacity","1");
+         $(".core_box_values_box6").css("transform","translateY(0px)");
+      },800)
+
+      setTimeout(function(){
+         $(".core_box_values_box7").css("opacity","1");
+         $(".core_box_values_box7").css("transform","translateX(0px)");
+      },800)
+
+      setTimeout(function(){
+         $(".core_box_values_box8").css("opacity","1");
+         $(".core_box_values_box8").css("transform","translateY(0px)");
+      },1000)
+   }
  })
 
-// $(window).scroll(function(){
-//    alert($(this).scrollTop());
-// })
+//  $(window).scroll(function(){
+//     alert($(this).scrollTop());
+//   })
 
 })
 
