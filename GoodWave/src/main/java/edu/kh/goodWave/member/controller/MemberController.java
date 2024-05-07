@@ -1,5 +1,7 @@
 package edu.kh.goodWave.member.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,8 +10,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
+
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -119,7 +123,29 @@ public class MemberController {
 	@GetMapping("idSearch")
 	public String idSearch() {
 		
+		
 		return "member/idSearch";
+	}
+	
+	
+	@PostMapping("idSearch")
+	public String idSearch(@RequestParam Map<String, String> paramMap,
+							Model model,
+							RedirectAttributes ra) {
+		
+		String id = service.idSearch(paramMap);
+		
+		if(id == null) {
+			ra.addFlashAttribute("message", "일치하는 회원 정보가 없습니다.");
+			return "redirect:/member/idSearch";
+		} else {
+			model.addAttribute("searchName",paramMap.get("searchName"));
+			model.addAttribute("id",id);
+			return "member/idSearchComplete";
+		}
+		
+		
+		
 	}
 	
 	@GetMapping("pwSearch")
@@ -128,6 +154,7 @@ public class MemberController {
 		return "member/pwSearch";
 	}
 	
+
 	@GetMapping("logout")
 	public String logout(
 			
@@ -141,7 +168,24 @@ public class MemberController {
 		
 	}
 	
-	
+
+	@PostMapping("pwSearch")
+	public String pwSearch(@RequestParam Map<String, String> paramMap,
+							RedirectAttributes ra,
+							Model model) {
+		
+		String pw = service.pwSearch(paramMap);
+		
+		if(pw != null) {
+			model.addAttribute("searchName",paramMap.get("search2Name"));
+			return "member/pwSearchComplete";
+		}
+		
+		ra.addFlashAttribute("message","일치하는 회원 정보가 없습니다.");
+		return "redirect:/member/pwSearch";
+		
+	}
+
 	
 	
 }

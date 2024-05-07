@@ -32,7 +32,7 @@
                     <br>
     
                     신청자 이름 <span>*</span>
-                    <input type="text" id="TDRegisterName3" class="registerInput" name="name">
+                    <input type="text" id="TDRegisterName3" class="registerInput" name="visitName">
                     
                     
         
@@ -41,14 +41,14 @@
     
                 <div class="popup-row">
                     신청자 전화번호 <span> * </span>  
-                    <input type="tel" id="TDRegisterTel3" class="registerInput">
+                    <input type="tel" id="TDRegisterTel3" class="registerInput" name="visitTel">
                     
                     
                   </div>
                   <div class="popup-row">
                     
                     신청날짜 <span>*</span> 
-                    <input type="date" id="TDRegisterDate3" class="registerInput"> 
+                    <input type="date" id="TDRegisterDate3" class="registerInput" name="visitDate"> 
     
                   </div>
                   <div class="btn-container">
@@ -73,7 +73,7 @@
 
     <script th:inline="javascript">
         const loginMember = /*[[${session.loginMember}]]*/ "로그인 회원";
-  
+        const visitName = document.getElementById("TDRegisterName3").value;
       </script>
 
 
