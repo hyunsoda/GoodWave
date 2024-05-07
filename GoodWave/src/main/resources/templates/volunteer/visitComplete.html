@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +22,8 @@
 
             <div id="y">
                 
-                <h1>OOO님의 <br> 방문봉사 신청 감사합니다.</h1>
+                <h1 th:text="|${registerName}님의|"></h1>
+                <h1>방문봉사 신청 감사합니다.</h1>
                 <br>
                 <h3 id="completeComment">확인 후 연락드리겠습니다.😊</h3>
                 

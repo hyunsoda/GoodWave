@@ -439,10 +439,10 @@ img{
     background-color: #7ABEDD;
     border-radius: 100px;
     position:fixed;
-    right:30px;
-    bottom:300px;
+    right:20px;
+    bottom:130px;
     cursor: pointer;
-    z-index: 199;
+    z-index: 999;
     text-align: center;
     color:white;
 }
@@ -484,21 +484,50 @@ img{
    }
 
    #gongji_grid_box > div{
-    border:1px solid black;
-    text-align: center;
+    border: 1px solid black;
+    /* text-align: center; */
     border-radius: 10px;
     cursor: pointer;
+    padding-left: 50px;
+    font-weight: 700;
+   
+    font-size: 26px;
+    color: #212121;
+     word-spacing: 5px;
    }
 
    .gongji_p{
-    line-height:118.75px;
+    line-height: 118.75px;
     transition: 0.1s linear;
+    flex-basis: 75%;
     }
 
     .gongji_div{
         transition: 0.3s linear;
         transform: translateY(100px);
         opacity: 0;
+    }
+
+    .gongji_date{
+        color: grey;
+    
+    font-size: 17px;
+   
+    flex-basis: 11%;
+    }
+
+    .jasehi{
+        padding: 13px;
+    font-size: 18px;
+    background-color: #dfdfdf;
+    position:relative;
+    left:30px;
+    transition: 0.1s linear;
+    }
+
+    .jasehi:hover{
+        background-color:#63A3D0;
+        color:white;
     }
 
     .gongji_p:hover{
@@ -629,6 +658,64 @@ img{
     height: 130px;
     background-color: #c1c1c1;
     position: absolute;
+}
+
+#myPageForm{
+    border-radius: 10px;
+    position: absolute;
+    top: 100px;
+    width: 200px;
+    display: grid;
+    height: 150px;
+    right: -80px;
+    grid-auto-columns: auto;
+    background-color: white;
+    box-shadow: 1px 1px 6px 1px #353434;
+    color: grey;
+    justify-content: flex-start;
+    overflow: hidden;
+    font-weight:500;
+   
+    grid-template-rows: repeat(3, 1fr);
+    display:none;
+
+}
+
+#myPageForm div{
+    align-items: center;
+    width: 205px;
+    font-size: 14px;
+    
+}
+
+.myPageThree{
+    position: relative;
+    left: 34px;
+}
+
+.hover_a{
+    transition: 0.1s linear;
+
+}
+
+.navImage{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: 15px;
+}
+
+.hover_a:hover{
+    background-color:rgb(230, 230, 230);
+}
+
+.gongi_aaa{
+    text-decoration: none;
+    display: flex;
+    color: inherit;
+    align-content: center;
+    align-items: center;
+   
 }
 
 
