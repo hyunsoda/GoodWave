@@ -2,11 +2,11 @@
 /* 비밀번호 수정 */
 
 //비밀번호 변경 form 태그
-const changePw = document.querySelector("#changePw");
+const passwordchange = document.querySelector("#passwordchange");
 
-if(changePw != null){
+if(passwordchange != null){
     // 제출 되었을 떄 
-    changePw.addEventListener("submit", e => {
+    passwordchange.addEventListener("submit", e => {
 
         const currentPw = document.querySelector("#currentPw");
         const newPw = document.querySelector("#newPw");

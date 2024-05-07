@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,9 +13,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import ch.qos.logback.core.model.Model;
+
 import edu.kh.goodWave.member.model.dto.Member;
 import edu.kh.goodWave.mypage.model.service.MyPageService;
 import lombok.RequiredArgsConstructor;
@@ -38,24 +40,24 @@ public class MyPageController {
 		
 		
 		//주소만 꺼내옴
-		//String memberAddress = loginMember.getMemberAddress();
+		String memberAddress = loginMember.getMemberAddress();
 		
 		// 주소가 있을 경우에만 동작
-				//if (memberAddress != null) {
+				if (memberAddress != null) {
 
 					// 구분자 "^^^"를 기준으로
 					// memberAddress 값을 쪼개어 String[]로 반환
-					//String[] arr = memberAddress.split("\\^\\^\\^"); // ^은 \\ 2개 붙여줘야한다.
+					String[] arr = memberAddress.split("\\^\\^\\^"); // ^은 \\ 2개 붙여줘야한다.
 																		// regex->정규표현식을 전달해야함
 
 					// 05831^^^서울 송파구 동남로 99^^^201호^^^
 					// ->["05831" , "서울 송파구 동남로 99","201호"]
 					// [0] [1] [2]
-//					model.addAttribute("postcode", arr[0]);
-//					model.addAttribute("address", arr[1]);
-//					model.addAttribute("detailAddress", arr[2]);
-
-//			}
+					model.addAttribute("postcode", arr[0]);
+					model.addAttribute("address", arr[1]);
+					model.addAttribute("detailAddress", arr[2]);
+					
+			}
 
 		
 		return "mypage/mypage";
@@ -160,6 +162,45 @@ public class MyPageController {
 
 		return "redirect:" + path;
 	}
+	
+	
+	/**
+	 * 회원 탈퇴
+	 * 
+	 * @param memberPw    : 입력 받은 비밀번호
+	 * @param loginMember : 로그인한 회원의 정보를 얻어옴(세션에 담겨있음)
+	 * @param status      : 세션 완료 용도의 객체 -> @SessionAttributes 로 등록된 세션을 완료
+	 * @param ra          :
+	 * @return
+	 */
+	@PostMapping("withdrawal")
+	public String secession(@RequestParam("memberPw") String memberPw,
+			@SessionAttribute("loginMember") Member loginMember, SessionStatus status, RedirectAttributes ra) {
+
+		// 서비스 호출
+		int memberNo = loginMember.getMemberNo();
+
+		int result = service.secession(memberPw, memberNo);
+
+		String message = null;
+		String path = null;
+
+		if (result > 0) {
+			message = "탈퇴 되었습니다";
+			path = "/";
+
+			status.setComplete(); // 세션을 완료시킴
+
+		} else {
+			message = "비밀번호가 일치하지 않습니다";
+			path = "withdrawal";
+
+		}
+
+		ra.addFlashAttribute("message", message);
+
+		return "redirect:" + path;
+	}
 
 	@ResponseBody
 	@GetMapping("activityList")
@@ -173,6 +214,9 @@ public class MyPageController {
 		
 		return map;
 	}
+	
+	
+	
 	
 	
 	

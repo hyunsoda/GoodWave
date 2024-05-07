@@ -36,7 +36,7 @@
     <div class="content-dis">
          <!--마이페이지-->
          <form  action="mypage" method="POST" name="myPageFrm" 
-         id="updateInfo"></form>
+         id="mypage">
            <div class="mypage info">
             <div class="mypage-elements">
               <label class="info-title">닉네임</label>
@@ -89,10 +89,11 @@
               </div>
               
               <div class="mypage-element">
-                <button id="submit-btn">수정하기</button>
+                <button id="submit-btn" class="myPage-submit">수정하기</button>
               </div>
 
             </div>
+          </form>
             <!--마이페이지-->
      
             <!--비밀번호변경 / 회원탈퇴 -->
@@ -200,8 +201,11 @@
   <th:block th:replace="~{/common/footer}"></th:block>
   <!--푸터-->
 
+  <!--다음 API -->
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
-<script src="/js/mypage/applyedit.js"></script>
+<!--마이페이지 js-->
+<script src="/js/mypage/mypage.js"></script>
     
 </body>
 </html>

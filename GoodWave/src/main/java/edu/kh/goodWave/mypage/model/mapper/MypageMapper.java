@@ -17,20 +17,28 @@ public interface MypageMapper {
 
 	/** 회원 비밀번호 조회
 	 * @param memberNo
-	 * @return
+	 * @return 암호화 된 비밀번호
 	 */
 	String selectPw(int memberNo);
 
 	/** 비밀번호 변경
 	 * @param paramMap
-	 * @return
+	 * @return result
 	 */
 	int changePw(Map<String, Object> paramMap);
+
+
+	/** 회원탈퇴
+	 * @param memberNo
+	 * @return result
+	 */
+	int secession(int memberNo);
 
 	/** 활동내역 조회
 	 * @return
 	 */
 	Map<String, Object> selectActivityList();
+
 	
 	
 }
