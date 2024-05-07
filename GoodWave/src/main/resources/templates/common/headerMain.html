@@ -117,11 +117,50 @@
         </th:block>    
 
         <th:block th:if="${session.loginMember != null}">
-            <div>
-                <a href="/mypage/mypage">
-                <i class="fa-solid fa-user" id="right-icon"></i>
+
+        
+        <div class="userMyPage">
+            
+            <i class="fa-solid fa-user" id="right-icon"></i>
+            
+        </div> 
+            
+
+            <div id="myPageForm" style="border-radius: 10px;border:1px solid black;">
+                <!-- div1 -->
+                <a href="#" class="hover_a" style="height:49px;">
+                    <div style="border-bottom:1px solid black;height:49px;">
+                        <p class="myPageThree">
+                            <th:block th:text="|${session.loginMember.memberId} 님 환영합니다|"></th:block>
+                        </p>
+                        
+                    </div>
                 </a>
+                
+                <!-- div1 -->
+
+                <!-- div2 -->
+                <a href="/mypage/mypage" class="hover_a">
+                    <div style="transform: translateY(14px);">
+                        <img src="/images/navImage/user.png" alt="" class="navImage">
+                        <p class="myPageThree">MyPage</p>
+                    </div>
+                </a>
+                
+                <!-- div2 -->
+
+                <!-- div3 -->
+                <a href="/member/logout" class="hover_a">
+                    <div style="transform: translateY(14px);">
+                        <img src="/images/navImage/signout.png" alt="" class="navImage">
+                        <p class="myPageThree">LogOut</p>
+                    </div>
+                </a>
+                
+                <!-- div3 -->
             </div>
+
+
         </th:block>    
 
 

@@ -39,8 +39,8 @@ submitBtn.addEventListener("click",()=> {
 
 
 
-
-
+const emailCheckSpan = document.querySelector("#emailCheckSpan");
+const emailcheckbtn = document.querySelector("#emailcheckbtn");
 const checkAll = document.querySelector('.checkbox_all .all');
 const checkBoxesNormal = document.querySelectorAll('.checkbox .normal');
 const checkBoxChecked = Array.from(checkBoxesNormal, (checkbox) => checkbox);
@@ -135,6 +135,42 @@ email.addEventListener("input",(e)=> {
 
     // ==== 나중에====
     /////======================= 이메일 중복 검사 추가하기=============
+
+   
+       emailcheckbtn.addEventListener("click", function(){
+        fetch("/member/emailCheck?memberEmail=" + email.value)
+        .then(respones => {
+            return respones.text();
+        }).then(result => {
+            if(result > 0){
+                emailCheckSpan.innerHTML = "";
+                emailCheckSpan.innerHTML = "중복된 이메일이 있습니다";
+                emailCheckSpan.classList.add("error");
+                emailCheckSpan.classList.remove("confirm");
+                emailSpan.classList.add("error");
+                emailSpan.classList.remove("confirm");
+                checkobj.email = false;
+               return;
+    
+            }
+
+            emailCheckSpan.innerHTML = "";
+            emailCheckSpan.innerHTML = "사용가능한 이메일 입니다";
+            emailCheckSpan.classList.remove("error");
+                emailCheckSpan.classList.add("confirm");
+            emailSpan.classList.add("confirm");
+            emailSpan.classList.remove("error");
+            checkobj.email = true;
+        }).catch(error => {
+            console.log(error);
+        })
+       }) 
+
+        
+   
+
+   
+
 
 
     emailSpan.classList.add('confirm');

@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
 
+    
+    <th:block th:replace="~{/common/introduceJsConnect}"></th:block>
+    
     <link rel="stylesheet" href="/css/member/member.css">
-    <link rel="stylesheet" href="/css/member/signUp.css">
     <th:block th:replace="~{/common/common}"></th:block>
+    <link rel="stylesheet" href="/css/member/signUp.css">
+    <link rel="stylesheet" href="/css/introduce/introduce.main.css">
+    <link rel="stylesheet" href="/css/SubNavCss/subnav.css">
 </head>
 <body>
-    <th:block th:replace="~{/common/header2}"></th:block>
+    <th:block th:replace="~{/common/headerMain}"></th:block>
 
-    <main>
+    <main class="signupmain">
         <section class="main">
             <form action="/member/signUp" method="post" id="signUpForm">
                 <fieldset class="loginfield">
@@ -20,21 +25,23 @@
                     <label>
                     아이디 
                     <span id="idSpan">*</span>
+                    
                     </label>
 
 
-                        <input type="text" class="normalBtn" id="id">
+                        <input type="text" class="normalBtn" id="id" name="memberId">
 
 
 
                     <label>
                     이메일 
                     <span id="emailSpan">*</span>
+                    <span id="emailCheckSpan" style="font-size:17px;float:right"></span>
                     </label>
 
                     <div>
-                        <input type="text" class="btn2" id="email">
-                        <button type="button">중복확인</button>
+                        <input type="text" class="btn2" id="email" name="memberEmail">
+                        <button type="button" id="emailcheckbtn">중복확인</button>
                     </div>
 
                     <label>
@@ -42,7 +49,7 @@
                         <span id="pwSpan">*</span>
                     </label>
 
-                    <input type="password" class="normalBtn" id="pw">
+                    <input type="password" class="normalBtn" id="pw" name="memberPw">
 
                     <label>
                          비밀번호 확인 
@@ -56,14 +63,14 @@
                         <span id="nameSpan">*</span>
                     </label>
 
-                    <input type="text" id="name">
+                    <input type="text" id="name" name="memberName">
 
                     <label>
                         휴대폰 번호
                         <span id="telSpan">*</span>
                     </label>
 
-                    <input type="tel" class="normalBtn" id="tel">
+                    <input type="tel" class="normalBtn" id="tel" name="memberTel">
 
                     선택사항
                     <hr>

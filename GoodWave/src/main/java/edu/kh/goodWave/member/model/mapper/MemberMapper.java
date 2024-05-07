@@ -15,6 +15,19 @@ public interface MemberMapper {
 	 */
 	Member login(String memberId);
 
+
+	/** 맴버 회원가입
+	 * @param inputMember
+	 * @return
+	 */
+	int signup(Member inputMember);
+
+	/** 맴버 이메일 중복확인 검사
+	 * @param email
+	 * @return
+	 */
+	int checkEmail(String email);
+
 	/** 아이디 찾기
 	 * @param paramMap
 	 * @return
@@ -38,6 +51,7 @@ public interface MemberMapper {
 	 * @return
 	 */
 	int updateRandomPw(Map<String, String> paramMap);
+
 
 	
 }

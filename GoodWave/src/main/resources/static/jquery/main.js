@@ -371,10 +371,10 @@ $(function(){
    $(window).scroll(function(){
       if($(this).scrollTop() > 200){
          $(".scrollTop_div").css("display","block");
-         $("#volunteer_a").css("diplay","block");
+         $("#volunteer_a").css("display","block");
       }else{
          $(".scrollTop_div").css("display","none");
-         $("#volunteer_a").css("diplay","none");
+         $("#volunteer_a").css("display","none");
       }
    })
 
@@ -382,7 +382,32 @@ $(function(){
       $("html").animate({"scrollTop":"0"}, 100);
    })
 
+   
+
+   
+
 })
+
+
+
+$(function(){
+
+   let a = 0;
+   let b = 0;
+
+   $(".userMyPage").click(function(){
+        a++;
+        b = a % 2;
+
+        if(b == 1){
+         $("#myPageForm").css("display","grid");
+        }else{
+         $("#myPageForm").css("display","none");
+        }
+   }) 
+
+})
+
 
 
 
