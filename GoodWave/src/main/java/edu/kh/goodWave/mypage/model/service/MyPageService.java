@@ -20,4 +20,10 @@ public interface MyPageService {
 	 */
 	int changePw(Map<String, Object> paramMap, int memberNo);
 
+	/** 활동 내역 조회
+	 * @param memberNo
+	 * @return
+	 */
+	Map<String, Object> selectActivityList(int memberNo);
+
 }

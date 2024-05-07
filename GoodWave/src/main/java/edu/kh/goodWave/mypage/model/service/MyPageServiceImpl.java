@@ -75,4 +75,10 @@ private final MypageMapper mapper;
 	
 	}
 
+	
+	@Override
+		public Map<String, Object> selectActivityList(int memberNo) {
+			
+			return mapper.selectActivityList();
+		}
 }
