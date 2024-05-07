@@ -50,9 +50,12 @@
              }
             </script>
      </table>
-     <div class="btn-area">
-     <button class="write-btn"><a href="/community/QNAwrite">글쓰기</a></button>
-     </div>
+     <th:block th:if="${session.loginMember != null}">
+        <div class="btn-area">
+            <button class="write-btn"><a href="/community/QNAwrite">글쓰기</a></button>
+            </div>
+     </th:block>
+     
 
 
      	<!-- ============================================================================================================== -->
