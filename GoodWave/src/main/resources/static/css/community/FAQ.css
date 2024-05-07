@@ -11,6 +11,7 @@
   margin:0px;
   box-sizing: border-box;
 }
+/* ************************************************************************* */
 
 
 * {
@@ -18,12 +19,15 @@
   }
   
   body {
-    padding: 2rem;
+    
     margin: 0;
   }
   
   .title {
+
     margin: 10rem auto;
+
+
     font-size: 2rem;
     text-align: center;
    
@@ -38,7 +42,8 @@
   }
   
   .faq-container {
-    max-width: 1000px;
+    width: 1000px;
+    height: 700px;
     display: flex;
     flex-direction: column;
     gap: 2rem;

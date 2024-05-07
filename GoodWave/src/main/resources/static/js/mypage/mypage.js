@@ -8,7 +8,7 @@ document.getElementsByClassName("show-info")[0].addEventListener("click",functio
   resetClass(form, "alist");
   form.classList.add("info");
 
-  document.getElementsByClassName("mypage-elements").innerText = "hi";
+  document.getElementsByClassName("mypage-elements").innerText = "";
 });
 
 document.getElementsByClassName("show-dlist")[0].addEventListener("click",function(){
@@ -17,7 +17,7 @@ document.getElementsByClassName("show-dlist")[0].addEventListener("click",functi
   resetClass(form, "alist");
   form.classList.add("dlist");
 
-  document.getElementsByClassName("donate-list").innerText = "hi";
+  document.getElementsByClassName("donate-list").innerText = "";
 
 });
 document.getElementsByClassName("show-alist")[0].addEventListener("click",function(){
@@ -26,6 +26,6 @@ document.getElementsByClassName("show-alist")[0].addEventListener("click",functi
   resetClass(form, "dlist");
   form.classList.add("alist");
 
-  document.getElementsByClassName("donate-list").innerText = "hi";
+  document.getElementsByClassName("donate-list").innerText = "";
 
 });

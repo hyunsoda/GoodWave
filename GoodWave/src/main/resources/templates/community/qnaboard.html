@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>질문게시판</title>
+    <th:block th:replace="~{/common/common}"></th:block>
+
 
     <link rel="stylesheet" href="/css/community/qnaboard.css">
     <th:block th:replace="~{/common/common}"></th:block>
@@ -13,6 +15,7 @@
 
 </head>
 <body>
+
     <th:block th:replace="~{/common/headerMain}"></th:block>
     <!--게시판이름 & 설명-->
 
@@ -78,9 +81,91 @@
     </div>
    
 
+
+
+    <!--게시판이름 & 설명-->
+    <h1 class=" title">질문 게시판</h1>
+    <h4 class="sub-title" style="color: #666666;">굿웨이브 회원들의 질문 게시판입니다. <br>
+        굿웨이브는 후원자님과의 소통으로 더 밝은 미래를 만들어갑니다
+    </h4>
+     <!--게시판이름 & 설명-->
+
+     <!--목록-->
+     <table class="table">
+         <tr class="header">
+             <td class="num">번호</td>
+             <td class="title">제목</td>
+             <td>작성자</td>
+             <td>작성날짜</td>
+             <td>조회수</td>
+         </tr>
+         <script>
+             var i, day = 20;
+             for (i = 10; i > 0; i--) {
+                 document.write("<tr class='body'>");
+                 document.write("<td>" + i +"</td>");
+                 document.write("<td class='title'>제목입니다.</td>"); 
+                 document.write("<td>작성자</td>"); 
+                 document.write("<td>24-01-" + day-- + "</td>");
+                 document.write("<td>0</td>");
+                 document.write("</tr>");
+             }
+            </script>
+     </table>
+     <div class="btn-area">
+     <button class="write-btn"><a href="/community/QNAwrite">글쓰기</a></button>
+     </div>
+
+
+     	<!-- ============================================================================================================== -->
+
+			<!-- 게시글이 있을 때만 페이지네이션이 보이게 할 예정 -->
+			<div class="pagination-area">
+
+				<ul class="pagination">
+
+					<!-- 첫 페이지로 이동
+					&lt;&lt; : <<
+					-->
+					<li><a>&lt;&lt;</a></li>
+
+					<!-- 이전 목록 마지막 번호로 이동 -->
+					<li><a>&lt;</a></li>
+
+					<!-- 특정 페이지로 이동 -->
+					<th:block>
+
+					<!-- 현재 보고 있는 페이지-->
+						<li>
+							<a class="current">1</a>
+						</li>
+						
+						<!-- 보고있지 않은 페이지 -->
+						<li>
+							<a>2</a>
+						</li> 
+
+					</th:block>
+						
+
+
+					
+					<!-- 다음 목록 시작 번호로 이동 -->
+					<li><a >&gt;</a></li>
+
+					<!-- 끝 페이지로 이동 -->
+					<li><a>&gt;&gt;</a></li>
+				</ul>
+			</div>
+
+
     
 
+    
 
+  <!--푸터-->
+  <th:block th:replace="~{/common/footer}"></th:block>
+  <!--푸터-->
 
 
     
