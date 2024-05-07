@@ -8,4 +8,22 @@
 				#{memberNo},#{donationEmail}, #{donationTel})
 	</insert>
 
-</mapper>
+	<!--연탄 봉사-->
+	<insert id="yeontan">
+		INSERT INTO VOLUNTEERLIST
+		VALUES(#{memberNo}, 1, TO_CHAR(#{a},'YYYY-MM-DD'))
+	</insert>
+
+	<!--자택방문 봉사-->
+	<insert id="visit">
+		INSERT INTO VOLUNTEERLIST
+		VALUES(#{memberNo}, 3, #{visitDate})
+	</insert>
+	
+	<!--재능기부 봉사-->
+	<insert id="talent">
+		INSERT INTO VOLUNTEERLIST
+		VALUES(#{memberNo}, 3, #{talentDate})
+	</insert>
+	
+	</mapper>

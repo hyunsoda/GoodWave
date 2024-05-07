@@ -19,11 +19,11 @@
 
 
           <!-- 로그인 했을 때 -->
-          <!-- <th:block th:if="${session.loginMember != null}"> -->
+    
           <!-- 버튼 클릭 시 나타나는 후원신청 form -->
           <div id="popupLayer" class="popup-hidden">
 
-            <form action="#" method="post" id="yeontanForm">
+            <form action="/volunteer/yeontan" method="post" id="yeontanForm">
             <div class="popup-row"> 
                 <h2>신청하기</h2>
 
@@ -31,7 +31,7 @@
                 <br>
 
                 신청자 이름 <span>*</span>
-                <input type="text" id="TDRegisterName2" class="registerInput" name="name">
+                <input type="text" id="TDRegisterName2" class="registerInput" name="yeontanName">
                 
                 
     
@@ -40,14 +40,14 @@
 
             <div class="popup-row">
                 신청자 전화번호 <span> * </span>  
-                <input type="tel" id="TDRegisterTel2" class="registerInput">
+                <input type="tel" id="TDRegisterTel2" class="registerInput" name="yeontanTel">
                 
                 
               </div>
               <div class="popup-row">
                 
                 신청날짜 <span>*</span> 
-                <input type="date" id="TDRegisterDate2" class="registerInput"> 
+                <input type="date" id="TDRegisterDate2" class="registerInput" name="yeontanDate"> 
 
               </div>
               <div class="btn-container">
