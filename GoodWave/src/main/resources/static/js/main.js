@@ -1,17 +1,7 @@
-const donationBtn = document.querySelector(".donation_124213");
-const donationBtn2 = document.querySelector(".donation2");
+const writedsdsd = document.querySelector(".wrarara");
 
-donationBtn.addEventListener("click", ()=> {
-
-    
-    if(loginMember != null){
-        location.href="/volunteer/donation";
-
-    }
-    if(loginMember == null){
-        location.href="/member/login";
-    }
-
+writedsdsd.addEventListener("click", function(){
+    location.href = "/community/QNAwrite";
 })
 
 

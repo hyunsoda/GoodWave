@@ -32,7 +32,29 @@ public class CommunityController {
 		
 		return "/community/FAQ";
 	}
+  
+  
 	
+	@GetMapping("QNA")
+	public String QNA(
+			@RequestParam(value="cp" , required=false, defaultValue="1") int cp,
+			Model model
+			) {
+  
+      Map<String, Object> map = service.selectBoardList(cp);
+		
+		
+		model.addAttribute("pagination", map.get("pagination"));
+		model.addAttribute("boardList", map.get("boardList"));
+  
+  
+return "redirect:/community/qnaboard";
+
+}
+  
+  
+  
+
 	@GetMapping("qnaboard")
 	public String QNA() {
 		return "/community/qnaboard";
@@ -48,9 +70,13 @@ public class CommunityController {
 	public String QNAwrite(Board board,
 							RedirectAttributes ra,
 							@SessionAttribute("loginMember") Member loginMember) {
+
 		
 		board.setMemberNo(loginMember.getMemberNo());
 		
+
+		
+
 		int result = service.qnaWrite(board);
 		
 		if(result >0) {
@@ -62,6 +88,7 @@ public class CommunityController {
 			ra.addFlashAttribute("message", "등록이 완료되지 않았습니다. 다시 작성해주세요");
 			return "redirect:/community/qnawrite";
 		}
+
 		
 		
 		

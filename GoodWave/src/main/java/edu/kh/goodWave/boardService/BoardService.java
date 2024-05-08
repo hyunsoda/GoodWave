@@ -9,7 +9,7 @@ public interface BoardService {
 	/** 게시판 리스트 조회
 	 * @return
 	 */
-	Map<String, Object> selectBoardList();
+	Map<String, Object> selectBoardList(int cp);
 
 	/** 게시판 작성하기
 	 * @param board

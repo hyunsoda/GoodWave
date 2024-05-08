@@ -30,14 +30,58 @@
 
      <!--목록-->
      <table class="table">
-         <tr class="header">
-             <td class="num">번호</td>
-             <td class="title">제목</td>
-             <td>작성자</td>
-             <td>작성날짜</td>
-             <td>조회수</td>
-         </tr>
-         <script>
+        <thead>
+            <tr class="header">
+                <td class="num">번호</td>
+                <td class="title">제목</td>
+                <td>작성자</td>
+                <td style=" position: relative;
+                left: 97px;width: 133px;">작성일</td>
+                <td style="position: relative;
+                left: 71px;">조회수</td>
+            </tr>
+        </thead>
+      
+
+        <tbody>
+
+                <th:block th:if="${#lists.isEmpty(boardList)}">
+                        <tr>
+                            <th colspan="5">게시글이 존재하지 않습니다.</th>
+                        </tr>
+                </th:block>
+
+                <th:block th:unless="${#lists.isEmpty(boardList)}">
+                        <tr th:each="board : ${boardList}" th:object="${board}">
+                            <!-- 번호 -->
+                            <td th:text="*{boardNo}" style="position:relative;left:15px;">게시글번호</td>
+                            <!-- 번호 -->
+
+                            <!-- 제목 -->
+                            <td>
+                                <a th:text="*{boardTitle}" class="board_content">게시글 제목</a>
+                                <th block th:text="|[*{commentCount}]|" class="board_writeDag">댓글 수</th>
+                            </td>
+                             <!-- 제목 -->
+ 
+                             <!-- 작성자 이름-->
+                             <td th:text="*{memberName}" class="board_writer">작성자 이름</td>
+                               <!-- 작성자 이름-->
+                               
+                               <!-- 작성 날짜-->
+                               <td th:text="*{boardWriteDate}" class="board_writeDate">작성일</td>
+                                <!-- 작성 날짜-->
+
+                                <!-- 조회수 -->
+                                <td th:text="*{readCount}" class="board_joheo">조회수</td>
+                                <!-- 조회수 -->
+
+
+                        </tr>
+                </th:block>
+
+        </tbody>
+         <!-- <script>
              var i, day = 20;
              for (i = 10; i > 0; i--) {
                  document.write("<tr class='body'>");
@@ -48,7 +92,7 @@
                  document.write("<td>0</td>");
                  document.write("</tr>");
              }
-            </script>
+            </script> -->
      </table>
      <th:block th:if="${session.loginMember != null}">
         <div class="btn-area">
@@ -63,28 +107,29 @@
 			<!-- 게시글이 있을 때만 페이지네이션이 보이게 할 예정 -->
 			<div class="pagination-area">
 
-				<ul class="pagination">
+				<ul class="pagination" th:object="${pagination}">
 
 					<!-- 첫 페이지로 이동
 					&lt;&lt; : <<
 					-->
-					<li><a>&lt;&lt;</a></li>
+					<li><a th:href="@{/community/QNA(cp=1)}">&lt;&lt;</a></li>
 
 					<!-- 이전 목록 마지막 번호로 이동 -->
-					<li><a>&lt;</a></li>
+					<li><a th:href="@{/community/QNA(cp=*{prevPage})}">&lt;</a></li>
 
 					<!-- 특정 페이지로 이동 -->
-					<th:block>
+					<th:block th:each="i : *{#numbers.sequence(startPage, endPage)}">
 
 					<!-- 현재 보고 있는 페이지-->
-						<li>
-							<a class="current">1</a>
+						<li th:if="${i} == *{currentPage}">
+							<a class="current" th:text="${i}">현재페이지</a>
 						</li>
 						
 						<!-- 보고있지 않은 페이지 -->
-						<li>
-							<a>2</a>
-						</li> 
+						<li th:unless="${i} == *{currentPage}">
+							<a th:href="@{/community/QNA(cp=${i})}"
+                            th:text="${i}">이동할페이지</a>
+						</li>
 
 					</th:block>
 						
@@ -92,10 +137,10 @@
 
 					
 					<!-- 다음 목록 시작 번호로 이동 -->
-					<li><a >&gt;</a></li>
+					<li><a th:href="@{/community/QNA(cp=*{nextPage})}">&gt;</a></li>
 
 					<!-- 끝 페이지로 이동 -->
-					<li><a>&gt;&gt;</a></li>
+					<li><a th:href="@{/community/QNA(cp=*{maxPage})}">&gt;&gt;</a></li>
 				</ul>
 			</div>
 

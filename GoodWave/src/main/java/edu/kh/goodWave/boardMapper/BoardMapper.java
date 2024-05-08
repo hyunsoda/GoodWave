@@ -1,6 +1,11 @@
 package edu.kh.goodWave.boardMapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.session.RowBounds;
+
+import edu.kh.goodWave.board.model.dto.Board;
 
 import edu.kh.goodWave.board.model.dto.Board;
 
@@ -12,10 +17,14 @@ public interface BoardMapper {
 	 */
 	int getListCount();
 
+
+	List<Board> selectBoardList(RowBounds rowBounds);
+
 	/** 게시글 쓰기
 	 * @param board
 	 * @return
 	 */
 	int qnaWrite(Board board);
+
 
 }

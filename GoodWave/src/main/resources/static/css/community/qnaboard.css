@@ -12,6 +12,10 @@
     box-sizing: border-box;
   }
 
+  td{
+    color:black;
+  }
+
 
  .qna_borad_dd{
   position: relative;
@@ -60,8 +64,8 @@
   thead {
     height: 50px;
     font-weight: bold;
-    color: #fff;
-    background: #7ABEDD;
+    /* color: #fff; */
+    /* background: #7ABEDD; */
   }
     
 
@@ -71,15 +75,12 @@
   } 
 
    td {
-    border-bottom: 1px solid rgba(0,0,0,.1);
-    background: #fff;
+    /* border-bottom: 1px solid rgba(0,0,0,.1); */
+    /* background: #fff; */
   }
 
   
-  a {
-    
-  }
-    
+
   
 
   /*글쓰기*/
@@ -118,11 +119,11 @@ table {
   border-top: none;
 }
 .header {
-  background-color: rgb(218, 231, 255);
+  /* background-color: rgb(218, 231, 255); */
   text-align: center;
 }
 .table td, .table th {
-  border-bottom: 1px lightgray solid; 
+  /* border-bottom: 1px lightgray solid;  */
   height: 30px;
   font-size: 14px;
 }
@@ -139,12 +140,14 @@ table {
   text-align: left;
 }
 
+
 .btn-area{
   margin-top: 25px;
   margin-left: 35px;
   width: 1000px;
   height: 100px;
 }
+
 
 
 
@@ -186,3 +189,31 @@ table {
   color: white !important;
   letter-spacing: 0 !important;
 }
+
+.board_content{
+  position:relative;
+  left:203px;
+}
+
+.board_writeDag{
+  position: relative;
+    right: 216px;
+}
+
+.board_writer{
+  position: relative;
+  right: 50px;
+}
+
+.board_writeDate{
+ 
+  position: relative;
+  left: -31px;
+}
+
+.board_joheo{
+  position: relative;
+    right: 53px;
+    background: none;
+}
+
