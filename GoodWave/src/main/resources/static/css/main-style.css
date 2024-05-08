@@ -208,6 +208,12 @@ img{
     font-weight: 700;
     color: #63A3D0;
     cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.good_wave_story_box:hover{
+    background-color: #63A3D0;
+    color:white;
 }
 
 .count_up_flex_box{
@@ -718,6 +724,7 @@ img{
     align-items: center;
    
 }
+
 
 
 

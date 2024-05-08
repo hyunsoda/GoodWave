@@ -1,5 +1,3 @@
-
-
 /*회원 정보 수정 페이지 */
 const mypage= document.querySelector("#mypage"); //form 태그
 

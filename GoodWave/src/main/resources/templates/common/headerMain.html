@@ -48,7 +48,7 @@
             </div>
             <div class="bbi right" id="right_ba">
                 <p class="font_p rela4 font_p4"><a href="/community/FAQ">자주 묻는 질문</a></p>
-                <p class="font_p rela4 font_p4"><a href="/community/QNA">Q&A</a></p>
+                <p class="font_p rela4 font_p4"><a href="/community/qnaboard">Q&A</a></p>
                 
             </div> 
         <!-- section -->        
@@ -175,7 +175,21 @@
 
 
         <div>
-            <button class="donation_124213">후원하기</button>
+           
+
+                <th:block th:if="${session.loginMember == null}">
+                    <button class="donation_124213">
+                        <a href="/member/login">후원하기</a>
+                    </button>
+                </th:block>
+
+                <th:block th:if="${session.loginMember != null}">
+                    <button class="donation_124213">
+                        <a href="/volunteer/donation">후원하기</a>
+                    </button>
+                </th:block>
+
+              
         </div>
 
 

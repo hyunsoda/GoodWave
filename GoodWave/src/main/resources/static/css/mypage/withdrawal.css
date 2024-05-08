@@ -32,13 +32,19 @@ body {
   font-family: 'Pretendard-Regular';
 }
 .mypage {
-  position:absolute;
-  top:60%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  width:400px;
-  height:250px;
-  padding:px;
+  position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 250px;
+    padding: px;
+}
+
+.agree-box{
+  position: relative;
+    top: 9px;
+    left: 10px;
 }
 .mypage .mypage-header {
   height:30px;
