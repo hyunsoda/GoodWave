@@ -50,6 +50,7 @@ public class CommunityController {
 		model.addAttribute("boardList", map.get("boardList"));
   
   
+
 		return "/community/qnaboard";
 
 }

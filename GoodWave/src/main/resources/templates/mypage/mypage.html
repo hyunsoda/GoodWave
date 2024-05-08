@@ -113,14 +113,25 @@
         <form  action="donationList" method="get" name="donationFrm" 
           id="donationList">
         <div class="donate-list">
-          <div class="donate"> 20,000원</div>
+          <div class="donate"></div>
           <table border="1">
             <thead>
               <th></th>
             </thead>
 
-          </table>
+          </table> 
           <!-- 후원 내역이 있을 경우 -->
+
+      <button id="selectDonationList">조회</button>
+
+      <table border="1">
+        <thead>
+            <th>후원내역</th>
+        </thead>
+
+        <tbody id="doantionList"></tbody>
+
+      </table>
 
 
           <!--후원내역이 없을 경우 -->
