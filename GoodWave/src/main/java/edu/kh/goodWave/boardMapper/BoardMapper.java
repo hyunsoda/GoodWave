@@ -2,6 +2,8 @@ package edu.kh.goodWave.boardMapper;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import edu.kh.goodWave.board.model.dto.Board;
+
 @Mapper
 public interface BoardMapper {
 
@@ -9,5 +11,11 @@ public interface BoardMapper {
 	 * @return
 	 */
 	int getListCount();
+
+	/** 게시글 쓰기
+	 * @param board
+	 * @return
+	 */
+	int qnaWrite(Board board);
 
 }

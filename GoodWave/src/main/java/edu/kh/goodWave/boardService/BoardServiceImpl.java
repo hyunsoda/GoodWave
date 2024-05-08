@@ -5,6 +5,7 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import edu.kh.goodWave.board.model.dto.Board;
 import edu.kh.goodWave.boardMapper.BoardMapper;
 import lombok.RequiredArgsConstructor;
 
@@ -21,9 +22,16 @@ public class BoardServiceImpl implements BoardService{
 		int listCount = mapper.getListCount();
 		
 		
-		
-		
 		return null;
 	}
+	
+	
+	@Override
+	public int qnaWrite(Board board) {
+
+		
+		return mapper.qnaWrite(board);
+	}
+	
 	
 }
