@@ -106,17 +106,20 @@
   /*글쓰기*/
 
 
+
+
 /* *********************************************************************** */
 
 
 
 table {
   height: 700px;
-  margin: auto;
-  width: 1000px;
-  border-radius: 5px;
-  border-collapse: collapse;
-  border-top: none;
+    margin: auto;
+    width: 1500px;
+    border-radius: 5px;
+    border-collapse: collapse;
+    border-top: none;
+    font-size:17px;
 }
 .header {
   /* background-color: rgb(218, 231, 255); */
@@ -125,11 +128,17 @@ table {
 .table td, .table th {
   /* border-bottom: 1px lightgray solid;  */
   height: 30px;
-  font-size: 14px;
+  font-size: 18px;
 }
 .num {
   width: 50px;
+  position: relative;
+    left: 41px;
+ 
 }
+
+
+
 .title {
   width: 500px;
 }
@@ -191,29 +200,35 @@ table {
 }
 
 .board_content{
-  position:relative;
-  left:203px;
+  position: relative;
+    left: 103px;
+    font-size: 18px;
 }
 
 .board_writeDag{
   position: relative;
-    right: 216px;
+  right: -102px;
 }
 
 .board_writer{
   position: relative;
-  right: 50px;
+    right: -39px;
 }
 
 .board_writeDate{
  
   position: relative;
-  left: -31px;
+  right: 3px;
+  background: none;
 }
 
 .board_joheo{
   position: relative;
-    right: 53px;
-    background: none;
+  right: 97px;
+  background: none;
+}
+
+.table{
+  font-size:18px;
 }
 

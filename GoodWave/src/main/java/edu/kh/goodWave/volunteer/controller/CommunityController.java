@@ -48,7 +48,7 @@ public class CommunityController {
 		model.addAttribute("boardList", map.get("boardList"));
   
   
-return "redirect:/community/qnaboard";
+		return "/community/qnaboard";
 
 }
   
@@ -82,7 +82,7 @@ return "redirect:/community/qnaboard";
 		if(result >0) {
 			
 			ra.addFlashAttribute("message", "등록되었습니다.");
-			return "redirect:/community/qnaboard";
+			return "redirect:/community/QNA";
 		} else {
 			
 			ra.addFlashAttribute("message", "등록이 완료되지 않았습니다. 다시 작성해주세요");
