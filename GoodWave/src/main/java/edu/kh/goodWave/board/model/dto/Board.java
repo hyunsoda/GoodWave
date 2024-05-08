@@ -1,5 +1,8 @@
 package edu.kh.goodWave.board.model.dto;
 
+
+import edu.kh.goodWave.volunteer.model.dto.Volunteer;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

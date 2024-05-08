@@ -3,11 +3,9 @@ package edu.kh.goodWave.boardService;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import edu.kh.goodWave.board.model.dto.Board;
 import edu.kh.goodWave.board.model.dto.Pagenation;
 import edu.kh.goodWave.boardMapper.BoardMapper;
@@ -25,7 +23,7 @@ public class BoardServiceImpl implements BoardService{
 		// 삭제되지 않은 게시글 수를 조회
 		int listCount = mapper.getListCount();
 		
-		
+
 		
 		Pagenation pagination = new Pagenation(cp, listCount);
 		
@@ -45,6 +43,16 @@ public class BoardServiceImpl implements BoardService{
 		
 		
 		return map;
+
 	}
+	
+	
+	@Override
+	public int qnaWrite(Board board) {
+
+		
+		return mapper.qnaWrite(board);
+	}
+	
 	
 }

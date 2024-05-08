@@ -96,7 +96,7 @@
      </table>
      <th:block th:if="${session.loginMember != null}">
         <div class="btn-area">
-           <a class="wrarara">글쓰기</a>
+            <a href="/community/qnawrite" class="write-btn">글쓰기</a>
             </div>
      </th:block>
      
@@ -153,7 +153,7 @@
   <th:block th:replace="~{/common/footer}"></th:block>
   <!--푸터-->
 
-
+            <script src="/js/community/qnawrite.js"></script>
     
 </body>
 </html>

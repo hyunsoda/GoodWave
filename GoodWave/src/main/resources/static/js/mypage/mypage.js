@@ -27,6 +27,10 @@ document.getElementsByClassName("show-alist")[0].addEventListener("click",functi
   resetClass(form, "dlist");
   form.classList.add("alist");
 
+
+
+  
+
   document.getElementsByClassName("donate-list").innerText = "";
 
 });
