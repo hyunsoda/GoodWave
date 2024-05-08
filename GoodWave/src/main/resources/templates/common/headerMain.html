@@ -109,7 +109,7 @@
     <div class="headerRight">
 
         <th:block th:if="${session.loginMember == null}">
-            <div>
+            <div class="first_box">
                 <a href="/member/login">
                 <i class="fa-solid fa-user" id="right-icon"></i>
                 </a>
@@ -119,7 +119,7 @@
         <th:block th:if="${session.loginMember != null}">
 
         
-        <div class="userMyPage">
+        <div class="userMyPage first_box">
             
             <i class="fa-solid fa-user" id="right-icon"></i>
             
@@ -164,7 +164,7 @@
         </th:block>    
 
 
-       
+        <input type="search" class="gggg">
 
         <div>
             <a>
@@ -172,9 +172,12 @@
             </a>
         </div>
 
-
+        
 
         <div>
+
+
+            
            
 
                 <th:block th:if="${session.loginMember == null}">

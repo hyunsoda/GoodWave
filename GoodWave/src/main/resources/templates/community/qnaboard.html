@@ -29,17 +29,24 @@
      <!--게시판이름 & 설명-->
 
      <!--목록-->
-     <table class="table">
+     <table class="table" id="tata">
         <thead>
+            
             <tr class="header">
                 <td class="num">번호</td>
-                <td class="title">제목</td>
-                <td>작성자</td>
-                <td style=" position: relative;
-                left: 97px;width: 133px;">작성일</td>
+                <td class="title" style="position: relative;
+                left: 50px;">제목</td>
+                <td></td>
                 <td style="position: relative;
-                left: 71px;">조회수</td>
+                 width: 240px; 
+                left: 183px;">작성자</td>
+                <td style=" position: relative;
+                left: 227px;
+                width: 293px;">작성일</td>
+                <td style="position: relative;
+                left: 106px;">조회수</td>
             </tr>
+        
         </thead>
       
 
@@ -54,15 +61,20 @@
                 <th:block th:unless="${#lists.isEmpty(boardList)}">
                         <tr th:each="board : ${boardList}" th:object="${board}">
                             <!-- 번호 -->
-                            <td th:text="*{boardNo}" style="position:relative;left:15px;">게시글번호</td>
+                            <td th:text="*{boardNo}" style=" position: relative;
+                            left: 57px;">게시글번호</td>
                             <!-- 번호 -->
 
                             <!-- 제목 -->
-                            <td>
+                            <td style="    padding-left: 40px;">
                                 <a th:text="*{boardTitle}" class="board_content">게시글 제목</a>
-                                <th block th:text="|[*{commentCount}]|" class="board_writeDag">댓글 수</th>
+                               
                             </td>
                              <!-- 제목 -->
+
+                             <td>
+                                <th block th:text="|[*{commentCount}]|" class="board_writeDag">댓글 수</th>
+                             </td>
  
                              <!-- 작성자 이름-->
                              <td th:text="*{memberName}" class="board_writer">작성자 이름</td>
