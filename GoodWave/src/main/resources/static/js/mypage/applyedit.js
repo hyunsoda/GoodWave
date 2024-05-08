@@ -146,17 +146,29 @@ yeontanForm.addEventListener("submit",(e)=> {
 
 
 const activityList = document.getElementById("tab-3");
+const applyList = document.getElementById("applyList");
 
-activityList.addEventListener("click",()=> {
+
+
+activityList.addEventListener("chekced",()=> {
 
     fetch("/mypage/activityList")
-    .then(resp =>resp.text())
+    .then(resp =>resp.json())
     .then(result=>{
         
         const apply = document.getElementById("apply-area");
+        console.log(result);
 
-        for(let i = 0; i<map.length();i++){
+
+        for(let i = 0; i<result.length();i++){
             
+            applyList.innerHTML="";
+
+
+
+
+
+
         }
 
     })

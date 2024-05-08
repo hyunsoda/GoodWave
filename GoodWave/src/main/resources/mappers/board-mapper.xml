@@ -9,4 +9,14 @@
    </select>
    
 	
+	
+	<insert id="qnaWrite">
+		INSERT INTO "QNABOARD"
+		VALUES(SEQ_BOARD_NUM.NEXTVAL,
+					 #{boardTitle},
+					 #{boardContent},
+					 SYSDATE, DEFAULT, DEFAULT, DEFAULT,#{memberNo})
+	</insert>
+	
+	
 </mapper>
