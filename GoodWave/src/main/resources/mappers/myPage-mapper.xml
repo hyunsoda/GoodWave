@@ -38,5 +38,12 @@
 		WHERE MEMBER_NO = #{memberNo}
 		ORDER BY REGISTRY_DATE ASC
 	</select>
+	
+	
+		<select id="donationList">
+		SELECT MONEY_DONATION_TOTAL
+		FROM MONEY_DONATION 
+		WHERE MEMBER_NO = #{memberNo}
+	</select>
 
 </mapper>

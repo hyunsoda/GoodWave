@@ -97,4 +97,11 @@ private final MypageMapper mapper;
 			
 			return mapper.selectActivityList();
 		}
+
+
+	@Override
+	public Map<String, Object> donationList(int memberNo) {
+	
+		return mapper.donationList();
+	}
 }

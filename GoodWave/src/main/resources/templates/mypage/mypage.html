@@ -39,7 +39,7 @@
          id="mypage">
            <div class="mypage info">
             <div class="mypage-elements">
-              <label class="info-title">닉네임</label>
+              <label class="info-title">이름</label>
               <div class="mypage-element1">
                 <!-- <div class="nickname">회원1</div> -->
                 <input type="text" name="memberName" 
@@ -67,7 +67,7 @@
                     th:value="${postcode}"
                     >
                   
-                  <button type="button" class="search">검색</button>
+                  <button type="button" id="searchAddress">검색</button>
 
                 </div>
       
@@ -90,7 +90,7 @@
               
               <div class="mypage-element">
                 <button id="submit-btn" class="myPage-submit">수정하기</button>
-              </div>
+              </div>          
 
             </div>
           </form>
@@ -107,11 +107,30 @@
 
      <!--후원내역-->
         <div class="content-dis">
-   
+
+
+          <!-- 후원 내역이 있을 경우 -->
+        <form  action="donationList" method="get" name="donationFrm" 
+          id="donationList">
         <div class="donate-list">
-        <div class="donate-none">후원 내역이 없습니다.</div> 
-          <!-- <div class="donate">2024.04.08 20,000원</div> -->
+          <div class="donate"> 20,000원</div>
+          <table border="1">
+            <thead>
+              <th></th>
+            </thead>
+
+          </table>
+          <!-- 후원 내역이 있을 경우 -->
+
+
+          <!--후원내역이 없을 경우 -->
+        <!-- <div class="donate-none">후원 내역이 없습니다.</div>  -->
+          <!--후원내역이 없을 경우 -->
+
+
+
         </div> 
+        </form>
 
         </div>
       <!--후원내역-->
@@ -129,7 +148,7 @@
 
        <!--수정/취소-->
         <div class="btn-area">
-       
+  
         <button class="cancle-btn">취소하기</button> 
        </div>
        <!--수정/취소-->

@@ -127,26 +127,54 @@ body {
   margin-top: 15px;
 }
 
-.line{
+.line1{
   border: 1px solid lightgrey;
-  margin-top: 10px;
-}
-
-
-label {
-  margin: auto;
-
-  /* display: block; */
-  display: inline-flex;
-  width: 500px;
-}
-
-.agree-con{
   margin-top: 20px;
 }
 
+.line2{
+  border: 1px solid lightgrey;
+  margin-top: 12px;
+}
 
 
 
+label {
+  
+  margin: auto;
 
+  /* display: block; */
+  display: inline;
+  width: 500px;
+
+
+}
+
+.agree-con{
+  position: relative;
+  
+  margin-top: 20px;
+}
+
+#agree{
+  width: 500px;
+}
+
+.agree-box1{
+  position: relative;
+  top: 10px;
+  left: 233px;
+}
+
+.agree-box2{
+  position: relative;
+  top: 10px;
+  left: 287px;
+}
+
+.agree-box3{
+  position: relative;
+  top: 10px;
+  left: 220px;
+}
 

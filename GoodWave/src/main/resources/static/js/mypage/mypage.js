@@ -1,40 +1,4 @@
-/* 상단메뉴바 */
-function resetClass(element, classname){
-  element.classList.remove(classname);
-}
 
-document.getElementsByClassName("show-info")[0].addEventListener("click",function(){
-  let form = document.getElementsByClassName("mypage")[0];
-  resetClass(form, "dlist");
-  resetClass(form, "alist");
-  form.classList.add("info");
-
-  document.getElementsByClassName("mypage-elements").innerText = "";
-});
-
-document.getElementsByClassName("show-dlist")[0].addEventListener("click",function(){
-  let form = document.getElementsByClassName("mypage")[0];
-  resetClass(form, "info");
-  resetClass(form, "alist");
-  form.classList.add("dlist");
-
-  document.getElementsByClassName("donate-list").innerText = "";
-
-});
-document.getElementsByClassName("show-alist")[0].addEventListener("click",function(){
-  let form = document.getElementsByClassName("mypage")[0];
-  resetClass(form, "info");
-  resetClass(form, "dlist");
-  form.classList.add("alist");
-
-  document.getElementsByClassName("donate-list").innerText = "";
-
-});
-
-
-
-
-/**************************************************************************************** */
 
 /*회원 정보 수정 페이지 */
 const mypage= document.querySelector("#mypage"); //form 태그
@@ -143,3 +107,47 @@ function execDaumPostcode() {
 document.querySelector("#searchAddress").addEventListener("click", execDaumPostcode);
 
 
+/********************************************************************************************** */
+/* 후원내역 확인 */
+
+
+
+// const donationList = document.getElementById("tab-2");
+
+// donationList.addEventListener("click",()=> {
+
+//     fetch("/mypage/donationList")
+//     .then(resp =>resp.text())
+//     .then(result=>{
+        
+        
+
+       
+
+//     })
+
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/********************************************************************************************** */
+/* 신청내역 확인 */

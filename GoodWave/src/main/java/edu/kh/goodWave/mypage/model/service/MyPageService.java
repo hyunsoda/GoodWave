@@ -34,5 +34,11 @@ public interface MyPageService {
 	 */
 	Map<String, Object> selectActivityList(int memberNo);
 
+	/** 후원내역 조회
+	 * @param memberNo
+	 * @return
+	 */
+	Map<String, Object> donationList(int memberNo);
+
 
 }
