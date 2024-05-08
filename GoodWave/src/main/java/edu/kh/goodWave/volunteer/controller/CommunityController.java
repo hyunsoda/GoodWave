@@ -27,13 +27,17 @@ public class CommunityController {
 	}
 	
 	@GetMapping("QNA")
-	public String QNA() {
+	public String QNA(
+			@RequestParam(value="cp" , required=false, defaultValue="1") int cp,
+			Model model
+			) {
 		
 		
-		Map<String, Object> map = service.selectBoardList();
+		Map<String, Object> map = service.selectBoardList(cp);
 		
 		
-		
+		model.addAttribute("pagination", map.get("pagination"));
+		model.addAttribute("boardList", map.get("boardList"));
 		
 		
 		

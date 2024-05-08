@@ -174,7 +174,21 @@
 
 
         <div>
-            <button class="donation_124213">후원하기</button>
+           
+
+                <th:block th:if="${session.loginMember == null}">
+                    <button class="donation_124213">
+                        <a href="/member/login">후원하기</a>
+                    </button>
+                </th:block>
+
+                <th:block th:if="${session.loginMember != null}">
+                    <button class="donation_124213">
+                        <a href="/volunteer/donation">후원하기</a>
+                    </button>
+                </th:block>
+
+              
         </div>
 
 

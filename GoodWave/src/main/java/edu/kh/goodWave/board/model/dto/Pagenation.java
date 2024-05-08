@@ -146,7 +146,7 @@ public class Pagenation {
 		
 		// 페이지 끝 번호가 최대 페이지 수를 초과한 경우
 		if(endPage > maxPage) endPage = maxPage;
-		
+		              
 		// prevPage : "<" 클릭 시 이동할 페이지 번호
 		// 				(이전 페이지 번호 목록 중 끝 번호)
 		
@@ -161,7 +161,7 @@ public class Pagenation {
 		// nextPage : ">" 클릭 시 이동할 페이지 번호
 		// 				(다음 페이지 번호 목록 중 시작 번호)
 		
-		// 더 이상 넘어갈 페이직 없을 경우
+		// 더 이상 넘어갈 페이지가 없을 경우
 		
 		if(endPage == nextPage) nextPage = maxPage;
 		else {
