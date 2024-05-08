@@ -117,6 +117,12 @@ body {
 /* ************************************************* */
 /* 약관동의 */
 
+.line{
+  position: relative;
+  border: 1px solid lightgray;
+  
+}
+
 .member{
   margin-top: 15px;
 }
@@ -129,8 +135,10 @@ body {
 
 label {
   margin: auto;
-  display: block;
-  width: 780px;
+
+  /* display: block; */
+  display: inline-flex;
+  width: 500px;
 }
 
 .agree-con{
