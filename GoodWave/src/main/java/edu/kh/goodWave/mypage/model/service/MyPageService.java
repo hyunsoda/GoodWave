@@ -1,7 +1,9 @@
 package edu.kh.goodWave.mypage.model.service;
 
+import java.util.List;
 import java.util.Map;
 
+import edu.kh.goodWave.donation.model.dto.Donation;
 import edu.kh.goodWave.member.model.dto.Member;
 
 public interface MyPageService {
@@ -34,11 +36,11 @@ public interface MyPageService {
 	 */
 	Map<String, Object> selectActivityList(int memberNo);
 
-	/** 후원내역 조회
-	 * @param memberNo
+
+	/**후원내역 조회
 	 * @return
 	 */
-	Map<String, Object> donationList(int memberNo);
+	List<Donation> selectDonationList(int memberNo);
 
 
 }

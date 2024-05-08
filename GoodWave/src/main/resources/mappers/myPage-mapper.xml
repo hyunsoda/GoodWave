@@ -40,7 +40,7 @@
 	</select>
 	
 	
-		<select id="donationList">
+		<select id="selectDonationList" resultType="Donation">
 		SELECT MONEY_DONATION_TOTAL
 		FROM MONEY_DONATION 
 		WHERE MEMBER_NO = #{memberNo}
