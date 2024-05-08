@@ -39,6 +39,11 @@ public interface MypageMapper {
 	 */
 	Map<String, Object> selectActivityList();
 
+	/**후원내역 조회
+	 * @return
+	 */
+	Map<String, Object> donationList();
+
 	
 	
 }

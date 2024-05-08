@@ -5,7 +5,6 @@ const agreeChkAll = document.querySelector('input[name=agree_all]');
       agreeChk[i].checked = e.target.checked;
     }
 });
-s
 
 
 /************************************************************************************************ */
@@ -20,7 +19,8 @@ if(withdrawal != null){
   withdrawal.addEventListener("submit", e => {
 
         const memberPw = document.querySelector("#memberPw");
-        const agree = document.querySelector("#agree");
+        const agree1 = document.querySelector("#agree1");
+        const agree2 = document.querySelector("#agree2");
 
         // - 비밀번호 입력 되었는지 확인
         if(memberPw.value.trim().length == 0){
@@ -33,7 +33,12 @@ if(withdrawal != null){
         //checkbox 또는 radio checked 속성
         //-checked -> 체크 시 true, 미체크시 false 반환
 
-        if(!agree.checked){ //체크 안됐을 때
+        if(!agree1.checked){ //체크 안됐을 때
+            alert("약관에 동의해주세요");
+            e.preventDefault();
+            return;
+        }
+        if(!agree2.checked){ //체크 안됐을 때
             alert("약관에 동의해주세요");
             e.preventDefault();
             return;

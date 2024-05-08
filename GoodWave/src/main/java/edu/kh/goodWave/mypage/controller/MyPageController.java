@@ -215,9 +215,19 @@ public class MyPageController {
 		return map;
 	}
 	
+	@ResponseBody
+	@GetMapping("donationList")
+	public Map<String, Object> donationList(@SessionAttribute("loginMember") Member loginMember, Model model ){
+		
+		int memberNo = loginMember.getMemberNo();
+		
+		Map<String, Object> map = service.donationList(memberNo);
+		
+
 	
-	
-	
+		return map;
+	}
+
 	
 	
 	

@@ -21,7 +21,7 @@ public class IntroduceController {
 	}
 	
 	
-	
+	//인사말 페이지로 forward
 	@GetMapping("greeting")
 	public String greeting() {
 		return "introduce/GoodWave_greeting";
