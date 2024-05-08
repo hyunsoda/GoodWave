@@ -1,11 +1,13 @@
 package edu.kh.goodWave.mypage.model.service;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import edu.kh.goodWave.donation.model.dto.Donation;
 import edu.kh.goodWave.member.model.dto.Member;
 import edu.kh.goodWave.mypage.model.mapper.MypageMapper;
 import lombok.RequiredArgsConstructor;
@@ -99,9 +101,13 @@ private final MypageMapper mapper;
 		}
 
 
+	//후원내역조회
 	@Override
-	public Map<String, Object> donationList(int memberNo) {
-	
-		return mapper.donationList();
+	public List<Donation> selectDonationList(int memberNo) {
+		
+		return mapper.selectDonationList();
 	}
+
+
+
 }
