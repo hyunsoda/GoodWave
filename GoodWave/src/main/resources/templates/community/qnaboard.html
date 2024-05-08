@@ -59,7 +59,7 @@
 
                             <!-- 제목 -->
                             <td>
-                                <a th:text="*{boardTitle}" class="board_content">게시글 제목</a>
+                                <a th:href="@{/community/{boardNo}(boardNo=*{boardNo})}" th:text="*{boardTitle}" class="board_content">게시글 제목</a>
                                 <th block th:text="|[*{commentCount}]|" class="board_writeDag">댓글 수</th>
                             </td>
                              <!-- 제목 -->
