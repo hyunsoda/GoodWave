@@ -1,9 +1,11 @@
 package edu.kh.goodWave.mypage.model.mapper;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import edu.kh.goodWave.donation.model.dto.Donation;
 import edu.kh.goodWave.member.model.dto.Member;
 
 @Mapper
@@ -39,10 +41,12 @@ public interface MypageMapper {
 	 */
 	Map<String, Object> selectActivityList();
 
+
+
 	/**후원내역 조회
 	 * @return
 	 */
-	Map<String, Object> donationList();
+	List<Donation> selectDonationList();
 
 	
 	

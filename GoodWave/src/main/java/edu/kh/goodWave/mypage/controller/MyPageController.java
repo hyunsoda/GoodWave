@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-
+import edu.kh.goodWave.donation.model.dto.Donation;
 import edu.kh.goodWave.member.model.dto.Member;
 import edu.kh.goodWave.mypage.model.service.MyPageService;
 import lombok.RequiredArgsConstructor;
@@ -216,16 +216,12 @@ public class MyPageController {
 	}
 	
 	@ResponseBody
-	@GetMapping("donationList")
-	public Map<String, Object> donationList(@SessionAttribute("loginMember") Member loginMember, Model model ){
+	@GetMapping("selectDonationList")
+	public List<Donation> selectDonationList(@SessionAttribute("loginMember") Member loginMember){
 		
 		int memberNo = loginMember.getMemberNo();
 		
-		Map<String, Object> map = service.donationList(memberNo);
-		
-
-	
-		return map;
+		return  service.selectDonationList(memberNo);
 	}
 
 	
