@@ -17,4 +17,10 @@ public interface BoardService {
 	 */
 	int qnaWrite(Board board);
 
+	/** 게시글 하나 조회
+	 * @param map
+	 * @return
+	 */
+	Board selectOne(Map<String, Integer> map);
+
 }

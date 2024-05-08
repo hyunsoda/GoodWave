@@ -66,9 +66,13 @@
                             <!-- 번호 -->
 
                             <!-- 제목 -->
+
+                  
+
                             <td style="    padding-left: 40px;">
-                                <a th:text="*{boardTitle}" class="board_content">게시글 제목</a>
+                                <a th:href="@{/community/{boardNo}(boardNo=*{boardNo})}" th:text="*{boardTitle}" class="board_content">게시글 제목</a>
                                
+
                             </td>
                              <!-- 제목 -->
 

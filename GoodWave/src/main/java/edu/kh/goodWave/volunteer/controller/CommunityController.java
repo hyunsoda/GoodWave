@@ -1,5 +1,6 @@
 package edu.kh.goodWave.volunteer.controller;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
@@ -7,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
@@ -49,9 +51,7 @@ public class CommunityController {
   
   
 
-
-return "community/qnaboard";
-
+		return "/community/qnaboard";
 
 }
   
@@ -96,6 +96,47 @@ return "community/qnaboard";
 		
 		
 	}
+	
+	
+	@GetMapping("{boardNo:[0-9]+}")
+	public String boardDetail(@PathVariable("boardNo") int boardNo,
+						@SessionAttribute(value="loginMember", required=false) Member loginMember,
+						RedirectAttributes ra,
+						Model model) {
+		
+		Map<String, Integer> map = new HashMap();
+		map.put("boardNo", boardNo);
+		
+		if(loginMember != null) {
+			map.put("memberNo", loginMember.getMemberNo());
+		}
+		
+		Board board = service.selectOne(map);
+		
+		String path = null;
+		
+		
+		if(board == null ) {
+			
+			path="redirect:/community/QNA";
+			ra.addFlashAttribute("message","게시글이 존재하지 않습니다.");
+		} else {
+			
+			// 이것저것 추가
+			
+			path="community/QNABoardDetail";
+			
+			model.addAttribute("board",board);
+			
+			
+			
+		}
+		
+		
+		return path;
+	}
+	
+	
 	
 	
 	

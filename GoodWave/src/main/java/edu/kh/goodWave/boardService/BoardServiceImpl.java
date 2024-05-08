@@ -55,4 +55,10 @@ public class BoardServiceImpl implements BoardService{
 	}
 	
 	
+	// 게시글 하나 조회
+	@Override
+	public Board selectOne(Map<String, Integer> map) {
+		
+		return mapper.selectOne(map);
+	}
 }

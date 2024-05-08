@@ -53,4 +53,12 @@ ORDER BY BOARD_NO DESC
 	</insert>
 	
 	
+	
+	<select id="selectOne">
+		SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENT, BOARD_WRITE_DATE, BOARD_UPDATE_DATE, READ_COUNT, MEMBER_NO 
+		FROM "QNABOARD"
+		WHERE BOARD_NO = #{boardNo}
+		AND BOARD_DEL_FL ='N'
+	</select>
+	
 </mapper>

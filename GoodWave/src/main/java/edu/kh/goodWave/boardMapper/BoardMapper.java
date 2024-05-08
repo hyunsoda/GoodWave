@@ -1,6 +1,7 @@
 package edu.kh.goodWave.boardMapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.session.RowBounds;
@@ -25,6 +26,13 @@ public interface BoardMapper {
 	 * @return
 	 */
 	int qnaWrite(Board board);
+
+
+	/** 게시글 하나 조회
+	 * @param map
+	 * @return
+	 */
+	Board selectOne(Map<String, Integer> map);
 
 
 }
