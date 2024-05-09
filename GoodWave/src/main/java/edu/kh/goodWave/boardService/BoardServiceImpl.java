@@ -61,4 +61,37 @@ public class BoardServiceImpl implements BoardService{
 		
 		return mapper.selectOne(map);
 	}
+
+
+	@Override
+	public Map<String, Object> search(String searchInput, int cp) {
+		
+		int listCount = mapper.getSearchCount(searchInput);
+		
+
+		
+		Pagenation pagination = new Pagenation(cp, listCount);
+		
+		
+		int limit = pagination.getLimit();
+		
+		int offset = (cp - 1) * limit;
+		
+		RowBounds rowBounds = new RowBounds(offset, limit);
+		
+		List<Board> boardList = mapper.selectSearchList(searchInput,rowBounds);
+		
+		Map<String, Object> map = new HashMap<>();
+		
+		map.put("pagination", pagination);
+		map.put("boardList", boardList);
+		
+		
+		return map;
+		
+		
+		
+		
+	}
+
 }

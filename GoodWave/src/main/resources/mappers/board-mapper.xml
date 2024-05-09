@@ -62,4 +62,47 @@ ORDER BY BOARD_NO DESC
 		AND BOARD_DEL_FL ='N'
 	</select>
 	
+	
+	<select id="getSearchCount">
+		SELECT COUNT(*) FROM "QNABOARD"
+		WHERE BOARD_DEL_FL='N'
+		AND (BOARD_TITLE LIKE '%' || #{searchInput} || '%'
+		OR BOARD_CONTENT LIKE '%' || #{searchInput} || '%')
+	</select>
+	
+	
+	<select id="selectSearchList">
+		SELECT BOARD_NO, BOARD_TITLE, MEMBER_NAME, READ_COUNT,
+	
+		(SELECT COUNT(*) 
+		FROM "COMMENT" C
+		WHERE B.BOARD_NO = C.BOARD_NO) COMMENT_COUNT,
+
+			<![CDATA[
+			CASE 
+				WHEN SYSDATE - BOARD_WRITE_DATE < 1 / 24 / 60  -- 조건  1/24 = 한 시간
+				THEN FLOOR((SYSDATE-BOARD_WRITE_DATE) * 24 * 60 * 60 ) || '초 전'
+				
+				WHEN SYSDATE - BOARD_WRITE_DATE < 1 / 24  
+				THEN FLOOR((SYSDATE-BOARD_WRITE_DATE) * 24 * 60) || '분 전'
+				
+				WHEN SYSDATE - BOARD_WRITE_DATE < 1 
+				THEN FLOOR((SYSDATE-BOARD_WRITE_DATE) * 24) || '시간 전'
+				
+				ELSE TO_CHAR(BOARD_WRITE_DATE, 'YYYY-MM-DD')
+				
+			END BOARD_WRITE_DATE
+			]]>
+		
+		FROM "QNABOARD" B
+		JOIN "MEMBER" USING(MEMBER_NO)
+		WHERE BOARD_DEL_FL = 'N'
+		AND (BOARD_TITLE LIKE '%' || #{searchInput} || '%'
+		OR BOARD_CONTENT LIKE '%' || #{searchInput} || '%')
+		ORDER BY BOARD_NO DESC
+	</select>
+	
+	
+	
+	
 </mapper>
