@@ -9,14 +9,35 @@
     <th:block th:replace="~{/common/introduceJsConnect}"></th:block>
     <link rel="stylesheet" href="/css/SubNavCss/subnav.css">
     <link rel="stylesheet" href="/css/introduce/introduce.main.css">
+    <link rel="stylesheet" href="/css/community/qnaBoardDetail.css">
 </head>
 <body>
     <th:block th:replace="~{/common/headerMain}"></th:block>
 
     <main>
-        
 
+        <!--게시판  -->
+        <section th:object="${board}">
+            <div id="upper">
+              
+                    <div th:text="*{boardTitle}"></div>
+                    <div>
+                        <div th:text="*{memberName}"></div>
+                        <div th:text="*{boardWriteDate}"></div>
+                    </div>
+                
 
+            </div>
+
+            <div id="bottom">
+                <div th:text="*{boardContent}"> </div>
+            </div>    
+        </section>
+
+        <!-- 댓글 -->
+        <section>
+
+        </section>
     </main>
         
 
