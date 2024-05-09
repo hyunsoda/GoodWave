@@ -22,5 +22,18 @@ public class Volunteer {
 	private String yeontanName;
 	private String yeontanTel;
 	private String yeontanDate;
+
+	
+	private int volunteerNo;
+	private int actNo;
+	private String actDate;
+	private String volunteerDelFl;
+	private String volunteerTitle;
+	private String volunteerContent;
+	private String registryDate;
+	private String memberName;
+	private String memberTel;
+	private String field;
+	
 	
 }
