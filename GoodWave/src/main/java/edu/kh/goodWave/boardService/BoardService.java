@@ -23,6 +23,15 @@ public interface BoardService {
 	 */
 	Board selectOne(Map<String, Integer> map);
 
+
 	int updateReadCount(int boardNo);
+
+	/** 게시글 찾기
+	 * @param searchInput
+	 * @param cp
+	 * @return
+	 */
+	Map<String, Object> search(String searchInput, int cp);
+
 
 }

@@ -5,6 +5,7 @@ import java.util.Map;
 
 import edu.kh.goodWave.donation.model.dto.Donation;
 import edu.kh.goodWave.member.model.dto.Member;
+import edu.kh.goodWave.volunteer.model.dto.Volunteer;
 
 public interface MyPageService {
 
@@ -30,17 +31,17 @@ public interface MyPageService {
 	 */
 	int secession(String memberPw, int memberNo);
 
-	/** 활동 내역 조회
-	 * @param memberNo
-	 * @return
-	 */
-	Map<String, Object> selectActivityList(int memberNo);
-
 
 	/**후원내역 조회
 	 * @return
 	 */
 	List<Donation> selectDonationList(int memberNo);
+
+	/**활동내역 조회
+	 * @param memberNo
+	 * @return
+	 */
+	List<Volunteer> applyList(int memberNo);
 
 
 }

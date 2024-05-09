@@ -32,6 +32,7 @@
     width:300px;
     height:250px;
     padding:10px;
+
   }
   
   .content{
@@ -46,12 +47,16 @@
   
 
     position: absolute;
-    top: 624px;
-    left: 50%;
+    top: 570px;
+    left: 49%;
     transform: translate(-50%, -50%);
-    width: 400px;
+    width: 440px;
     height: 600px;
     padding: 10px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
+    0 2px 2px rgba(0,0,0,0.15), 
+    0 4px 4px rgba(0,0,0,0.15), 
+    0 8px 8px rgba(0,0,0,0.15);
 
   }
   .mypage .mypage-header {
@@ -87,7 +92,7 @@
     transition:all 500ms ease-in-out;
   }
   .mypage .mypage-elements input {
-    width:100%;
+    width:80%;
     padding:10px;
     font-size:16px;
     margin:5px 0px;
@@ -97,7 +102,7 @@
     background:#f5f5f5;
   }
   .mypage .mypage-elements button {
-    width:100%;
+    width:80%;
     padding:10px;
     font-size:16px;
     font-weight:600;
@@ -132,36 +137,51 @@
   
   .address {
   margin-top: 15px;
-  border-bottom: 1px solid lightgray;
+
   }
 
+  .info-title{
+    color: rgb(52, 52, 53);
+    font-weight: bolder;
+  }
 
   /*******************************************************************************************************************/
    /* 후원내역 */  
 
   .donate-list{
+  
     position: absolute;
-    top: 430px;
-    left: 50%;
+    top: 460px;
+    left: 49%;
     transform: translate(-50%, -50%);
-    width: 400px;
+    width: 440px;
     height: 600px;
     padding: 10px;
+
+    box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
+    0 2px 2px rgba(0,0,0,0.15), 
+    0 4px 4px rgba(0,0,0,0.15), 
+    0 8px 8px rgba(0,0,0,0.15);
   }
   
   .donate-list{
   background-color: white;
-  height: 30%;
+  height: 40%;
   }
   
   
   .donate{
-  margin-top: 45px;
-  word-spacing: 80px;
+  position: relative;
+  left: 35px;
+  top: 10px;
+  line-height: 35px;
+  border: none;
   color: gray;
   font-size: large;
   font-weight: bold;
   text-align: center;
+
+
   }
   
   .donate-none{
@@ -180,17 +200,23 @@
 
   .apply-list{
     position: absolute;
-    top: 400px;
-    left: 50%;
+    top: 460px;
+    left: 49%;
     transform: translate(-50%, -50%);
-    width: 400px;
+    width: 440px;
     height: 600px;
     padding: 10px;
+
+    
+    box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
+    0 2px 2px rgba(0,0,0,0.15), 
+    0 4px 4px rgba(0,0,0,0.15), 
+    0 8px 8px rgba(0,0,0,0.15);
   }
   
   .apply-list{
   background-color: white;
-  height: 20%;
+  height: 40%;
   }
   
   .apply-none{
@@ -201,12 +227,15 @@
   text-align: center;
   }
   .apply{
-  margin-right: 130px;
-  word-spacing: 20px;
-  color: gray;
-  font-size: medium;
-  font-weight: bold;
-  text-align: center;
+    position: relative;
+    left: 35px;
+    top: 10px;
+    line-height: 35px;
+    border: none;
+    color: gray;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
   }
   
 
@@ -218,12 +247,14 @@
   width: 30%;
   border: none;
   text-align: right;
-  margin-top: -25px;
+  margin-bottom: 100px;
   margin-left: 250px;
   
   }
   
   .cancle-btn{
+  position: relative;
+  top: 20px;
   background-color: white;
   text-decoration: underline #B0DBEF;
   text-decoration-thickness: 2px;
@@ -315,6 +346,7 @@
   
   }
   .tab {
+  margin-right: 40px;
   overflow: hidden;
   display: flex;
 
@@ -350,152 +382,5 @@
   
   
   
-
-  /* *****************************************************************************  */
-  /* 수정창 */
-
-  
-#popupLayer{
-  width: 550px;
-  height: 450px;
-  border: 3px solid #4C8DC3;
-  border-radius: 15px;
-  background-color: white;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);  
-  position: fixed; 
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-
-}
-
-/* popup layer 행 */
-.popup-row{
-  padding: 10px;
-  margin: 20px;
-  margin-top: 25px;
-  position : relative;
-  
-  width: 90%;
-  font-size: 18px;
-}
-
-.popup-row > h2 {
-  margin-top: 10px;
-}
-
-
-.popup-row > span {
-  color: #4C8DC3;
-}
-
-
-/* popup layer 숨기기/보이기 */
-.popup-hidden{ display: none !important; }
-
-
-/* x 버튼 */
-#popupClose{
-
- 
-  position: absolute; 
-
-  top: 0px;  
-  right: 10px; 
-
-  font-size: 30px;
-  font-weight: bold;
-
-  user-select: none; /* 드래그 방지 */
-
-  cursor: pointer; /* 커서 손가락 모양 */
-}
-
-#popupClose:hover{ color :grey; }
-
-#popupClose:active{ color : red; }
-
-
-/* 버튼 영역 */
-.btn-container{
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 15px;
-}
-
-.btn-container > button{
-   margin: 5px;
-   background-color: #7ABEDD;
-   cursor: pointer;
-   border: transparent;
-  }
-
-
-
-.registerInput{
-  border: transparent;
-  border-bottom: 1px solid black;
-  font-size: 17px;
-  padding: 3px;
-}
-
-#registerBtn2{
-  width: 300px;
-  height: 50px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 20px;
-}
-
-
-#TDRegisterName, #TDRegisterName2, #TDRegisterName3{
-  width: 350px;
-}
-#TDRegisterTel, #TDRegisterTel2, #TDRegisterTel3{
-  width: 310px;
-}
-
-#TDRegisterSort{
-  width: 415px;
-}
-#TDRegisterDate, #TDRegisterDate2, #TDRegisterDate3{
-  width: 375px;
-}
-
-#imglogo {
-  width: 80px;
-  height: 50px;
-
-}
-
-.logo-container{
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 35px;
-
-}
-
-
-.dark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 500%;
-
-
-  
-  background: rgba(0, 0, 0, .8);
- 
-}
 
 

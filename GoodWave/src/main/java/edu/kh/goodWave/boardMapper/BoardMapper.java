@@ -35,10 +35,26 @@ public interface BoardMapper {
 	Board selectOne(Map<String, Integer> map);
 
 
+
 	int updateReadCount(int boardNo);
 
 
 	int selectReadCount(int boardNo);
+
+	/** 게시글 검색 시 count
+	 * @param searchInput
+	 * @return
+	 */
+	int getSearchCount(String searchInput);
+
+
+	/** 게시글 검색 가져오기
+	 * @param searchInput
+	 * @param rowBounds
+	 * @return
+	 */
+	List<Board> selectSearchList(String searchInput, RowBounds rowBounds);
+
 
 
 }

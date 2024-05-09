@@ -18,11 +18,11 @@
 
         <div><img src="/images/login/로그인.webp" alt=""></div>
         <!-- 메인 -->
-        <section class="second">
+        <section class="loginMain">
 
             <section class="loginBox">
                 <h1>로그인</h1>
-                 <form action="/member/login" method="post">   
+                 <form action="/member/login" method="post" id="loginForm">   
                     <fieldset class="loginfield">
 
                        <input type="text" name="memberId" id="loginId" placeholder="아이디를 입력해주세요.">
@@ -44,14 +44,26 @@
                     <a href="/member/idSearch">아이디 찾기</a>
                     <span> | </span>
                     <a href="/member/pwSearch">비밀번호 찾기</a>
-                    <span> | </span>
-                    <a href="/member/signUp">회원가입</a>
+                    
+                    
                 </div>    
 
             </section>
                     
 
-            
+
+            <section class="loginBox" id="loginBoxUnder">
+             
+                    <div id="textBox">
+                        <h1>회원가입</h1>
+                        <h3>회원가입을 하시면 다양한 메뉴를 이용하실 수 있습니다.</h3>
+                    </div>
+                    <div></div>
+                    <a href="/member/signUp"><button type="button">회원가입</button></a>
+                
+            </section>
+
+
         </section>
     <!-- 메인 -->
 
@@ -64,8 +76,12 @@
 
 
     <th:block th:replace="~{/common/footer}"></th:block>
+
  
     <script src="/js/cookie.js"></script>
+
+    <script src="/js/member/login.js"></script>
+
 
 </body>
 </html>

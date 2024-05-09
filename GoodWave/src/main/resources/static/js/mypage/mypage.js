@@ -108,88 +108,72 @@ document.querySelector("#searchAddress").addEventListener("click", execDaumPostc
 /********************************************************************************************** */
 /* 후원내역 확인 */
 
-조회버튼
-const selectDonationList = document.querySelector("#selectDonationList");
+//조회버튼
+const donationList = document.querySelector("#tab-2");
 
 // //tbody
-const doantionList = document.querySelector("#doantionList");
+const dList = document.querySelector("#dList");
 
 // //td 요소를 만들고 text 추가 후 반환
 const createTd = (text) => {
-//     const td = document.createElement("td");
-//     td.innerText = text;
-//     return td; //<td>1</td> //<td>user01@or.kr</td>//<td>유저일</td>
-// }
+     const td = document.createElement("td");
+     td.innerText = text;
+    return td; //<td>1</td> //<td>user01@or.kr</td>//<td>유저일</td>
+ }
 
 
 // //조회 버튼 클릭 시
-// selectDonationList.addEventListener("click", ()=> {
+donationList.addEventListener("click", ()=> {
 
 //     //1) 비동기로 회원 목록 조회
 //     //   (응답에 포함되어 있어야 할 번호, 이메일, 닉네임, 탈퇴여부)
+    
+    dList.innerHTML = "";
+     fetch("/mypage/donationList")
+     .then(response => response.json()) //JSON.parse(response)
+     .then(list => {
 
-//     fetch("/mypage/selectdonationList")
-//     .then(response => response.json()) //JSON.parse(response)
-//     .then(list => {
-
+        console.log(list);
 //         //const data = JSON.parse(list);
 
 //         //list 바로 이용 -> JS 객체 배열
 //         //data-> JS 객체 배열
 
 //         //이전 내용 삭제
-//         doantionList.innerHTML = "";
 
 //         //tbody 에 들어갈 요소 만들기 + 값 세팅 후에 tbody에 추가
-//         list.forEach((member,index) => {
-//             //member :현재 반복 접근 중인 요소
-//             //index : 현재 접근 중인 인덱스
 
-//             //tr 만들어서 그 안에 td 만들고, append 후
-//             //다시 tbody 에 append
-//             const keyList = ['moneyDonationTotal'];  //오류 : memberDelFl : undifined 으로 뜸
+        if(list.length == 0) {
+            dList.innerText = "후원 내역이 없습니다";
 
-//             const tr = document.createElement("tr");
-//             // <tr></tr>
-//             keyList.forEach( key => tr.append( createTd(member[key]) ));
+        } else {
 
-//             //tbody 자식으로 tr 추가
-//             doantionList.append(tr);
-
-//         });
-
-//     })
+            list.forEach((item,index) => {
+                
+                const tr = document.createElement("tr");
     
-// });
-
-
-const donationList = document.getElementById("tab-2");
-const dList = document.getElementById("dList");
-
-donationList.addEventListener("chekced",()=> {
-
-    fetch("/mypage/donationList")
-    .then(resp =>resp.json())
-    .then(result=>{
-        
-        const donate = document.getElementById("donate-area");
-        console.log(result);
-
-
-        for(let i = 0; i<result.length();i++){
-            
-            dList.innerHTML="";
-
-
-
-
-
-
+                const td1 = document.createElement("td");
+                td1.innerText = "금액 : "+ item.moneyDonationTotal;
+    
+                const td2 = document.createElement("td");
+                td2.innerText = "계정 : "+  item.memberEmail;
+    
+                const td3 = document.createElement("td");
+                td3.innerText = "후원완료";
+    
+                tr.append(td1);
+                tr.append(td2);
+                tr.append(td3);
+    
+                dList.append(tr);
+    
+            });
         }
 
-    })
 
-})
+   })
+    
+ });
 
 
 
@@ -198,33 +182,57 @@ donationList.addEventListener("chekced",()=> {
 /* 신청내역 확인 */
 
 
-const activityList = document.getElementById("tab-3");
-const applyList = document.getElementById("applyList");
+//조회버튼
+const applyList = document.querySelector("#tab-3");
+
+// //tbody
+const aList = document.querySelector("#aList");
+
+// //td 요소를 만들고 text 추가 후 반환
+const createTd2 = (text) => {
+     const td = document.createElement("td");
+     td.innerText = text;
+    return td; //<td>1</td> //<td>user01@or.kr</td>//<td>유저일</td>
+ }
 
 
+// //조회 버튼 클릭 시
+applyList.addEventListener("click", ()=> {
 
-activityList.addEventListener("chekced",()=> {
+//     //1) 비동기로 회원 목록 조회
+//     //   (응답에 포함되어 있어야 할 번호, 이메일, 닉네임, 탈퇴여부)
 
-    fetch("/mypage/activityList")
-    .then(resp =>resp.json())
-    .then(result=>{
-        
-        const apply = document.getElementById("apply-area");
-        console.log(result);
+     fetch("/mypage/applyList")
+     .then(response => response.json()) //JSON.parse(response)
+     .then(list => {
 
+console.log(list);
+//         //const data = JSON.parse(list);
 
-        for(let i = 0; i<result.length();i++){
-            
-            applyList.innerHTML="";
+//         //list 바로 이용 -> JS 객체 배열
+//         //data-> JS 객체 배열
 
+//         //이전 내용 삭제
+       aList.innerHTML = "";
 
+//         //tbody 에 들어갈 요소 만들기 + 값 세팅 후에 tbody에 추가
+       list.forEach((item,index) => {
+//             //member :현재 반복 접근 중인 요소
+//             //index : 현재 접근 중인 인덱스
 
+//             //tr 만들어서 그 안에 td 만들고, append 후
+//             //다시 tbody 에 append
+             const keyList = ['registryDate', 'actName', 'field'];  //오류 : memberDelFl : undifined 으로 뜸
 
+           const tr = document.createElement("tr");
+            // <tr></tr>
+          keyList.forEach( key => tr.append( createTd2(item[key]) ));
 
+            //tbody 자식으로 tr 추가
+            aList.append(tr);
 
-        }
+        });
 
-    })
-
-})
-
+   })
+    
+ });
