@@ -69,8 +69,8 @@
 
                   
 
-                            <td style="    padding-left: 40px;">
-                                <a th:href="@{/community/{boardNo}(boardNo=*{boardNo})}" th:text="*{boardTitle}" class="board_content">게시글 제목</a>
+                            <td style="padding-left: 40px;">
+                                <a th:href="@{/board/{boardNo}(boardNo=*{boardNo}, cp=${pagination.currentPage})}" th:text="*{boardTitle}" class="board_content">게시글 제목</a>
                                
 
                             </td>
