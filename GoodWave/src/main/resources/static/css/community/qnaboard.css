@@ -113,13 +113,14 @@
 
 
 table {
-  height: 700px;
+  line-height: 65px;
+    height: auto;
     margin: auto;
     width: 1500px;
     border-radius: 5px;
     border-collapse: collapse;
     border-top: none;
-    font-size:17px;
+    font-size: 17px;
 }
 .header {
   /* background-color: rgb(218, 231, 255); */

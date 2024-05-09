@@ -1,6 +1,8 @@
 package edu.kh.goodWave.board.model.dto;
 
 
+import java.util.List;
+
 import edu.kh.goodWave.volunteer.model.dto.Volunteer;
 
 import lombok.AllArgsConstructor;
@@ -31,6 +33,17 @@ public class Board {
 	
 	private int commentCount;
 	
+	//썸네일 이미지
 	
-//	private int boardCode;
+	private String thumbnail;
+	
+	// --- 추가 예정 ---
+		// 특정 게시글 이미지 목록
+	private List<BoardImg> imageList;
+	
+    // 
+	
+	// 특정 게시글에 작성된 댓글 목록
+	
+		private List<Comment> commentList;
 }

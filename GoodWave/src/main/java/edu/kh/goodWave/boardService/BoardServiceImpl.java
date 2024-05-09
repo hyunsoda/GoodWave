@@ -10,10 +10,12 @@ import edu.kh.goodWave.board.model.dto.Board;
 import edu.kh.goodWave.board.model.dto.Pagenation;
 import edu.kh.goodWave.boardMapper.BoardMapper;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Transactional(rollbackFor = Exception.class)
 @RequiredArgsConstructor
+@Slf4j
 public class BoardServiceImpl implements BoardService{
 	private final BoardMapper mapper;
 
@@ -64,6 +66,19 @@ public class BoardServiceImpl implements BoardService{
 
 
 	@Override
+
+	public int updateReadCount(int boardNo) {
+		
+		int result = mapper.updateReadCount(boardNo);
+		
+		
+	if(result >0) {
+			return mapper.selectReadCount(boardNo);
+	}
+		
+		return -1;
+	}
+
 	public Map<String, Object> search(String searchInput, int cp) {
 		
 		int listCount = mapper.getSearchCount(searchInput);
@@ -93,5 +108,6 @@ public class BoardServiceImpl implements BoardService{
 		
 		
 	}
+
 
 }

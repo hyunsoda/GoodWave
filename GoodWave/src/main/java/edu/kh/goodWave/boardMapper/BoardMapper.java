@@ -35,6 +35,12 @@ public interface BoardMapper {
 	Board selectOne(Map<String, Integer> map);
 
 
+
+	int updateReadCount(int boardNo);
+
+
+	int selectReadCount(int boardNo);
+
 	/** 게시글 검색 시 count
 	 * @param searchInput
 	 * @return
@@ -48,6 +54,7 @@ public interface BoardMapper {
 	 * @return
 	 */
 	List<Board> selectSearchList(String searchInput, RowBounds rowBounds);
+
 
 
 }

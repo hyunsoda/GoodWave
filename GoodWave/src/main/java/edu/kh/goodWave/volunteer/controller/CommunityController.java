@@ -128,43 +128,7 @@ public class CommunityController {
 	}
 	
 	
-	@GetMapping("{boardNo:[0-9]+}")
-	public String boardDetail(@PathVariable("boardNo") int boardNo,
-						@SessionAttribute(value="loginMember", required=false) Member loginMember,
-						RedirectAttributes ra,
-						Model model) {
-		
-		Map<String, Integer> map = new HashMap();
-		map.put("boardNo", boardNo);
-		
-		if(loginMember != null) {
-			map.put("memberNo", loginMember.getMemberNo());
-		}
-		
-		Board board = service.selectOne(map);
-		
-		String path = null;
-		
-		
-		if(board == null ) {
-			
-			path="redirect:/community/QNA";
-			ra.addFlashAttribute("message","게시글이 존재하지 않습니다.");
-		} else {
-			
-			// 이것저것 추가
-			
-			path="community/QNABoardDetail";
-			
-			model.addAttribute("board",board);
-			
-			
-			
-		}
-		
-		
-		return path;
-	}
+	
 	
 	
 	

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,15 +15,29 @@
     <th:block th:replace="~{/common/headerMain}"></th:block>
 
     <main>
+ 
+         
+        <div class="QNA_TEXT">
+            <h1>후기 게시판</h1>
+        </div>
+         
 
         <!--게시판  -->
         <section th:object="${board}">
+            <!--게시판  -->  
             <div id="upper">
               
-                    <div th:text="*{boardTitle}"></div>
                     <div>
-                        <div th:text="*{memberName}"></div>
-                        <div th:text="*{boardWriteDate}"></div>
+                        <p th:text="*{boardTitle}">제목</p>
+                    </div>
+
+                    <div class="boardDetail_flex">
+                        <div th:text="*{memberName}" class="content_left"></div>
+                        <div th:text="*{boardWriteDate}" class="content_left"></div>
+                    </div>
+                 
+                    <div class="boardDetail_flex">
+                        <p th:text="|조회수 *{readCount}|"></p>
                     </div>
                 
 
@@ -32,12 +46,63 @@
             <div id="bottom">
                 <div th:text="*{boardContent}"> </div>
             </div>    
+
+            
+            <div id="mainImgBox">
+                <img src="" alt="">
+            </div>
+
+
+<!-- 이미지 -->
+    <th:block th:if="${#lists.size(board.imageList) > 0}">
+        <!-- 썸네일이 있을 경우 -->
+    <th:block th:if="*{thumbnail}">
+        <div class="img-box shy">
+            <div class="boardImg thumbnail">
+                <img th:src="|${thumbnail.imgPath}${thumbnail.imgRename}|">                            
+            </div>
+        </div>
+    </th:block>
+        
+       
+<th:block th:if="${#lists.size(board.imageList) > start}">
+        <th:block th:each="i : ${#numbers.sequence(start, #lists.size(board.imageList) - 1)}">
+            <div class="img-box">
+                <div class="boardImg">
+
+                    <img th:src="|${board.imageList[i].imgPath}${board.imageList[i].imgRename}|">  
+
+                       
+                </div>
+            </div>
+        </th:block>                                      
+         
+
+</th:block>
+       
+</th:block>
+<!-- 이미지 -->
+
+
+             <!--게시판  --> 
         </section>
+          <!--게시판  -->
+
+     
+    
+ 
+           
 
         <!-- 댓글 -->
-        <section>
 
-        </section>
+         
+            <th:block th:replace="~{/community/qnaComment}"></th:block>
+         
+          
+
+
+        <!-- 댓글 -->
+       
     </main>
         
 
