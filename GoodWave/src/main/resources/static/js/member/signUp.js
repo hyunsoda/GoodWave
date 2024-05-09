@@ -64,7 +64,7 @@ checkBoxesNormal.forEach((checkbox) => checkbox.addEventListener('click', onBoxC
 
 
 $(".checkbox_all .all").click(function(){
-    if ($(".checkbox_all").prop("checked")) {
+    if ($(this).prop("checked")) {
         $().prop("checked", true);
     } else {
         $(".checkbox .normal").prop("checked", false);

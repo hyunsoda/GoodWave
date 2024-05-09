@@ -23,4 +23,6 @@ public interface BoardService {
 	 */
 	Board selectOne(Map<String, Integer> map);
 
+	int updateReadCount(int boardNo);
+
 }

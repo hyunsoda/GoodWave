@@ -35,4 +35,10 @@ public interface BoardMapper {
 	Board selectOne(Map<String, Integer> map);
 
 
+	int updateReadCount(int boardNo);
+
+
+	int selectReadCount(int boardNo);
+
+
 }

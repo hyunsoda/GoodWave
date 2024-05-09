@@ -21,6 +21,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.kh.goodWave.member.model.dto.Member;
 import edu.kh.goodWave.member.model.service.MemberService;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -53,7 +55,9 @@ public class MemberController {
 	@PostMapping("login")
 	public String login(Member inputMember,
 						RedirectAttributes ra,
-						Model model) {
+						Model model,
+						@RequestParam(value="saveId", required=false) String saveId,
+						HttpServletResponse resp) {
 		
 		
 		Member loginMember = service.loginMember(inputMember);
@@ -64,7 +68,29 @@ public class MemberController {
 		}
 		if(loginMember != null) {
 			model.addAttribute("loginMember",loginMember);
+			
+			
+			Cookie cookie = new Cookie("saveId", loginMember.getMemberId());
+			
+			
+			
+			
+			
+			
+			//saveId=user01
+			
+			cookie.setPath("/");
+			
+			if(saveId != null) {
+				cookie.setMaxAge(60 * 60 * 24 * 30);
+			}else {
+				cookie.setMaxAge(0);
+			}
+			
+			resp.addCookie(cookie);
+			
 			ra.addFlashAttribute("message","로그인되었습니다.");
+			
 		}
 		
 		

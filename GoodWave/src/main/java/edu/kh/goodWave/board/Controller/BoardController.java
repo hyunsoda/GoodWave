@@ -1,5 +1,7 @@
 package edu.kh.goodWave.board.Controller;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,8 +15,10 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.kh.goodWave.board.model.dto.Board;
+import edu.kh.goodWave.board.model.dto.BoardImg;
 import edu.kh.goodWave.boardService.BoardService;
 import edu.kh.goodWave.member.model.dto.Member;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -41,7 +45,7 @@ public class BoardController {
 			
 			) {
 		
-		Map<String, Object> map = new HashMap<>();
+		Map<String, Integer> map = new HashMap<>();
 		map.put("boardNo", boardNo);
 		
 		// 1. 로그인이 되어있을때만 map 에 맴버넘버넣기
@@ -52,9 +56,131 @@ public class BoardController {
 		
 		// 2) 서비스 호출 
 		
-//		Board board = service.selectOne(map);
+		// map 에다가 현재 게시글 no 실어서 보내서 게시글 내용 조회해오기
+		
+//		SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENT, BOARD_WRITE_DATE, BOARD_UPDATE_DATE, READ_COUNT, MEMBER_NO, MEMBER_NAME
+//		FROM "QNABOARD"
+//		JOIN "MEMBER" USING (MEMBER_NO)
+//		WHERE BOARD_NO = #{boardNo}
+//		AND BOARD_DEL_FL ='N'
+	    Board board = service.selectOne(map);
+	    
+	   
+	    
+		String path = null;
+		
+		if(board == null) {
+			path = "redirect:/community/QNA";
+			ra.addFlashAttribute("게시글이 존재하지 않습니다");
+		}else {
+			
+			//이것저것 추가
+			
+			// 1. 비회원 또는 로그인한 회원의 글이 아닌 경우
+			
+			if(loginMember == null || loginMember.getMemberNo() !=  board.getMemberNo() ) {
+					
+				
+				Cookie[] cookies = req.getCookies();
+				
+				
+				
+				Cookie c = null;
+				
+				for(Cookie temp : cookies) {
+					if(temp.getName().equals("readBoardNo") ) {
+						 c = temp;
+						 break;
+					}
+				}
+				
+				int result = 0;
+				
+				if(c == null) {
+					// 새 쿠키 생성 
+					
+					c = new Cookie("readBoardNo", "[" + boardNo + "]");
+					                //"readBoardNo" , "[50]"
+					result = service.updateReadCount(boardNo);
+					
+				}else {
+					//readBoardNo 가 쿠키에 있을 때
+					// "readBoardNo" 가 쿠키에 있을 때
+					// "readBoardNo" : [2][30][400][2000][4000]
+					
+					// 글을 처음 읽는 경우
+					//찾지 못하면 
+					if(c.getValue().indexOf("[" + boardNo + "]") == -1) {
+						c.setValue(c.getValue() + "[" + boardNo + "]");
+						result = service.updateReadCount(boardNo);
+					}
+					
+					// 먼저 조회된 board의 readCount 값을
+					// result 값으로 변환
+					
+				
+					
+					if( result > 0) {
+						board.setReadCount(result);
+						
+						// 적용 경로 설정
+						c.setPath("/");
+						
+						LocalDateTime now = LocalDateTime.now();
+						
+						// 다음날 자정
+						
+						LocalDateTime nextDateMidnight = now.plusDays(1).withHour(0).withMinute(0).withSecond(0).withNano(0);
+						
+						
+						// 다음날 자정까지 남은 시간 계산 (초 단위)
+						long secondUntileNextDay = Duration.between(now, nextDateMidnight).getSeconds();
+						
+						c.setMaxAge((int)secondUntileNextDay);
+						
+						resp.addCookie(c);
+					}
+					
+					
+				}
+				
+				//
+			}
+			//
+			
+			// 쿠키 이용한 증가하기
+			
+			path = "community/QNABoardDetail";
+			
+			// board - 게시글 일반내용 + imgList + commentList
+			model.addAttribute("board", board);
+			
+			// 조회된 이미지 목록 (imageList) 가 있을 경우
+			if(!board.getImageList().isEmpty()) {
+				
+				
+				
+				BoardImg thumbnail = null;
+				
+				// imageList 의 0번 인덱스 == 가장 빠른 순서 (imgOrder)
+				
+				// 이미지 목록의 첫번째 행이 순서 0 == 썸네일 인 경우 
+				
+				
+				
+				if(board.getImageList().get(0).getImgOrder() == 1) {
+					thumbnail = board.getImageList().get(0);
+					
+					model.addAttribute("thumbnail", thumbnail);
+					model.addAttribute("start", thumbnail != null ? 1 : 0);
+				}
+			}
+			
+			
+//			model.addAttribute("board", board);
+		}
 	
 		
-		return "";
+		return path;
 	}
 }
