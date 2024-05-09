@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import edu.kh.goodWave.donation.model.dto.Donation;
 import edu.kh.goodWave.member.model.dto.Member;
 import edu.kh.goodWave.mypage.model.mapper.MypageMapper;
+import edu.kh.goodWave.volunteer.model.dto.Volunteer;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -94,18 +95,21 @@ private final MypageMapper mapper;
 	
 	}
 
-	@Override
-		public Map<String, Object> selectActivityList(int memberNo) {
-			
-			return mapper.selectActivityList();
-		}
+
 
 
 	//후원내역조회
 	@Override
 	public List<Donation> selectDonationList(int memberNo) {
 		
-		return mapper.selectDonationList();
+		return mapper.selectDonationList(memberNo);
+	}
+
+
+	//활동내역조회
+	@Override
+	public List<Volunteer> applyList(int memberNo) {
+		return mapper.applyList(memberNo);
 	}
 
 

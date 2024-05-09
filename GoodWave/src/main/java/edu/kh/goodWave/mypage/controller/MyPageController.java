@@ -19,6 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import edu.kh.goodWave.donation.model.dto.Donation;
 import edu.kh.goodWave.member.model.dto.Member;
 import edu.kh.goodWave.mypage.model.service.MyPageService;
+import edu.kh.goodWave.volunteer.model.dto.Volunteer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -203,14 +204,13 @@ public class MyPageController {
 	}
 
 	@ResponseBody
-	@GetMapping("activityList")
-	public Map<String, Object> activityList(@SessionAttribute("loginMember") Member loginMember){
+	@GetMapping("applyList")
+	public List<Volunteer> applyList(@SessionAttribute("loginMember") Member loginMember){
 		
 		int memberNo = loginMember.getMemberNo();
 		
-		Map<String, Object> map = service.selectActivityList(memberNo);
-		
-		
+		List<Volunteer> map = service.applyList(memberNo);
+				
 		
 		return map;
 	}
@@ -221,8 +221,13 @@ public class MyPageController {
 		
 		int memberNo = loginMember.getMemberNo();
 		
-		return  service.selectDonationList(memberNo);
+		List<Donation> re = service.selectDonationList(memberNo);
+				
+		return  re;
+		
 	}
+	
+	
 
 	
 	
