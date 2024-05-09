@@ -40,11 +40,23 @@ public class CommunityController {
 	@GetMapping("QNA")
 	public String QNA(
 			@RequestParam(value="cp" , required=false, defaultValue="1") int cp,
+			@RequestParam(value="searchInput", required=false) String searchInput,
 			Model model
 			) {
   
-      Map<String, Object> map = service.selectBoardList(cp);
-		
+		Map<String, Object> map = null;
+				
+		if(searchInput == null) {
+			
+			map = service.selectBoardList(cp);
+		} else {
+			
+			 map = service.search(searchInput,cp);
+			 model.addAttribute("searchInput",searchInput);
+		}
+				
+			
+      
 		
 		model.addAttribute("pagination", map.get("pagination"));
 		model.addAttribute("boardList", map.get("boardList"));
@@ -54,9 +66,27 @@ public class CommunityController {
 		return "/community/qnaboard";
 
 }
-  
-  
-  
+//  
+//	/** 검색하기
+//	 * @param searchInput
+//	 * @return
+//	 */
+//	@GetMapping("search")
+//	public String search(@RequestParam("searchInput") String searchInput,
+//			@RequestParam(value="cp" , required=false, defaultValue="1") int cp,
+//			Model model) {
+//		
+//		Map<String, Object> map = service.search(searchInput,cp);
+//		
+//		model.addAttribute("pagination", map.get("pagination"));
+//		model.addAttribute("boardList", map.get("boardList"));
+//		model.addAttribute("searchInput",searchInput);
+//		
+//		
+//		
+//		return"/community/qnaboard";
+//	}
+//  
 
 	@GetMapping("qnaboard")
 	public String QNA() {

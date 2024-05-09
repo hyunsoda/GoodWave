@@ -63,22 +63,21 @@ checkBoxesNormal.forEach((checkbox) => checkbox.addEventListener('click', onBoxC
 
 
 
-$(".checkbox_all .all").click(function(){
-    if ($(".checkbox_all").prop("checked")) {
-        $().prop("checked", true);
+
+$('.checkbox_all .all').click(function () {
+    if ($(this).prop('checked')) {
+        $('.checkbox .normal').prop('checked', true);
     } else {
-        $(".checkbox .normal").prop("checked", false);
+        $('.checkbox .normal').prop('checked', false);
     }
 });
-
-$(".checkbox").on("click", "normal", function(){
+$('.checkbox').on('click', '.normal', function () {
     var is_checked = true;
-    $(".checkbox .normal").each(function () {
-        is_checked = is_checked && $(this).is(":checked");
+    $('.checkbox .normal').each(function () {
+        is_checked = is_checked && $(this).is(':checked');
     });
-    $(".checkbox_all .all").prop("checked", is_checked);
+    $('.checkbox_all .all').prop('checked', is_checked);
 });
-
 
 
 
