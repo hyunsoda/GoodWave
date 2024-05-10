@@ -15,11 +15,14 @@
 
 
 </head>
-<body id="mypage">
+<body id="mypage" class="bg">
+
+  
  
   <!--헤더-->
   <th:block th:replace="~{/common/headerMain}"></th:block>
  <!--헤더-->
+
 
 <div class="main">
   <input type="radio" id="tab-1" name="show" checked/>
@@ -118,33 +121,30 @@
              <table>
              
                <tbody id="dList">
+             
                 <tr>
-                  <td>금액 :10000</td>
-                  <td>이메일 : sdgsdg</td>
-                  <td>후원완료</td>
+                  <td class="sub" id="s1"></td>
+                  <td class="sub" id="s2"></td>
+                  <td class="sub" id="s3"></td>
                 </tr>
-                <tr>
-                  <td>금액 :10000</td>
-                  <td>이메일 : sdgsdg</td>
-                  <td>후원완료</td>
-                </tr>
+
+<!-- 
+                <div class="DonatenoList">
+                  <img src="/images/mypage/내역 없음.png"  class="noList" >
+                   <div class="noList-title">후원내역이 없습니다.</div>
+                 </div> -->
+
                </tbody>
 
-               <!-- <th:block th:if="${}">
-                <tr>
-                  <th colspan="6">후원 내역이 없습니다.</th>
-                </tr>
-                </th:block>
-        -->
+   
              </table>
      
             </div> 
 
-       
 
-          <!--후원내역이 없을 경우 -->
-        <!-- <div class="donate-none">후원 내역이 없습니다.</div>  -->
-          <!--후원내역이 없을 경우 -->
+        
+    
+
 
         </div> 
 
@@ -163,8 +163,9 @@
         <table>
           <thead>
               <th>날짜</th>
-              <th>종류</th>
-              <th>보기</th>
+              <th>활동</th>
+              <th>세부사항</th>
+              <th><button class="cancle-btn">취소</button></th>
           </thead>
   
           <tbody id="aList">
@@ -172,16 +173,23 @@
   
         </table>
 
+        <!-- <div>
+          <img src="/images/mypage/내역 없음.png" class="noList-a">
+           <div class="noList-a-title">신청내역이 없습니다.</div>
+         </div> -->
+
        </div> 
        </div> 
 
 
        <!-- <div class="apply-none">신청 내역이 없습니다.</div>  -->
 
+    
+
        <!--수정/취소-->
-        <div class="btn-area" th:object="${volunteer}">
+        <!-- <div class="btn-area" th:object="${volunteer}">
         <button class="cancle-btn" >취소하기</button> 
-       </div>
+       </div> -->
        <!--수정/취소-->
       </div> 
       

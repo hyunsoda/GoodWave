@@ -36,4 +36,6 @@ public class Volunteer {
 	private String field;
 	
 	
+	private String actName;
+	
 }
