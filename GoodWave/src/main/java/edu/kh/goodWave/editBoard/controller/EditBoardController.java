@@ -62,7 +62,8 @@ public class EditBoardController {
 		path = "board/boardUpdate";
 		model.addAttribute("board",board);
 		model.addAttribute("message", message);
-		
+		model.addAttribute("start", 0);
+		log.debug("image : " + board.getImageList());
 		
 		return path;
 	}

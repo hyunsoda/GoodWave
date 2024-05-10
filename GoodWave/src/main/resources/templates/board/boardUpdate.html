@@ -4,14 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시글 수정</title>
+    <th:block th:replace="~{/common/common}"></th:block>
+    <th:block th:replace="~{/common/introduceJsConnect}"></th:block>
+    <link rel="stylesheet" href="/css/community/qnaUpdate.css">
+    <link rel="stylesheet" href="/css/SubNavCss/subnav.css">
+    <link rel="stylesheet" href="/css/introduce/introduce.main.css">
+    
+    <!-- <link rel="stylesheet" href="/css/community/qnawrite.css"> -->
 </head>
 <body>
+    <main id="board_detail_text_main">
+        
+
+        <form th:action="@{update}" th:object="${board}" method="POST" 
+            class="board-write" id="boardUpdateFrm" enctype="multipart/form-data">  
+
+            <div style="margin-bottom: 50px;">
+                <h1>게시글 수정</h1>
+                <p>굿웨이브 수정 게시판입니다.<br>굿웨이브는 후원자님과의 소통으로 더 밝은 미래를 만들어갑니다</p>
+            </div>
+            
+
+            <!-- 제목 -->
+            <p class="board-title">
+                제목 <input type="text" name="boardTitle" placeholder="제목" th:value="${board.boardTitle}" id="board_detail_text_title">   
+            </p>
+
+
+
+
+            <!-- 썸네일 영역 -->
+          <th:block th:if="${#lists.size(board.imageList) > 0}"> 
+          
+
+
+             <!-- 업로드 이미지 영역 -->
+         
+             <div class="img-box">
+
+                <th:block th:each="i : ${#numbers.sequence(start, #lists.size(board.imageList) - 1)}">
+                        <div class="img-box shy boardImg">
+                            <div class="boardImg thumbnail">
+                                <img th:src="|${board.imageList[i].imgPath}${board.imageList[i].imgRename}|" class="preview">
+                                <input type="file" name="images" class="inputImage" id="img1" accept="image/*">
+                                <span class="delete-image" style="float: right;
+                                position: relative;
+                                bottom: 20px;
+                                right: 3px;">&times;</span>                             
+                            </div>
+                        </div>
+                </th:block>
+
+                <!-- <div class="boardImg">
+                    <label for="img1">
+                        <img class="preview">
+                    </label>
+                    <input type="file" name="images" class="inputImage" id="img1" accept="image/*">
+                    <span class="delete-image">&times;</span>
+                </div>
+
+                <div class="boardImg">
+                    <label for="img2">
+                        <img class="preview">
+                    </label>
+                    <input type="file" name="images" class="inputImage" id="img2" accept="image/*">
+                    <span class="delete-image">&times;</span>
+                </div>
+
+                <div class="boardImg">
+                    <label for="img3">
+                        <img class="preview">
+                    </label>
+                    <input type="file" name="images" class="inputImage" id="img3" accept="image/*">
+                    <span class="delete-image">&times;</span>
+                </div>
+
+                <div class="boardImg">
+                    <label for="img4">
+                        <img class="preview">
+                    </label>
+                    <input type="file" name="images" class="inputImage" id="img4" accept="image/*">
+                    <span class="delete-image">&times;</span>
+                </div>
+                <div class="boardImg">
+                    <label for="img5">
+                        <img class="preview">
+                    </label>
+                    <input type="file" name="images" class="inputImage" id="img5" accept="image/*">
+                    <span class="delete-image">&times;</span>
+                </div> -->
+
+
+            </div>
+        </th:block>
+
+           
+            <!-- 내용 -->
+            <div class="board-content">
+               내용 <textarea name="boardContent" th:text="*{boardContent}" style="resize: none;" id="board_content_detail">게시글 내용</textarea>
+               
+            </div>
+
+
+            <!-- 버튼 영역 -->
+            <div class="board-btn-area">
+                <button type="submit" id="writebtn">수정</button>
+            </div>
+
+            
+            <!-- 기존 이미지가 있다가 삭제된 이미지의 순서를 기록-->
+            <input type="hidden" name="deleteOrder" value="">
+
+            <!-- 수정 성공 시 주소(쿼리스트링) 유지용도 -->
+            <input type="hidden" name="querystring">
+        </form>
+
+    </main>
+
+    <th:block th:replace="~{common/footer}"></th:block>
+
+
+
+   
+
+
+
+  <script th:inline="javascript">
+    const imageList = /*[[${board.imageList}]]*/ "이미지";
+    const previewList = document.querySelectorAll('.preview');
+
+    const orderList = [];
+
+    for(let img of imageList){
+        previewList[img.imgOrder].src = img.imgPath + img.imgRename; 
+
+        orderList.push(img.imgOrder);
+    }
+ 
+
 
     
 
 
-
-
+  </script>
+ 
     <script src="/js/board/boardUpdate.js"></script> 
 </body>
 </html>
