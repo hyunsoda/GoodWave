@@ -114,8 +114,8 @@ const donationList = document.querySelector("#tab-2");
 // //tbody
 const dList = document.querySelector("#dList");
 
-//내역없음
-const DonatenoList = document.getElementsByClassName("DonatenoList");
+// 후원 내역 감싸는 div 요소
+const noDList = document.querySelector("#noDList");
 
 
 // //td 요소를 만들고 text 추가 후 반환
@@ -129,32 +129,31 @@ const createTd = (text) => {
 // //조회 버튼 클릭 시
 donationList.addEventListener("click", ()=> {
 
-//     //1) 비동기로 회원 목록 조회
-//     //   (응답에 포함되어 있어야 할 번호, 이메일, 닉네임, 탈퇴여부)
+
     
-    dList.innerHTML = "";
+
+    
      fetch("/mypage/donationList")
      .then(response => response.json()) //JSON.parse(response)
      .then(list => {
 
+
+
         console.log(list);
-//         //const data = JSON.parse(list);
 
-//         //list 바로 이용 -> JS 객체 배열
-//         //data-> JS 객체 배열
+        dList.innerHTML = "";
 
-//         //이전 내용 삭제
-
-//         //tbody 에 들어갈 요소 만들기 + 값 세팅 후에 tbody에 추가
 
         if(list.length == 0) {
 
-            
-
+            noDList.classList.remove("hiddenNoDList");
+           
         } else {
 
+            noDList.classList.add("hiddenNoDList");
+
             list.forEach((item,index) => {
-                
+   
                 const tr = document.createElement("tr");
     
                 const sub1 = document.createElement("sub1");
@@ -190,6 +189,9 @@ donationList.addEventListener("click", ()=> {
 //조회버튼
 const applyList = document.querySelector("#tab-3");
 
+// 신청 내역 감싸는 div 요소
+const noAList = document.querySelector("#noAList");
+
 // //tbody
 const aList = document.querySelector("#aList");
 
@@ -200,44 +202,111 @@ const createTd2 = (text) => {
     return td; //<td>1</td> //<td>user01@or.kr</td>//<td>유저일</td>
  }
 
+ const getApplyList = () => {
+    fetch("/mypage/applyList")
+    .then(response => response.json()) //JSON.parse(response)
+    .then(list => {
 
-// //조회 버튼 클릭 시
-applyList.addEventListener("click", ()=> {
+       console.log(list);
 
-//     //1) 비동기로 회원 목록 조회
-//     //   (응답에 포함되어 있어야 할 번호, 이메일, 닉네임, 탈퇴여부)
+      aList.innerHTML = "";
 
-     fetch("/mypage/applyList")
-     .then(response => response.json()) //JSON.parse(response)
-     .then(list => {
 
-console.log(list);
-//         //const data = JSON.parse(list);
 
-//         //list 바로 이용 -> JS 객체 배열
-//         //data-> JS 객체 배열
+      if(list.length == 0) {
 
-//         //이전 내용 삭제
-       aList.innerHTML = "";
+        noAList.classList.remove("hiddenNoAList");
 
-//         //tbody 에 들어갈 요소 만들기 + 값 세팅 후에 tbody에 추가
-       list.forEach((item,index) => {
-//             //member :현재 반복 접근 중인 요소
-//             //index : 현재 접근 중인 인덱스
+      } else {
+        
+        noAList.classList.add("hiddenNoAList");
+            
+        list.forEach((item,index) => {
 
-//             //tr 만들어서 그 안에 td 만들고, append 후
-//             //다시 tbody 에 append
-             const keyList = ['registryDate', 'actName', 'field'];  //오류 : memberDelFl : undifined 으로 뜸
+            const keyList = ['registryDate', 'actName', 'field']; 
 
-           const tr = document.createElement("tr");
-            // <tr></tr>
-          keyList.forEach( key => tr.append( createTd2(item[key]) ));
+            const tr = document.createElement("tr");
 
-            //tbody 자식으로 tr 추가
+            const button= document.createElement("button");
+            button.classList.add("cancle-btn");
+            button.id = item.volunteerNo;
+            button.innerText = "취소" ;
+
+
+            keyList.forEach( key => tr.append( createTd2(item[key]) ));
+
             aList.append(tr);
+            tr.append(button);
+
+            
 
         });
 
-   })
+
+        const cancleBtnArr = document.querySelectorAll(".cancle-btn");
+
+        cancleBtnArr.forEach((item, index) => {
+
+            //item.id = index;
+            
+            item.addEventListener("click", (e) => {
+                
+                console.log(e.target.id);
+
+                applyCancle(e.target.id);
+
+            })
+        })
+
+      }
+
+
+  })
+ }
+
+
+/************************************************************************************************ */
+
+
+// //조회 버튼 클릭 시
+applyList.addEventListener("click", ()=> {
+    getApplyList();
     
  });
+
+
+
+
+
+
+ /** 신청 취소
+ * @param {*} volunteerNo
+ */
+const applyCancle = volunteerNo => {
+
+    // 취소 선택 시
+    if(!confirm("취소 하시겠습니까?")) return;
+  
+    fetch("/mypage/applyCancle ",{
+      method : "POST",
+      headers : {"Content-Type" : "application/json"},
+      body : JSON.stringify({"volunteerNo" : volunteerNo} )
+    })
+    .then( resp => resp.text() )
+    .then( result => {
+  
+      if(result > 0){
+        alert("취소 되었습니다");
+        getApplyList();
+
+      } else {
+        alert("취소 실패");
+      }
+  
+    })
+    .catch( err => console.log(err));
+  
+  }
+
+
+

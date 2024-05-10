@@ -51,6 +51,12 @@ public interface MypageMapper {
 	 */
 	List<Volunteer> applyList(int memberNo);
 
+	/**신청 취소
+	 * @param volunteerNo
+	 * @return
+	 */
+	int cancle(Volunteer volunteer);
+
 	
 	
 }

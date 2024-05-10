@@ -6,8 +6,10 @@ import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -209,10 +211,10 @@ public class MyPageController {
 		
 		int memberNo = loginMember.getMemberNo();
 		
-		List<Volunteer> map = service.applyList(memberNo);
+		List<Volunteer> applyList = service.applyList(memberNo);
 				
 		
-		return map;
+		return applyList;
 	}
 	
 	@ResponseBody
@@ -227,7 +229,22 @@ public class MyPageController {
 		
 	}
 	
-	
+//	/**
+//	 * 신청 취소
+//	 * 
+//	 * @return
+//	 */
+	@ResponseBody
+	@PostMapping("applyCancle")
+	public int cancle(@RequestBody Volunteer volunteer, 
+					@SessionAttribute("loginMember") Member loginMember) {
+		log.info("volunteerNo : " + volunteer.getVolunteerNo());
+		
+		volunteer.setMemberNo(loginMember.getMemberNo());
+		
+		return service.cancle(volunteer);
+	}
+
 
 	
 	

@@ -111,7 +111,6 @@
      <!--후원내역-->
         <div class="content-dis">
 
-
           <!-- 후원 내역이 있을 경우 -->
     
         <div class="donate-list"  th:object="${donation}" >
@@ -121,33 +120,25 @@
              <table>
              
                <tbody id="dList">
-             
-                <tr>
-                  <td class="sub" id="s1"></td>
-                  <td class="sub" id="s2"></td>
-                  <td class="sub" id="s3"></td>
-                </tr>
-
-<!-- 
-                <div class="DonatenoList">
-                  <img src="/images/mypage/내역 없음.png"  class="noList" >
-                   <div class="noList-title">후원내역이 없습니다.</div>
-                 </div> -->
 
                </tbody>
 
-   
              </table>
-     
-            </div> 
+         
+       
 
 
-        
-    
-
-
+          
+       
+         </div> 
+      
         </div> 
 
+        <div id="noDList">
+          <img src="/images/mypage/내역 없음.png" class="noList" >
+           <div class="noList-title">후원내역이 없습니다.</div>
+        </div> 
+ 
         </div>
       <!--후원내역-->
 
@@ -158,40 +149,33 @@
 
       <div class="apply-list" th:object="${volunteer}" > 
   
-       <div class="apply">
+        <div class="apply">
 
-        <table>
-          <thead>
-              <th>날짜</th>
-              <th>활동</th>
-              <th>세부사항</th>
-              <th><button class="cancle-btn">취소</button></th>
-          </thead>
-  
-          <tbody id="aList">
-          </tbody>
-  
-        </table>
-
-        <!-- <div>
-          <img src="/images/mypage/내역 없음.png" class="noList-a">
-           <div class="noList-a-title">신청내역이 없습니다.</div>
-         </div> -->
-
-       </div> 
-       </div> 
-
-
-       <!-- <div class="apply-none">신청 내역이 없습니다.</div>  -->
-
+          <table>
+            <thead>
+                <th></th>
+                <th></th>
+                <th></th>
+            </thead>
     
+            <tbody id="aList">
+            </tbody>
+    
+          </table>
+    
+        </div> 
 
-       <!--수정/취소-->
-        <!-- <div class="btn-area" th:object="${volunteer}">
-        <button class="cancle-btn" >취소하기</button> 
-       </div> -->
-       <!--수정/취소-->
+       <div id="noAList">
+        <img src="/images/mypage/내역 없음.png" class="noList-a">
+         <div class="noList-a-title">신청내역이 없습니다.</div>
+
+
+       </div>
+
+       </div> 
+
       </div> 
+
       
         </div>
       <!-- 신청내역 -->
@@ -202,6 +186,7 @@
 </div>
 
 
+ 
 
        
 
