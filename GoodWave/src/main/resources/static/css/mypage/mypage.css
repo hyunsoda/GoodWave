@@ -16,25 +16,16 @@
     top:0px;
   }
 
+  .bg{
+    background-image: url("/images/mypage/배경.webp");
+    background-size: cover;
+  }
+
+
 
   /* ****************************************************************************************  */
   /* 마이페이지 */
 
-  .mypage-title-con{
-    color: rgb(52, 52, 53);
-    position: relative;
-    text-align: center;
-    position:absolute;
-    position:absolute;
-    top:30%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:300px;
-    height:250px;
-    padding:10px;
-
-  }
-  
   .content{
     height: 800px;
   }
@@ -45,9 +36,9 @@
   }
   .mypage {
   
-
+    background-color: white;
     position: absolute;
-    top: 570px;
+    top: 550px;
     left: 49%;
     transform: translate(-50%, -50%);
     width: 440px;
@@ -83,7 +74,7 @@
     color:#7ABEDD;
   }
   .mypage .mypage-elements {
-    margin-top:15px;
+    margin-top:35px;
   }
   .mypage .mypage-elements .mypage-element {
     height:250px;
@@ -149,9 +140,9 @@
    /* 후원내역 */  
 
   .donate-list{
-  
+    background-color: white;
     position: absolute;
-    top: 460px;
+    top: 525px;
     left: 49%;
     transform: translate(-50%, -50%);
     width: 440px;
@@ -165,33 +156,25 @@
   }
   
   .donate-list{
-  background-color: white;
-  height: 40%;
+
+  height: 550px;
   }
   
   
   .donate{
   position: relative;
-  left: 35px;
-  top: 10px;
-  line-height: 35px;
+  left: 65px;
+  top: 30px;
+  line-height: 40px;
   border: none;
   color: gray;
   font-size: large;
   font-weight: bold;
   text-align: center;
 
+  }
 
-  }
-  
-  .donate-none{
-  color: gray;
-  font-size: larger;
-  font-weight: bold;
-  margin-top: 40%;
-  text-align: center;
-  }
-  
+ 
 
 
    /*******************************************************************************************************************/
@@ -199,8 +182,9 @@
 
 
   .apply-list{
+    background-color: white;
     position: absolute;
-    top: 460px;
+    top: 525px;
     left: 49%;
     transform: translate(-50%, -50%);
     width: 440px;
@@ -215,8 +199,8 @@
   }
   
   .apply-list{
-  background-color: white;
-  height: 40%;
+
+    height: 550px;
   }
   
   .apply-none{
@@ -229,7 +213,7 @@
   .apply{
     position: relative;
     left: 35px;
-    top: 10px;
+    top: 30px;
     line-height: 35px;
     border: none;
     color: gray;
@@ -279,7 +263,7 @@
   width: 150px;
   text-align: right;
   position:absolute;
-  top:520px;
+  top:550px;
   left:310px;
   transform:translate(-50%,-50%);
   }
@@ -366,7 +350,7 @@
     -webkit-user-select: none;
   }
   .content {
-  background-color: white;
+
   min-height: 300px;
   }
   .content > div{
@@ -380,7 +364,41 @@
     top: 10px;
   }
   
-  
-  
+ /* ************************************************************************* */ 
+  /*후원내역 없음*/
 
 
+.noList{
+
+  width: 35%; 
+  margin: auto; 
+  margin-top: 20px;
+
+}
+
+.noList-title{
+
+  font-size: larger; 
+   font-weight: bold;  
+   color: gray; 
+   margin: auto; 
+   margin-top: 10px;
+
+}
+
+
+  /*신청내역 없음*/
+  .noList-a{
+    width: 35%; 
+    margin: auto; 
+    margin-top: 20px;
+  }
+
+  .noList-a-title{
+    font-size: larger;  
+    font-weight: bold;  
+    color: gray; 
+    margin: auto; 
+    margin-top: 10px;
+  }
+ /* ************************************************************************* */ 
