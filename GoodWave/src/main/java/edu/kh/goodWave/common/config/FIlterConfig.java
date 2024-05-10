@@ -19,7 +19,7 @@ public class FIlterConfig {
 		
 		filter.setFilter(new LoginFilter());
 		
-		String[] filterURL = {"/myPage/*", "/mypage/*"};
+		String[] filterURL = {"/myPage/*", "/editBoard/*"};
 		
 		
 		filter.setUrlPatterns(Arrays.asList(filterURL));
