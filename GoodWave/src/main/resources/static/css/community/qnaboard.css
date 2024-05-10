@@ -88,13 +88,16 @@
     border: 0;
     border-radius: 10px;
     position: relative;
-    left: 1600px;
+    /* left: 1600px; */
     background-color: #7ABEDD;
     color: white;
     margin-top: 20px;
-    width: 130px;
+    /* width: 130px; */
     height: 40px;
     padding: 12px;
+    float: right;
+    right: 200px;
+  
   }
 
   .write-btn:hover{
@@ -153,9 +156,10 @@ table {
 
 .btn-area{
   margin-top: 25px;
-  margin-left: 35px;
-  width: 1000px;
-  height: 100px;
+    /* margin-left: -45px; */
+    /* width: 1000px; */
+    /* display: flex; */
+    height: 100px;
 }
 
 

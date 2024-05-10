@@ -111,12 +111,14 @@
                  document.write("</tr>");
              }
             </script> -->
+
+            <th:block th:if="${session.loginMember != null}">
+                <div class="btn-area">
+                    <a href="/community/qnawrite" class="write-btn">글쓰기</a>
+                    </div>
+             </th:block>
      </table>
-     <th:block th:if="${session.loginMember != null}">
-        <div class="btn-area">
-            <a href="/community/qnawrite" class="write-btn">글쓰기</a>
-            </div>
-     </th:block>
+    
      
 
 

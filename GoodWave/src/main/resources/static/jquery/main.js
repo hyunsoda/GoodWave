@@ -408,6 +408,37 @@ $(function(){
         }
    }) 
 
+  /* padding: 15px; */
+   /* border: 3px solid white; */
+   /* display: none; */
+
+   let c = 0;
+   let d = 0;
+
+   $(".main_user_img").click(function(){
+       c++;
+       d = c % 2;
+
+       if(d == 1){
+         $(".gggg").fadeIn(100);
+         $(".gggg").css("padding","15px");
+         $(".gggg").css("width","250px")
+         $(".fkfkfk").css("transform","translateX(-250px)");
+       }else{
+         
+         $(".gggg").css("padding","0px");
+         $(".gggg").css("width","0px");
+         $(".fkfkfk").css("transform","translateX(0px)");
+
+         setTimeout(function(){
+            $(".gggg").css("display","none");
+         },550)
+       }
+
+     
+      
+   })
+
 })
 
 

@@ -54,6 +54,7 @@ main {
     margin-bottom:70px;
 }
 
+
 #upper > :last-child{
     display: flex;
     flex-direction: column;
@@ -85,7 +86,7 @@ main {
     margin : 0;
     padding: 20px 0;
     font-size: 2em;
-    border-bottom : 3px solid #ccc;
+    
 }
 
 .board-title > span{
@@ -178,8 +179,7 @@ main {
     clear: both;
     padding: 30px 0;
     margin: 30px 0;
-    border-top : 3px solid #ccc;
-    border-bottom : 3px solid #ccc;
+    
 
     font-size: 18px;
 
