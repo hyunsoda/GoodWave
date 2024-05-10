@@ -112,6 +112,12 @@ private final MypageMapper mapper;
 		return mapper.applyList(memberNo);
 	}
 
+	//신청 취소
+	@Override
+	public int cancle(Volunteer volunteer) {
+		return mapper.cancle(volunteer);
+	}
+
 
 
 }
