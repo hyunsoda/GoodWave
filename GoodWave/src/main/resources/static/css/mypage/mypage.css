@@ -212,7 +212,7 @@
   }
   .apply{
     position: relative;
-    left: 35px;
+    left: 30px;
     top: 30px;
     line-height: 35px;
     border: none;
@@ -220,6 +220,7 @@
     font-size: large;
     font-weight: bold;
     text-align: center;
+  
   }
   
 
@@ -238,7 +239,7 @@
   
   .cancle-btn{
   position: relative;
-  top: 20px;
+    left: 50px;
   background-color: white;
   text-decoration: underline #B0DBEF;
   text-decoration-thickness: 2px;
@@ -368,11 +369,17 @@
   /*후원내역 없음*/
 
 
+  /*후원내역 있을 때 */
+  .hiddenNoDList {
+    display: none;
+  }
+
+
 .noList{
 
   width: 35%; 
   margin: auto; 
-  margin-top: 20px;
+  margin-top: 75px;
 
 }
 
@@ -387,11 +394,21 @@
 }
 
 
+
+  /* 신청내역 있을 때 */
+  .hiddenNoAList {
+    display: none;
+  }
+
+
+  /*******************************************************************/
+
   /*신청내역 없음*/
+
   .noList-a{
     width: 35%; 
     margin: auto; 
-    margin-top: 20px;
+    margin-top: 150px;
   }
 
   .noList-a-title{

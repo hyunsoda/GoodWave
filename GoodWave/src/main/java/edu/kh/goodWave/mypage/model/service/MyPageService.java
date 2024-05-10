@@ -43,5 +43,11 @@ public interface MyPageService {
 	 */
 	List<Volunteer> applyList(int memberNo);
 
+	/**신청 취소
+	 * @param volunteer
+	 * @return
+	 */
+	int cancle(Volunteer volunteer);
+
 
 }
