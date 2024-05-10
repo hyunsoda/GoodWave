@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -41,7 +42,8 @@ public class BoardController {
 			RedirectAttributes ra,
 			@SessionAttribute(value="loginMember" , required=false) Member loginMember,
 			HttpServletRequest req,
-			HttpServletResponse resp
+			HttpServletResponse resp,
+			@RequestParam(value="cp", required=false) int cp
 			
 			) {
 		
@@ -180,7 +182,7 @@ public class BoardController {
 //			model.addAttribute("board", board);
 		}
 	
-		
+		model.addAttribute("cp",cp);
 		return path;
 	}
 }

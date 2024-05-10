@@ -4,6 +4,7 @@ const checkobj={
     "inputPw" : false
 };
 
+
 const loginId2 = document.getElementById("loginId");
 
 
@@ -19,6 +20,7 @@ loginId2.addEventListener("input",(e)=>{
 
     if(inputId.trim().length===0){
         checkobj.inputId = false;
+
         // inputId="";
         return;
     }
@@ -43,11 +45,12 @@ document.getElementById("loginPw").addEventListener("input",(e)=>{
 
 
 
-
-
 const loginForm = document.getElementById("loginForm");
 
 loginForm.addEventListener("submit",(e)=> {
+
+    
+
     for(let key in checkobj){
         if(!checkobj[key]){
 

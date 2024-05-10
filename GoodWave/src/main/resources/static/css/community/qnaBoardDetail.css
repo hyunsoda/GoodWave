@@ -12,7 +12,7 @@ main {
 
 #upper {
     display: flex;
-    /* height: 120px; */
+    height: 70px;
     /* padding: 30px 0px 20px 20px; */
     border-bottom: 1px solid grey;
     padding: 10px 0px;
@@ -23,9 +23,10 @@ main {
     font-size: 22px;
     display: flex;
     align-items: center;
-    flex-basis: 69%;
-    
+    flex-basis: 67%;
 }
+    
+
 
 .boardDetail_flex{
     display:flex;
@@ -64,8 +65,9 @@ main {
 #bottom {
   
     font-size: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 80px;
     margin-top: 60px;
+    height: auto;
 }
 
 /* 상세조회 전체 영역 */
@@ -285,20 +287,20 @@ main {
 .comment-btn-area button{
     width: 50px;
     height: 30px;
-	margin-left: 10px;
-
+    margin-left: 10px;
+    border-radius: 20px;
     font-weight: bold;
     border: 0;
-    background-color: #455ba8;
-    color : white;
-
+    background-color: #4C8DC3;
+    color: white;
     cursor: pointer;
+    color: white;
 }
 
 .comment-btn-area button:hover{
     background-color: white;
-    color : #455ba8;
-    border: 2px solid #455ba8;
+    color : #5d77d4;
+    border: 1px solid #455ba8;
 }
 
 .update-textarea{
@@ -312,6 +314,26 @@ main {
 	padding : 15px 0;
 }
 
+.editbtn{
+    transition: 0.1s linear;
+    width: 80px;
+    height: 30px;
+    margin-left: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 0;
+    background-color: #4C8DC3;
+    color: white;
+    cursor: pointer;
+    float:right;
+    margin-bottom: 20px;
+}
+
+.editbtn:hover{
+    background-color: white;
+    color : #455ba8;
+    border: 1px solid #455ba8;
+}
 
 .child-comment{
 	padding-left : 50px;
@@ -341,5 +363,7 @@ main {
 
 /* 댓글 내용 */
 .comment-content{
-	white-space: pre-wrap; /* 작성된 문자열 모양 그대로(공백 유지) */
+	margin-left: 10px;
+    margin-top: 5px;
 }
+
