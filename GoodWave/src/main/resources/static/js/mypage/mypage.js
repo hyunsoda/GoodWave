@@ -114,11 +114,15 @@ const donationList = document.querySelector("#tab-2");
 // //tbody
 const dList = document.querySelector("#dList");
 
+//내역없음
+const DonatenoList = document.getElementsByClassName("DonatenoList");
+
+
 // //td 요소를 만들고 text 추가 후 반환
 const createTd = (text) => {
-     const td = document.createElement("td");
-     td.innerText = text;
-    return td; //<td>1</td> //<td>user01@or.kr</td>//<td>유저일</td>
+     const sub = document.createElement("sub");
+     sub.innerText = text;
+    return sub; //<td>1</td> //<td>user01@or.kr //</td>//<td>유저일</td>
  }
 
 
@@ -144,7 +148,8 @@ donationList.addEventListener("click", ()=> {
 //         //tbody 에 들어갈 요소 만들기 + 값 세팅 후에 tbody에 추가
 
         if(list.length == 0) {
-            dList.innerText = "후원 내역이 없습니다";
+
+            
 
         } else {
 
@@ -152,18 +157,18 @@ donationList.addEventListener("click", ()=> {
                 
                 const tr = document.createElement("tr");
     
-                const td1 = document.createElement("td");
-                td1.innerText = "금액 : "+ item.moneyDonationTotal;
+                const sub1 = document.createElement("sub1");
+                sub1.innerText = "  금액 : "+ item.moneyDonationTotal;
     
-                const td2 = document.createElement("td");
-                td2.innerText = "계정 : "+  item.memberEmail;
+                const sub2 = document.createElement("sub2");
+                sub2.innerText = "  계정 : "+  item.memberEmail;
     
-                const td3 = document.createElement("td");
-                td3.innerText = "후원완료";
+                const sub3 = document.createElement("sub3");
+                sub3.innerText = "      ";
     
-                tr.append(td1);
-                tr.append(td2);
-                tr.append(td3);
+                tr.append(sub1);
+                tr.append(sub2);
+                tr.append(sub3);
     
                 dList.append(tr);
     

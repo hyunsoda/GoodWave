@@ -1,12 +1,26 @@
+
 const checkobj={
     "inputId" : false,
     "inputPw" : false
 };
 
-document.getElementById("loginId").addEventListener("input",(e)=>{
-    inputId = e.target.value;
-    if(inputId.trim().length==0){
-        inputId = false;
+
+const loginId2 = document.getElementById("loginId");
+
+
+if(loginId2.value.trim().length>1){
+    checkobj.inputId = true;
+   
+};
+
+
+loginId2.addEventListener("input",(e)=>{
+
+    const inputId = e.target.value;
+
+    if(inputId.trim().length===0){
+        checkobj.inputId = false;
+
         // inputId="";
         return;
     }
@@ -17,14 +31,17 @@ document.getElementById("loginId").addEventListener("input",(e)=>{
 
 
 document.getElementById("loginPw").addEventListener("input",(e)=>{
-    inputPw = e.target.value;
+    
+    const inputPw = e.target.value;
+
     if(inputPw.trim().length===0){
-        inputPw = false;
+        checkobj.inputPw = false;
         inputPw="";
         return;
     }
     checkobj.inputPw = true;
 });
+
 
 
 
