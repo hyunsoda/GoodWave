@@ -7,21 +7,25 @@
     <th:block th:replace="~{/common/common}"></th:block>
 
     <link rel="stylesheet" href="/css/community/qnawrite.css">
+    <th:block th:replace="~{/common/common}"></th:block>
+    <th:block th:replace="~{/common/introduceJsConnect}"></th:block>
+ <link rel="stylesheet" href="/css/SubNavCss/subnav.css">
+<link rel="stylesheet" href="/css/introduce/introduce.main.css">
 
 </head>
 <body>
 
   <!--헤더-->
-  <th:block th:replace="~{/common/header2}"></th:block>
+  <th:block th:replace="~{/common/headerMain}"></th:block>
   <!--헤더-->
 
 <div class="board-wrqp">
-    <h1>질문 게시판</h1>
-    <h4 style="color: #666666;">굿웨이브 회원들의 질문 게시판입니다. <br>
+    <h1>후기 게시판</h1>
+    <h4 style="color: #666666;">굿웨이브 회원들의 후기 게시판입니다. <br>
         굿웨이브는 후원자님과의 소통으로 더 밝은 미래를 만들어갑니다
     </h4>
 
-    <form action="/community/qnawrite" method="post" id="qnaWriteForm">
+    <form action="/community/qnawrite" method="post" id="qnaWriteForm" enctype="multipart/form-data">
     <div class="qnawrite-content">
        
         <!--제목-->
