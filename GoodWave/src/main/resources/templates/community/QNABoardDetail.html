@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/SubNavCss/subnav.css">
     <link rel="stylesheet" href="/css/introduce/introduce.main.css">
     <link rel="stylesheet" href="/css/community/qnaBoardDetail.css">
+    <link rel="stylesheet" href="/css/community/comment.js">
 </head>
 <body>
     <th:block th:replace="~{/common/headerMain}"></th:block>
@@ -43,9 +44,7 @@
 
             </div>
 
-            <div id="mainImgBox">
-                <img src="" alt="">
-            </div>
+        
 
             <div id="bottom">
                 <div th:text="*{boardContent}"> </div>
@@ -116,9 +115,18 @@
     </main>
         
 
+    <script th:inline="javascript">
 
+        // - loginMember가 null인 경우 null 반환
+        const loginMemberNo = /*[[${session.loginMember?.memberNo}]]*/ "로그인 회원 번호";
+
+        // 현재 게시글 번호를 전역 변수로 저장
+        const boardNo = /*[[${board.boardNo}]]*/ "게시글 번호";
+
+    </script>
 
 
     <th:block th:replace="~{/common/footer}"></th:block>
+    <script src="/js/board/comment.js"></script>
 </body>
 </html>
