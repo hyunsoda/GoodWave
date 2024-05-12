@@ -261,14 +261,14 @@ border-color: black; */
       left: -46px;
   
     }
-
+/*==================================================*/
 
     .gggg{
       width: 0px;
       height: 50px;
       background: transparent;
       position: absolute;
-      transition: 0.5s linear;
+      transition: 0.2s linear;
       border: none;
       right: 147px;
       border-radius: 50px;
@@ -287,8 +287,22 @@ border-color: black; */
 
     .fkfkfk{
       position:relative;
-      transition: 0.5s linear;
+      transition: 0.2s linear;
     }
   
+  
+    .donation_124213{
+      transition:0.2s linear
+    }
+
+ 
+
+    #bb{
+      transition: 0.2s linear;
+    }
+    
+    .main_user_img{
+      transition: 0.2s linear;
+    }
 
 

@@ -227,11 +227,13 @@ $(window).scroll(function(){
       let windowScrollTop = $(this).scrollTop();
 
       if(windowScrollTop > 1){
+         $(".gggg").css("border","3px solid black");
          $("#bb").css("backgroundColor","white");
          $("#bb").css("color","black");
          $(".donation_124213").css("color", "black");
          $(".donation_124213").css("border-color", "black");
       }else{
+         $(".gggg").css("border","3px solid white");
          $("#bb").css("backgroundColor","transparent");
          $("#bb").css("color","white");
          $(".donation_124213").css("color", "white");
@@ -432,7 +434,7 @@ $(function(){
 
          setTimeout(function(){
             $(".gggg").css("display","none");
-         },550)
+         },200)
        }
 
      
