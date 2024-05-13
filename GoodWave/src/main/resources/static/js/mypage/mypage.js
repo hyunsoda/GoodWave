@@ -164,9 +164,16 @@ donationList.addEventListener("click", ()=> {
     
                 const sub3 = document.createElement("sub3");
                 sub3.innerText = "      ";
-    
+
+                const sub4 = document.createTextNode("\u00a0\u00a0\u00a0\u00a0\u00a0");
+              
                 tr.append(sub1);
+
+                tr.append(sub4);
+
                 tr.append(sub2);
+
+                
                 tr.append(sub3);
     
                 dList.append(tr);
@@ -194,6 +201,8 @@ const noAList = document.querySelector("#noAList");
 
 // //tbody
 const aList = document.querySelector("#aList");
+
+
 
 // //td 요소를 만들고 text 추가 후 반환
 const createTd2 = (text) => {
@@ -223,9 +232,13 @@ const createTd2 = (text) => {
             
         list.forEach((item,index) => {
 
+
             const keyList = ['registryDate', 'actName', 'field']; 
 
+          
+
             const tr = document.createElement("tr");
+           
 
             const button= document.createElement("button");
             button.classList.add("cancle-btn");
@@ -233,12 +246,11 @@ const createTd2 = (text) => {
             button.innerText = "취소" ;
 
 
-            keyList.forEach( key => tr.append( createTd2(item[key]) ));
+           keyList.forEach( key => tr.append( createTd2(item[key]) ));
 
-            aList.append(tr);
-            tr.append(button);
-
-            
+          
+           aList.append(tr);
+           tr.append(button);
 
         });
 

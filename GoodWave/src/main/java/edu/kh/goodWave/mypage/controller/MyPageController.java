@@ -239,10 +239,13 @@ public class MyPageController {
 	@ResponseBody
 	@PostMapping("applyCancle")
 	public int cancle(@RequestBody Volunteer volunteer, 
-					@SessionAttribute("loginMember") Member loginMember,
-					@DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
+					@SessionAttribute("loginMember") Member loginMember
+) {
 		
-		String  applyCancleDate = date.toString();
+		
+		
+//		@DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date
+//		String  applyCancleDate = date.toString();
 		
 		log.info("volunteerNo : " + volunteer.getVolunteerNo());
 		

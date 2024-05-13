@@ -49,6 +49,7 @@
 		WHERE MEMBER_NO = #{memberNo}
 	</select>
 	
+	<!-- 신청활동 취소 -->
 	<delete id="cancle">
 	 	DELETE FROM "VOLUNTEERLIST" 
 		WHERE VOLUNTEER_NO = #{volunteerNo}
