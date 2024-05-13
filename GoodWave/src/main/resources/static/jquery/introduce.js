@@ -258,6 +258,9 @@ $(function(){
 let c = 0;
 let d = 0;
 
+$(".gggg").css("color","black");
+$(".gggg").css("border","3px solid black");
+
 $(".main_user_img").click(function(){
     c++;
     d = c % 2;
@@ -281,6 +284,34 @@ $(".main_user_img").click(function(){
   
    
 })
+
+$(".list_go_btn").mouseover(function(){
+   $(".aaaaaaaa").css("backgroundColor","white");
+   $(".aaaaaaaa").css("border","1px solid #4C8DC3");
+   $(".aaaaaaaa").css("color","#4C8DC3");
+
+})
+$(".list_go_btn").mouseout(function(){
+   $(".aaaaaaaa").css("backgroundColor","#4C8DC3");
+   $(".aaaaaaaa").css("color","white");
+   
+   
+  
+
+})
+
+$("#list_list").mouseover(function(){
+   $(this).css("backgroundColor","white");
+   $(this).css("border","1px solid #7ABEDD");
+   $(this).css("color","#4C8DC3");
+
+})
+
+$("#list_list").mouseout(function(){
+   $(this).css("backgroundColor","#7ABEDD");
+   $(this).css("color","white");
+})
+
 
 })
 
