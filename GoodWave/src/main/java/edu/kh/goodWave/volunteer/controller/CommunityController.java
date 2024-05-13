@@ -1,6 +1,7 @@
 package edu.kh.goodWave.volunteer.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.kh.goodWave.board.model.dto.Board;
@@ -102,15 +104,17 @@ public class CommunityController {
 	@PostMapping("qnawrite")
 	public String QNAwrite(Board board,
 							RedirectAttributes ra,
-							@SessionAttribute("loginMember") Member loginMember) {
+							@SessionAttribute("loginMember") Member loginMember,
+							@RequestParam("images") List<MultipartFile> images
+							
+			) {
 
 		
 		board.setMemberNo(loginMember.getMemberNo());
 		
-
 		
 
-		int result = service.qnaWrite(board);
+		int result = service.qnaWrite(board,images);
 		
 		if(result >0) {
 			

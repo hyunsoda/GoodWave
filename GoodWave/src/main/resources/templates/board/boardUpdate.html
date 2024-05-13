@@ -41,7 +41,7 @@
              <!-- 업로드 이미지 영역 -->
          
              <div class="img-box">
-
+<!-- 
          <th:block th:each="i : ${#numbers.sequence(start, #lists.size(board.imageList) - 1)}">
                         <div class="img-box shy boardImg">
                             <div class="boardImg thumbnail">
@@ -53,9 +53,9 @@
                                 right: 3px;">&times;</span>                             
                             </div>
                         </div>
-                </th:block> 
+                </th:block>  -->
 
-                <!-- <div class="boardImg">
+                <div class="boardImg">
                     <label for="img1">
                         <img class="preview">
                     </label>
@@ -92,7 +92,7 @@
                     </label>
                     <input type="file" name="images" class="inputImage" id="img5" accept="image/*">
                     <span class="delete-image">&times;</span>
-                </div> -->
+                </div>
 
 
             </div>
@@ -143,7 +143,9 @@
         console.log(img);
     }
  
-   
+const start = /*[[${start}]]*/ "das";
+
+   console.log(start);
    
 
     
