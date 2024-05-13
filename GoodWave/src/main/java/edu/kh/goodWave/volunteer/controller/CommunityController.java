@@ -152,6 +152,15 @@ public class CommunityController {
 	
 	
 	
+	// 목록으로
+	
+//		@GetMapping("{boardNo:[0-9]+}")
+//		public String listGo(
+//				@RequestParam("cp") int cp,
+//				@PathVariable("boardNo") int boardNo
+//				) {
+//			return "board/" + boardNo + "cp=" + cp;
+//		}
 	
 	
 	

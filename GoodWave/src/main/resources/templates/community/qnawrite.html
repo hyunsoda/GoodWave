@@ -33,53 +33,82 @@
         제목<input type="text" placeholder="제목을 입력하세요" name="boardTitle" id="boardTitle">
         </div>
         <!--제목-->
-
         <!--내용-->
         <div class="content">
             내용<textarea placeholder="내용을 입력하세요." name="boardContent" id="boardContent"></textarea>
         </div>
         <!--내용-->
     </div>
+     <div></div>
+    <div style="width: 82%;
+    height: 1px;
+    border: 1px solid darkgrey;
+    /* margin: auto; */
+    /* margin: 0 auto; */
+    margin-left: 54px;
+    margin-top: 35px;"></div>
+    <div></div>
 
+    <div style="margin-left: 58px;
+    position: relative;
+    top: 20px;">
+        <h3 style="font-size:20px;margin-bottom:10px;">* 파일 첨부</h3>
+        <p style="color:grey;">10MB 이하의 jpg, png 파일</p>
+        <p style="color:grey;">3개까지 업로드 가능합니다</p>
+    </div>
 
-       <div class="boardImg">
-                    <label for="img1">
-                        <img class="preview">
-                    </label>
-                    <input type="file" name="images" class="inputImage" id="img1" accept="image/*">
-                    <span class="delete-image">&times;</span>
-                </div>
+    <div style="display: flex;
+    column-gap: 20px;
+    margin-left: 110px;
+    margin-top: 50px;">
 
-                <div class="boardImg">
-                    <label for="img2">
-                        <img class="preview">
-                    </label>
-                    <input type="file" name="images" class="inputImage" id="img2" accept="image/*">
-                    <span class="delete-image">&times;</span>
-                </div>
+        <div class="boardImg">
+            <img src="/images/imageimage.png" alt="" class="label_img">
+            <label for="img1">
+                <img class="preview">
+            </label>
+            <input type="file" name="images" class="inputImage" id="img1" accept="image/*">
+            <span class="delete-image">&times;</span>
+        </div>
 
-                <div class="boardImg">
-                    <label for="img3">
-                        <img class="preview">
-                    </label>
-                    <input type="file" name="images" class="inputImage" id="img3" accept="image/*">
-                    <span class="delete-image">&times;</span>
-                </div>
+        <div class="boardImg">
+            <img src="/images/imageimage.png" alt="" class="label_img">
+            <label for="img2">
+                <img class="preview">
+            </label>
+            <input type="file" name="images" class="inputImage" id="img2" accept="image/*">
+            <span class="delete-image">&times;</span>
+        </div>
 
-                <div class="boardImg">
-                    <label for="img4">
-                        <img class="preview">
-                    </label>
-                    <input type="file" name="images" class="inputImage" id="img4" accept="image/*">
-                    <span class="delete-image">&times;</span>
-                </div>
-                <div class="boardImg">
-                    <label for="img5">
-                        <img class="preview">
-                    </label>
-                    <input type="file" name="images" class="inputImage" id="img5" accept="image/*">
-                    <span class="delete-image">&times;</span>
-                </div>
+        <div class="boardImg">
+            <img src="/images/imageimage.png" alt="" class="label_img">
+            <label for="img3">
+                <img class="preview">
+            </label>
+            <input type="file" name="images" class="inputImage" id="img3" accept="image/*">
+            <span class="delete-image">&times;</span>
+        </div>
+
+        <!-- <div class="boardImg">
+            <img src="/images/imageimage.png" alt="" class="label_img">
+            <label for="img4">
+                <img class="preview">
+            </label>
+            <input type="file" name="images" class="inputImage" id="img4" accept="image/*">
+            <span class="delete-image">&times;</span>
+        </div>
+        <div class="boardImg">
+            <img src="/images/imageimage.png" alt="" class="label_img">
+            <label for="img5">
+                <img class="preview">
+            </label>
+            <input type="file" name="images" class="inputImage" id="img5" accept="image/*">
+            <span class="delete-image">&times;</span>
+        </div> -->
+
+    </div>
+
+      
 
 
         <!-- 버튼 영역 -->

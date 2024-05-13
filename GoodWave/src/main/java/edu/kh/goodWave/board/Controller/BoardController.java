@@ -34,6 +34,9 @@ public class BoardController {
 	
 	private final BoardService service;
 	
+	
+	
+	
 	// 게시글 상세조회 
 	@GetMapping("{boardNo:[0-9]+}")
 	public String boardDetail(
