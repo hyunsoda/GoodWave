@@ -87,6 +87,8 @@ h2{
     justify-content: center;
     height: 400px;
     align-items: center;
+    margin: auto;
+    margin-top: -80px;
 }
 
 .signUpComplete > h1{
@@ -103,15 +105,19 @@ h2{
     height: 40px;
     width: 330px;
     font-size: 20px;
-    background-color: grey;
+
     cursor: pointer;
     text-align: center;
-    border: 0.3px solid black;
+    
     justify-content: center;
     padding-top: 5px;
     text-decoration: none;
-    color: black;
+    background-color: #B0DBEF;
 }
+
+#finishBtn:hover {
+    background:#7ABEDD;
+  }
 
 .checkField{
     display:flex;
@@ -174,4 +180,12 @@ h2{
 .error{
     color: red;
     font-size: 20px;
+}
+
+#sicon{
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    margin-top: 50px;
+
 }

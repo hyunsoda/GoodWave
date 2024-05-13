@@ -29,15 +29,15 @@
     margin: 10rem auto;
 
 
-    font-size: 2rem;
+    font-size: 40px;
     text-align: center;
    
   }
 
   .sub-title{
     color: #666666;
-    margin: 2rem auto;
-    margin-top: -20px;
+    margin: auto;
+    margin-top: -140px;
     font-size: 20px;
     text-align: center;
   }
@@ -48,7 +48,8 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    margin: 0 auto;
+    margin:auto;
+    margin-top: 60px;
     padding: 0;
     list-style: none;
   }
