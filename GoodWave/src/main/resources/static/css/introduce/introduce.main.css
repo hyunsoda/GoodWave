@@ -160,9 +160,9 @@
  }
 
  .donation_124213{
-    color:black
-;
-border-color:black }
+    color:black;
+    border: 2px solid #717171;
+    border-color: #717171 }
 
  .introduce_history_wrap_box2{
     box-shadow: 7px 5px 8px 1px #bdbdbd;

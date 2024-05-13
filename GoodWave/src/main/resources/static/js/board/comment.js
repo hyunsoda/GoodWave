@@ -18,7 +18,7 @@ const selectCommentList = ()=> {
             commentRow.classList.add("child-comment");
     
             if(comment.commentDelFl == 'Y')
-                comment.innerText = "삭제된 댓글 입니다.";
+              commentRow.innerText = "삭제된 댓글 입니다.";
     
             else {
                 const commentWriter = document.createElement("p");
@@ -104,9 +104,9 @@ const selectCommentList = ()=> {
 
 
 
-selectCommentList();
+ selectCommentList();
 
-const board_sujeong_btn = document.querySelector("#board_sujeong_btn");
+ const board_sujeong_btn = document.querySelector("#board_sujeong_btn");
 
 
 

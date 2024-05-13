@@ -85,7 +85,7 @@
 
              <!--게시판  --> 
         </section>
-          <!--게시판  -->
+
           <th:block th:if="${session.loginMember != null && session.loginMember.memberNo == board.memberNo}">
        <div class="board_btns" style="display:flex;justify-content: flex-end;">
         <button id="board_sujeong_btn" class="editbtn">게시글 삭제</button>
@@ -99,6 +99,9 @@
           
       </th:block>
      
+
+
+
 
  
            

@@ -163,7 +163,7 @@
   
   .donate{
   position: relative;
-  left: 65px;
+  left: 55px;
   top: 30px;
   line-height: 40px;
   border: none;
@@ -182,6 +182,7 @@
 
 
   .apply-list{
+
     background-color: white;
     position: absolute;
     top: 525px;
@@ -210,11 +211,14 @@
   margin-top: 30%;
   text-align: center;
   }
+
   .apply{
+    
     position: relative;
-    left: 30px;
+    left: 45px;
     top: 30px;
     line-height: 35px;
+ 
     border: none;
     color: gray;
     font-size: large;
