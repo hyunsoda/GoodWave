@@ -170,7 +170,7 @@ public class BoardController {
 				
 				
 				
-				if(board.getImageList().get(0).getImgOrder() == 0) {
+				if(board.getImageList().get(0).getImgOrder() == 1) {
 					thumbnail = board.getImageList().get(0);
 					
 					model.addAttribute("thumbnail", thumbnail);

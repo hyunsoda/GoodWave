@@ -77,15 +77,15 @@
             </div> -->
         <!-- </th:block>                                       -->
          
-
-</th:block>
-       
-</th:block>
 <!-- 이미지 -->
 
 
+
 <th:block th:if="${session.loginMember != null and session.loginMember.memberNo == board.memberNo}">
+    
     <button id="board_sujeong_btn" class="editbtn">게시글 삭제</button>
+
+
     <a th:href="@{/editBoard/{boardNo}(boardNo=${board.boardNo} , cp=${cp}) }">
         <button id="board_delete_btn" class="editbtn">게시글 수정</button>
     </a>
@@ -122,10 +122,17 @@
         // 현재 게시글 번호를 전역 변수로 저장
         const boardNo = /*[[${board.boardNo}]]*/ "게시글 번호";
 
+        const cp = /*[[${cp}]]*/ "cp";
+
     </script>
 
 
     <th:block th:replace="~{/common/footer}"></th:block>
-    <script src="/js/board/comment.js"></script>
+    <script src="/js/board/comment.js">
+ 
+    
+
+    </script>
+
 </body>
 </html>
