@@ -79,8 +79,12 @@ h2{
     font-size: 20px;
     margin-bottom: 20px;
     border-radius: 15px;
-    background-color: #7ABEDD;
+    background-color: #B0DBEF;
     border: transparent;
+}
+
+#submitBtn:hover{
+    background: #7ABEDD;
 }
 
 .a{
@@ -97,16 +101,18 @@ h2{
     
     height: 600px;
 
-    background-image: url("/images/logo.png");
+    background-image: url("/images/logo3.png");
     background-repeat: no-repeat;
     background-size: 350px;
     background-position: center;
-    background-blend-mode:soft-light;
-    backdrop-filter: blur(10px);
+   
+    margin: auto;
+    margin-top: 150px;
+
 }
 
 #complete > div{
-    backdrop-filter: blur(15px);
+
     height: 450px;
     display: flex;
     flex-direction: column;
@@ -133,6 +139,8 @@ h2{
 }
 
 #y{
+    margin: auto;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -151,4 +159,16 @@ h2{
 #z{
     flex-basis: 5%;
     font-size: 25px;
+    background-color: #B0DBEF;
+    border-radius: 5px;
+    width: 300px;
+
+    text-align: center;
 }
+
+
+  #z:hover {
+    background:#7ABEDD;
+  }
+  
+  

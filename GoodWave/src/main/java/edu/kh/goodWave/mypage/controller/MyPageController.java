@@ -1,9 +1,11 @@
 package edu.kh.goodWave.mypage.controller;
 
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -56,9 +58,9 @@ public class MyPageController {
 					// 05831^^^서울 송파구 동남로 99^^^201호^^^
 					// ->["05831" , "서울 송파구 동남로 99","201호"]
 					// [0] [1] [2]
-					model.addAttribute("postcode", arr[0]);
-					model.addAttribute("address", arr[1]);
-					model.addAttribute("detailAddress", arr[2]);
+					//model.addAttribute("postcode", arr[0]);
+					//model.addAttribute("address", arr[1]);
+					//model.addAttribute("detailAddress", arr[2]);
 					
 			}
 
@@ -237,7 +239,11 @@ public class MyPageController {
 	@ResponseBody
 	@PostMapping("applyCancle")
 	public int cancle(@RequestBody Volunteer volunteer, 
-					@SessionAttribute("loginMember") Member loginMember) {
+					@SessionAttribute("loginMember") Member loginMember,
+					@DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
+		
+		String  applyCancleDate = date.toString();
+		
 		log.info("volunteerNo : " + volunteer.getVolunteerNo());
 		
 		volunteer.setMemberNo(loginMember.getMemberNo());

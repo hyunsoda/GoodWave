@@ -289,10 +289,10 @@ border-color:black }
     .purpose_p{
 
         text-align: center;
-        margin-top: 90px;
+        margin-top: 100px;
         font-size: 37px;
         /* margin-left: 30px; */
-        margin: 30px auto;
+        margin: 50px auto;
         font-weight: 700;
         letter-spacing: 10px;
     }
@@ -350,4 +350,22 @@ border-color:black }
     }
 
 
-
+    .core_font_h2{
+        color: white;
+        margin: auto;
+        margin-left: 1400px;
+       bottom: 800px;
+       font-size: 100px;
+    }
+    .core_font_span{
+        margin: auto;
+        margin-bottom: 1000px;
+        margin-left: 1470px;
+        font-size: 50px;
+    }
+    .core_font_box{
+        
+        position: relative;
+       top: -200px;
+       
+    }

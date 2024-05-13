@@ -24,6 +24,7 @@ img{
 .story_first_img_div{
     overflow: hidden;
 }
+
 .story_first_img_div_img{
     transition: 0.1s linear;
 }
@@ -179,7 +180,7 @@ img{
 }
 
 .stack_up_box{
-    margin-top: 70px;
+    margin-top: 40px;
     background-color: #e0ebf5;
     width: 100%;
     height:500px;
@@ -188,6 +189,7 @@ img{
 }
 
 .stack_up_flex_box{
+
     display: flex;
     column-gap: 25px;
     /* width: 660px; */
@@ -198,6 +200,7 @@ img{
 }
 
 .good_wave_story_box{
+    background-color: white;
 
     text-align: center;
     width: 250px;
@@ -263,7 +266,7 @@ img{
     display: grid;
     column-gap: 35px;
     grid-template-columns: 139px 223px;
-    margin-top: 25px;
+    margin-top: 80px;
 }
 
 .stick_img > img{
@@ -358,19 +361,20 @@ img{
 
 
 .blur_img {
-   
+   width: 100%;
     height:100%;
 }
 
 
-
-
-    .volunteer_box_1_font{
+ .volunteer_box_1_font{
         position: relative;
         bottom: 520px;
         color: white;
         left: 340px;
-    }
+}
+
+
+
  /* .blur_img::before{
     content: '';
     position: absolute;
@@ -381,8 +385,6 @@ img{
     background-color: rgba(0, 0, 0, 0.5);
     filter: blur(20px);
 }  */
-
-
 
 
 
@@ -457,10 +459,14 @@ img{
     width: 70%;
     height: 60%;
     /* margin: 7px auto; */
-    margin: 7px 8px;
+    margin: 10px 10px;
 }
 
-
+.give_box_p{
+    margin: auto;
+    margin-top: -8px;
+    font-weight: normal;
+}
 
 
     #volunteer_a{
@@ -490,7 +496,7 @@ img{
    }
 
    #gongji_grid_box > div{
-    border: 1px solid black;
+    border: 2px solid rgba(0, 0, 0, 0.728);
     /* text-align: center; */
     border-radius: 10px;
     cursor: pointer;
@@ -542,9 +548,11 @@ img{
     }
  
     .gongi_div_p{
-        float: right;
+    font-weight: bold;
+    color: #63A3D0;
+    float: right;
     position: relative;
-    bottom: 50px;
+    bottom: 35px;
     font-size: 30px;
     opacity: 0;
     transform: translateY(100px);
@@ -562,6 +570,10 @@ img{
         bottom: 9px;
       
 
+}
+
+.history_flex_p{
+    font-weight: bold;
 }
 
 .histroy_wrap_box_flex_box{

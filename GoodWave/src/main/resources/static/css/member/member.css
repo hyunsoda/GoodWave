@@ -138,14 +138,19 @@ a{
 
 
 button{
+
     background-color: transparent;
     width: 350px;
     height: 40px;
     margin-top: 10px;
     font-size: 20px;
     border: transparent;
-    background-color:  rgb(147 175 196);;
+    background-color:  #B0DBEF ;
     /* background color는 우리 색 맞춰서 바꾸자~ */
     cursor: pointer;
 }
 
+button:hover {
+    background: #7ABEDD;
+  }
+  
