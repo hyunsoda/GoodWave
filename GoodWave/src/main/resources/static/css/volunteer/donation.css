@@ -119,6 +119,7 @@ h2{
 }
 
 #x{
+
     display: flex;
     text-align: center;
     justify-content: center;
@@ -128,8 +129,9 @@ h2{
 }
 
 #x > div{
+
     display: flex;
-    width: 100px;
+    width: 200px;
     height: 1.5px;
     background-color: #4C8DC3;
     justify-content: center;
@@ -171,4 +173,5 @@ h2{
     background:#7ABEDD;
   }
   
-  
+
+ 
