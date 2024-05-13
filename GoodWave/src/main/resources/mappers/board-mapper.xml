@@ -44,13 +44,21 @@ ORDER BY BOARD_NO DESC
    
 	
 	
-	<insert id="qnaWrite">
-		INSERT INTO "QNABOARD"
-		VALUES(SEQ_BOARD_NUM.NEXTVAL,
-					 #{boardTitle},
-					 #{boardContent},
-					 SYSDATE, DEFAULT, DEFAULT, DEFAULT,#{memberNo})
-	</insert>
+	<insert id="qnaWrite" useGeneratedKeys="true" parameterType="Board">
+
+<selectKey order="BEFORE" resultType="_int" keyProperty="boardNo">
+	SELECT SEQ_BOARD_NUM.NEXTVAL FROM DUAL
+</selectKey>
+
+
+INSERT INTO "QNABOARD"
+VALUES(${boardNo},
+	    #{boardTitle},
+	    #{boardContent},
+	    SYSDATE, DEFAULT, DEFAULT, DEFAULT,
+	    ${memberNo})
+
+</insert>
 	
 	
 	
@@ -189,6 +197,25 @@ WHERE BOARD_NO = #{boardNo}
 	
 	
 	
+	<insert id="insertUploadList" parameterType="list">
+			INSERT INTO BOARD_IMG
+			
+			<foreach collection="list" item="img"
+				open="(" close=")" separator=" UNION "
+			>
+			
+			 SELECT NEXT_IMG_NO(),
+  			   #{img.imgPath}, 
+   			   #{img.imgOriginalName},
+   		    	 #{img.imgRename}, 
+  			  #{img.imgOrder},
+  			  #{img.boardNo}
+  			  FROM 
+   		    	 DUAL 
+			
+			</foreach>
+				
+	</insert>
 
 	
 </mapper>

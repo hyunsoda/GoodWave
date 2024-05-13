@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.session.RowBounds;
 
 import edu.kh.goodWave.board.model.dto.Board;
-
+import edu.kh.goodWave.board.model.dto.BoardImg;
 import edu.kh.goodWave.board.model.dto.Board;
 
 @Mapper
@@ -54,6 +54,9 @@ public interface BoardMapper {
 	 * @return
 	 */
 	List<Board> selectSearchList(String searchInput, RowBounds rowBounds);
+
+
+	int insertUploadList(List<BoardImg> uploadLList);
 
 
 

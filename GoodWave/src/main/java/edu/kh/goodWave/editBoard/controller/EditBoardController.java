@@ -149,7 +149,8 @@ public class EditBoardController {
 		model.addAttribute("board",board);
 		model.addAttribute("message", message);
 		model.addAttribute("start", 0);
-		model.addAttribute("cp", cp);		log.debug("image : " + board.getImageList());
+		model.addAttribute("cp", cp);		
+		log.debug("image : " + board.getImageList());
 		
 		return path;
 	}

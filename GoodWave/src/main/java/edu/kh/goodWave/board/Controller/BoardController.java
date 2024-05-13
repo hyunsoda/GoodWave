@@ -162,7 +162,7 @@ public class BoardController {
 				
 				
 				
-				BoardImg thumbnail = null;
+//				BoardImg thumbnail = null;
 				
 				// imageList 의 0번 인덱스 == 가장 빠른 순서 (imgOrder)
 				
@@ -170,18 +170,24 @@ public class BoardController {
 				
 				
 				
-//				if(board.getImageList().get(0).getImgOrder() == 1) {
-//					thumbnail = board.getImageList().get(0);
-//					
-//					model.addAttribute("thumbnail", thumbnail);
-//					
-//				}
-				model.addAttribute("start", 0);
+
+
+
+					
+
+					model.addAttribute("start", 0);
+				
+
+
+				
+
+
 				
 			}
+
 			
 			
-//			model.addAttribute("board", board);
+
 		}
 	
 		model.addAttribute("cp",cp);
