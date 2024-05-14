@@ -165,7 +165,7 @@ WHERE BOARD_NO = #{boardNo}
 	
 	
 	<select id="selectSearchList">
-		SELECT BOARD_NO, BOARD_TITLE, MEMBER_NAME, READ_COUNT,
+		SELECT ROWNUM,BOARD_NO, BOARD_TITLE, MEMBER_NAME, READ_COUNT,
 	
 		(SELECT COUNT(*) 
 		FROM "COMMENT" C
@@ -192,7 +192,7 @@ WHERE BOARD_NO = #{boardNo}
 		WHERE BOARD_DEL_FL = 'N'
 		AND (BOARD_TITLE LIKE '%' || #{searchInput} || '%'
 		OR BOARD_CONTENT LIKE '%' || #{searchInput} || '%')
-		ORDER BY BOARD_NO DESC
+		ORDER BY ROWNUM DESC
 	</select>
 	
 	
