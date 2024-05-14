@@ -58,18 +58,18 @@ public class MyPageController {
 																		// regex->정규표현식을 전달해야함
 
 					
-					if(arr.length > 2) {
+//					if(arr.length > 2) {
 						model.addAttribute("postcode", arr[0]);
 						model.addAttribute("address", arr[1]);
 						model.addAttribute("detailAddress", arr[2]);
-					}
+//					}
 					
 					
 					// 05831^^^서울 송파구 동남로 99^^^201호^^^
 					// ->["05831" , "서울 송파구 동남로 99","201호"]
 					// [0] [1] [2]
-					model.addAttribute("postcode", arr[0]);
-					model.addAttribute("address", arr[1]);
+//					model.addAttribute("postcode", arr[0]);
+//					model.addAttribute("address", arr[1]);
 					
 					//model.addAttribute("detailAddress", arr[2]);
 					
@@ -144,7 +144,7 @@ public class MyPageController {
 
 		ra.addFlashAttribute("message", message);
 
-		return "redirect:mypage";
+		return "redirect:/mypage";
 		
 	}
 	
@@ -218,7 +218,7 @@ public class MyPageController {
 
 		ra.addFlashAttribute("message", message);
 
-		return "redirect:" + path;
+		return "redirect:/" + path;
 	}
 
 	@ResponseBody

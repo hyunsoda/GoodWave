@@ -39,6 +39,7 @@ public class MemberServiceImpl implements MemberService{
 		
 
 		// String bcryptPassword = bcrypt.encode(loginMember.getMemberPw());
+		
 		 log.debug("loginMember : " + loginMember);
 		 //log.debug("패스워드 : " + loginMember.getMemberPw());
 		
@@ -193,6 +194,14 @@ public class MemberServiceImpl implements MemberService{
 	       }
 	       return key;
 	   }
+
+
+
+
+	@Override
+	public int checkMemberId(String memberId) {
+		return mapper.checkMemberId(memberId);
+	}
 
 
 }

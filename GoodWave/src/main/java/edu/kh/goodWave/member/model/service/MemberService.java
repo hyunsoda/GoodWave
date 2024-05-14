@@ -41,4 +41,7 @@ public interface MemberService {
 	String pwSearch(Map<String, String> paramMap);
 
 
+	int checkMemberId(String memberId);
+
+
 }

@@ -11,19 +11,19 @@
 	<!--연탄 봉사-->
 	<insert id="yeontan">
 		INSERT INTO VOLUNTEERLIST
-		VALUES(#{memberNo}, 1, #{date2}, #{yeontanName},#{yeontanTel},DEFAULT)
+		VALUES(#{memberNo}, 1, #{date2}, #{yeontanName},#{yeontanTel},DEFAULT,SEQ_VOLUNTEERLIST_ORDER_NO.NEXTVAL)
 	</insert>
 
 	<!--자택방문 봉사-->
 	<insert id="visit">
 		INSERT INTO VOLUNTEERLIST
-		VALUES(#{memberNo}, 3, #{date2}, #{visitName},#{visitTel},DEFAULT)
+		VALUES(#{memberNo}, 3, #{date2}, #{visitName},#{visitTel},DEFAULT,SEQ_VOLUNTEERLIST_ORDER_NO.NEXTVAL)
 	</insert>
 	
 	<!--재능기부 봉사-->
 	<insert id="talent">
 		INSERT INTO VOLUNTEERLIST
-		VALUES(#{memberNo}, 2, #{date2}, #{talentDonationName}, #{talentDonationTel},#{talentDonationField})
+		VALUES(#{memberNo}, 2, #{date2}, #{talentDonationName}, #{talentDonationTel},#{talentDonationField},SEQ_VOLUNTEERLIST_ORDER_NO.NEXTVAL)
 	</insert>
 	
 	<select id="check">
