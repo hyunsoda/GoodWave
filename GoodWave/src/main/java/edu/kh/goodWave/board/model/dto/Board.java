@@ -27,7 +27,7 @@ public class Board {
 	private int readCount;
 	private String boardDelFl;
 	private int memberNo;
-	
+	private int rowNum;
 	private String memberName;
 	
 	

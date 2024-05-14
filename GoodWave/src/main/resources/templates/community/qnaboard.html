@@ -66,7 +66,7 @@
                 <th:block th:unless="${#lists.isEmpty(boardList)}">
                         <tr th:each="board : ${boardList}" th:object="${board}" id="abc">
                             <!-- 번호 -->
-                            <td th:text="*{boardNo}" style=" position: relative;
+                            <td th:text="*{rowNum}" style=" position: relative;
                             left: 57px;">게시글번호</td>
                             <!-- 번호 -->
 
