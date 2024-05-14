@@ -27,6 +27,17 @@
     box-shadow: inset 3px 3px 10px #e6e6e6;
     
 }
+.boardImg{
+    position: relative;
+    top: 102px;
+    width: 20%;
+    z-index: -100;
+    margin: -20px auto;
+    height: 77%;
+
+}
+
+
 
 .board-content{
     display: flex;
@@ -67,10 +78,14 @@
     display: flex;
     width: 840px;
     position: relative;
-    top: 20px;
-    left: 40px;
+    /* top: 40px; */
+    /* height: 300px; */
+    bottom: 70px;
+    left: -33px;
     margin-bottom: 10px;
+    height: 139px;
     column-gap: 15px;
+    z-index: 200;
  
    
 }
@@ -79,13 +94,44 @@
     width:200px;
     height:200px;
 }
-
-.boardImg{
-    width:200px;
+.delete-image{
+    float: right;
 }
 
-label{
-    display: block;
-    height: 200px;
+.boardImg{
     width: 200px;
+    /* background-color: #7ABEDD; */
+    height: 50px;
+}
+
+
+
+form input::file-selector-button {
+    display: none;
+  }
+
+.qnawrite-content{
+
+padding: 20px;
+}
+
+label {
+cursor: pointer;
+/* Style as you please, it will become the visible UI component. */
+}
+
+.inputImage {
+opacity: 0;
+position: absolute;
+z-index: -1;
+}
+
+
+.label_img{
+    position: relative;
+    top: 102px;
+    width: 25%;
+    z-index: -100;
+    margin: -20px auto;
+    height: 84%;
 }

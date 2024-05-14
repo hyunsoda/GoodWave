@@ -174,3 +174,7 @@ boardUpdateFrm.addEventListener("submit", e => {
   // 현재 페이지에서 얻어온 querystring을 input 태그 hidden 타입에 value 값으로 대입하기
   document.querySelector("[name='querystring']").value = location.search;
 });
+
+const list_list = document.querySelector("#list_list").addEventListener("click", function(){
+    location.href = location.pathname.replace("editBoard","board") + location.search;
+})

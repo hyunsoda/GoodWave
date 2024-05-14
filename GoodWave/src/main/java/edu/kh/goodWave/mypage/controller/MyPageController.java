@@ -58,9 +58,9 @@ public class MyPageController {
 					// 05831^^^서울 송파구 동남로 99^^^201호^^^
 					// ->["05831" , "서울 송파구 동남로 99","201호"]
 					// [0] [1] [2]
-					//model.addAttribute("postcode", arr[0]);
-					//model.addAttribute("address", arr[1]);
-					//model.addAttribute("detailAddress", arr[2]);
+					model.addAttribute("postcode", arr[0]);
+					model.addAttribute("address", arr[1]);
+					model.addAttribute("detailAddress", arr[2]);
 					
 			}
 

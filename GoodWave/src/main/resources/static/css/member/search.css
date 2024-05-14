@@ -166,7 +166,9 @@
 /* ******** */
 
 #searchIdTitle2{
-    font-size: 25px;
+    font-size:30px;
+    margin: auto;
+    margin-top: 50px;
 }
 
 #y > h2{
@@ -183,7 +185,7 @@
 
 }
 
-#x1 > div{
+/* #x1 > div{
     display: flex;
     width: 80px;
     height: 1.5px;
@@ -193,7 +195,7 @@
     margin-top: 20px;
     flex-basis: 30%;
 
-}
+} */
 
 #y2 {
     color: rgba(0, 0, 0, 0.843);
@@ -205,5 +207,8 @@
     text-align: center;
     flex-basis: 65%;
     font-size: 17px;
+
+    margin: auto;
+    margin-top: -10px;
     
 }

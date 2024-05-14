@@ -384,7 +384,7 @@
   width: 35%; 
   margin: auto; 
   margin-top: 120px;
-  margin-left: 70px;
+  margin-left: 80px;
 
 }
 
@@ -395,7 +395,7 @@
    color: gray; 
    margin: auto; 
    margin-top: 10px;
-   margin-left: -125px;
+   margin-left: -110px;
 
 }
 
@@ -423,5 +423,6 @@
     color: gray; 
     margin: auto; 
     margin-top: 10px;
+    margin-left: 5px;
   }
  /* ************************************************************************* */ 
