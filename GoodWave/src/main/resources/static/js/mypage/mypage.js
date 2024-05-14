@@ -308,8 +308,6 @@ const applyCancle = orderNo => {
      
                           
       } )
-
-    })
     .then( resp => resp.text() )
     .then( result => {
   
