@@ -37,9 +37,10 @@ public class MemberServiceImpl implements MemberService{
 
 		Member loginMember = mapper.login(inputMember.getMemberId());
 		
-		
-		 String bcryptPassword = bcrypt.encode(loginMember.getMemberPw());
-//		 log.debug("bcryptPassword : " + "abcdef");
+
+		// String bcryptPassword = bcrypt.encode(loginMember.getMemberPw());
+		 log.debug("loginMember : " + loginMember);
+		 //log.debug("패스워드 : " + loginMember.getMemberPw());
 		
 //		 boolean result = bcrypt.matches(inputMember.getMemberPw(), bcryptPassword);
 //		 log.debug("result : " + result);
@@ -48,7 +49,6 @@ public class MemberServiceImpl implements MemberService{
 		if(loginMember == null) return null;
 		
 
-		
 		if(!bcrypt.matches(inputMember.getMemberPw(), loginMember.getMemberPw())) {
 			return null;
 		}
@@ -56,7 +56,6 @@ public class MemberServiceImpl implements MemberService{
 		
 		
 		loginMember.setMemberPw(null);
-		
 		
 		
 		return loginMember;
