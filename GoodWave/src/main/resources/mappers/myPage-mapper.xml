@@ -36,7 +36,7 @@
 	<!-- 회원 봉사신청내역 -->
 	<select id="applyList" resultType="Volunteer">
 		SELECT ACT_NAME, TO_CHAR(REGISTRY_DATE,'YYYY-MM-DD') REGISTRY_DATE, 
-		VOLUNTEER_NO, FIELD, ORDER_NO FROM VOLUNTEERLIST 
+		VOLUNTEER_NO, FIELD FROM VOLUNTEERLIST 
 		LEFT JOIN ACTIVITY ON (ACT_NO = VOLUNTEER_NO)
 		WHERE MEMBER_NO = #{memberNo}
 		ORDER BY REGISTRY_DATE ASC
@@ -52,7 +52,7 @@
 	<!-- 신청활동 취소 -->
 	<delete id="cancle">
 	 	DELETE FROM "VOLUNTEERLIST" 
-		WHERE  ORDER_NO= #{orderNo}
+		WHERE VOLUNTEER_NO = #{volunteerNo}
 		AND MEMBER_NO = #{memberNo}
  	</delete>
  
