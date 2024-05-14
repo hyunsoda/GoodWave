@@ -302,7 +302,13 @@ const applyCancle = orderNo => {
     fetch("/mypage/applyCancle ",{
       method : "POST",
       headers : {"Content-Type" : "application/json"},
+
       body : JSON.stringify({"orderNo" : orderNo} )
+
+     
+                          
+      } )
+
     })
     .then( resp => resp.text() )
     .then( result => {

@@ -254,6 +254,7 @@ public class MyPageController {
 	@PostMapping("applyCancle")
 	public int cancle(@RequestBody Volunteer volunteer, 
 					@SessionAttribute("loginMember") Member loginMember
+					
 ) {
 		
 		
@@ -262,6 +263,8 @@ public class MyPageController {
 //		String  applyCancleDate = date.toString();
 		
 		log.info("volunteerNo : " + volunteer.getVolunteerNo());
+		
+		log.info("registryDate : " + volunteer.getActDate());
 		
 		volunteer.setMemberNo(loginMember.getMemberNo());
 		

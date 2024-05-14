@@ -6,14 +6,14 @@ const a = document.querySelector("#a");
 
 registerBtn.addEventListener("click", ()=> {
 
-    // if(loginMember != null){
+    if(loginMember != null){
         popupLayer.classList.remove("popup-hidden");
         a.classList.add("dark");
-    // }
-    // if(loginMember == null){
-    //     alert("로그인 후 이용해 주세요");
-    //     location.href="/member/login";
-    // }
+    }
+    if(loginMember == null){
+        alert("로그인 후 이용해 주세요");
+        location.href="/member/login";
+    }
 
 });
 
