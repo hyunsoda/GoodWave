@@ -214,6 +214,14 @@ public class MemberController {
 		return "redirect:/member/pwSearch";
 		
 	}
+	
+	@ResponseBody
+	@GetMapping("checkMemberId")
+	public int checkMemberId(
+			@RequestParam("memberId") String memberId
+			) {
+		return service.checkMemberId(memberId);
+	}
 
 
 	

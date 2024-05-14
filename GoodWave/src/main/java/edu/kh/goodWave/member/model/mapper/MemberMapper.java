@@ -53,5 +53,8 @@ public interface MemberMapper {
 	int updateRandomPw(Map<String, String> paramMap);
 
 
+	int checkMemberId(String memberId);
+
+
 	
 }

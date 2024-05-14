@@ -38,7 +38,7 @@ submitBtn.addEventListener("click",()=> {
 
 
 
-
+const checkId = document.querySelector("#checkId");
 const emailCheckSpan = document.querySelector("#emailCheckSpan");
 const emailcheckbtn = document.querySelector("#emailcheckbtn");
 const checkAll = document.querySelector('.checkbox_all .all');
@@ -314,7 +314,7 @@ tel.addEventListener("input", ()=> {
 })
 
 
-id.addEventListener("input", ()=>{
+id.addEventListener("input", (e)=>{
 
     if(id.value.trim().length===0){
         idSpan.classList.remove("confirm");
@@ -336,6 +336,28 @@ id.addEventListener("input", ()=>{
     idSpan.classList.remove("error");
     idSpan.classList.add("confirm");
     checkobj.id=true;
+
+
+    fetch("/member/checkMemberId?memberId=" + e.target.value)
+    .then(response => {
+          return response.text();
+    }).then(result => {
+
+        checkId.innerText = ""
+        
+
+        if(result == 1){
+            checkId.innerText = "중복된 아이디가 있습니다";
+            checkId.classList.remove("confirm");
+            checkId.classList.add("error");
+            idSpan.classList.remove("confirm");
+            idSpan.classList.add("error");
+            checkobj.id=false;
+            return;
+        }
+
+
+    })
 
 
 })

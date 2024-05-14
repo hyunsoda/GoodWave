@@ -34,7 +34,7 @@ public class Volunteer {
 	private String memberName;
 	private String memberTel;
 	private String field;
-	
+	private int orderNo;
 	
 	private String actName;
 	

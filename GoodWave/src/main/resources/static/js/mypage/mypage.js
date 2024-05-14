@@ -242,7 +242,7 @@ const createTd2 = (text) => {
 
             const button= document.createElement("button");
             button.classList.add("cancle-btn");
-            button.id = item.volunteerNo;
+            button.id = item.orderNo;
             button.innerText = "취소" ;
 
 
@@ -292,9 +292,9 @@ applyList.addEventListener("click", ()=> {
 
 
  /** 신청 취소
- * @param {*} volunteerNo
+ * @param {*} orderNo
  */
-const applyCancle = volunteerNo => {
+const applyCancle = orderNo => {
 
     // 취소 선택 시
     if(!confirm("취소 하시겠습니까?")) return;
@@ -302,7 +302,7 @@ const applyCancle = volunteerNo => {
     fetch("/mypage/applyCancle ",{
       method : "POST",
       headers : {"Content-Type" : "application/json"},
-      body : JSON.stringify({"volunteerNo" : volunteerNo} )
+      body : JSON.stringify({"orderNo" : orderNo} )
     })
     .then( resp => resp.text() )
     .then( result => {
