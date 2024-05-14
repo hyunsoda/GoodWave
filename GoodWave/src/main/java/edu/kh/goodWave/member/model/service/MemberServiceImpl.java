@@ -38,13 +38,7 @@ public class MemberServiceImpl implements MemberService{
 		Member loginMember = mapper.login(inputMember.getMemberId());
 		
 
-		// String bcryptPassword = bcrypt.encode(loginMember.getMemberPw());
-		
-		 log.debug("loginMember : " + loginMember);
-		 //log.debug("패스워드 : " + loginMember.getMemberPw());
-		
-//		 boolean result = bcrypt.matches(inputMember.getMemberPw(), bcryptPassword);
-//		 log.debug("result : " + result);
+//		 String bcryptPassword = bcrypt.encode(loginMember.getMemberPw());
 		
 		
 		if(loginMember == null) return null;
