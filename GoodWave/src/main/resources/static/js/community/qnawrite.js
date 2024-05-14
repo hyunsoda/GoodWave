@@ -130,7 +130,7 @@ for(let i=0 ; i<inputImageList.length ; i++){
 
 
 // 작성 폼 유효성 검사
-document.querySelector("#boardWriteFrm")
+document.querySelector("#qnaWriteForm")
   .addEventListener("submit", e => {
 
   const boardTitle = document.querySelector("[name='boardTitle']");
@@ -153,41 +153,39 @@ document.querySelector("#boardWriteFrm")
 });
 
 
-const boardTitle = document.getElementById("boardTitle");
-const boardContent = document.getElementById("boardContent");
+// const boardTitle = document.getElementById("boardTitle");
+// const boardContent = document.getElementById("boardContent");
 
-const checkobj = {
-    "boardTitle" : false,
-    "boardContent" : false
-};
+// const checkobj = {
+//     "boardTitle" : false,
+//     "boardContent" : false
+// };
 
-boardTitle.addEventListener("input",(e)=> {
+// boardTitle.addEventListener("input",(e)=> {
 
-    const inputTitle = e.target.value;
 
-    if(inputTitle.trim().length === 0){
-        checkobj.boardTitle = false;
-        boardTitle.value = "";
-        return;
-    }
+//     if(boardTitle.value.trim().length == 0){
+//         checkobj.boardTitle = false;
+//         boardTitle.value = "";
+//         return;
+//     }
 
-    checkobj.boardTitle = true;
+//     checkobj.boardTitle = true;
     
-});
+// });
 
 
-boardContent.addEventListener("input",(e)=> {
+// boardContent.addEventListener("input",(e)=> {
 
-    const inputContent = e.target.value;
 
-    if(inputContent.trim().length <3){
-        checkobj.boardContent = false;
+//     if(boardContent.value.trim().length <3){
+//         checkobj.boardContent = false;
      
-        return;
-    }
+//         return;
+//     }
 
-    checkobj.boardContent = true;
-})
+//     checkobj.boardContent = true;
+// })
 
 
 
@@ -204,6 +202,8 @@ document.getElementById("qnaWriteForm").addEventListener("submit",(e)=> {
                 case "boardContent" : str = "5글자 이상 작성해주세요."; break;
             }
             alert(str);
+
+            document.querySelector(key).focus;
 
             e.preventDefault();
             return;

@@ -35,7 +35,8 @@
 
             <!-- 제목 -->
             <p class="board-title">
-                제목 <input type="text" name="boardTitle" placeholder="제목" th:value="${board.boardTitle}" id="board_detail_text_title">   
+                제목 <input type="text" name="boardTitle" placeholder="제목"
+                 th:value="${board.boardTitle}" id="title" class="board_up_title">   
             </p>
 
 
@@ -44,7 +45,8 @@
            
             <!-- 내용 -->
             <div class="board-content">
-               내용 <textarea name="boardContent" th:text="*{boardContent}" style="resize: none;" id="board_content_detail">게시글 내용</textarea>
+               내용 <textarea name="boardContent" th:text="*{boardContent}" 
+               style="resize: none;" id="content" class="board_up_content">게시글 내용</textarea>
                
             </div>
 
@@ -91,6 +93,8 @@
                          </div>
                      </div>
              </th:block>  -->
+
+             
              
              <div style="display: flex;
              column-gap: 20px;
