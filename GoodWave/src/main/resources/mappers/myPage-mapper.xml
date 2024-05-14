@@ -54,6 +54,7 @@
 	 	DELETE FROM "VOLUNTEERLIST" 
 		WHERE VOLUNTEER_NO = #{volunteerNo}
 		AND MEMBER_NO = #{memberNo}
+		AND ACT_DATE = #{registryDate}
  	</delete>
  
 

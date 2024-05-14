@@ -302,7 +302,9 @@ const applyCancle = volunteerNo => {
     fetch("/mypage/applyCancle ",{
       method : "POST",
       headers : {"Content-Type" : "application/json"},
-      body : JSON.stringify({"volunteerNo" : volunteerNo} )
+      body : JSON.stringify({"volunteerNo" : volunteerNo
+                          
+      } )
     })
     .then( resp => resp.text() )
     .then( result => {
