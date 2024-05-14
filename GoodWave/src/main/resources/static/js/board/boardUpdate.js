@@ -178,3 +178,59 @@ boardUpdateFrm.addEventListener("submit", e => {
 const list_list = document.querySelector("#list_list").addEventListener("click", function(){
     location.href = location.pathname.replace("editBoard","board") + location.search;
 })
+
+const checkObj = {
+   "title" : false,
+   "content" : false
+};
+
+
+
+const title = document.querySelector("#title");
+const content = document.querySelector("#content");
+const boardForm = document.querySelector(".board-write");
+
+title.addEventListener("input", function(e){
+ const ttt = e.target.value;
+
+ if(ttt.value.trim().length == 0){
+  checkObj.title = false;
+ }
+
+ checkObj = true;
+})
+
+content.addEventListener("input", function(e){
+  const ddd = e.target.value;
+  if(ddd.value.trim().length == 0){
+    checkObj.content = false;
+  }
+
+  checkObj = true;
+})
+
+
+boardForm.addEventListener("submit", function(e){
+
+    for(let key of checkObj){
+       
+        if(!checkObj[key]){
+            let str;
+
+            switch(key){
+              case "title" : str = "제목을 입력해주세요"; break;
+              case "content" : str = "내용을 입력해주세요"; break;
+            }
+
+            alert(str);
+
+            document.getElementById(key).focus;
+
+
+            e.preventDefault();
+
+            return;
+        }
+    }
+
+});

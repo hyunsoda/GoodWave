@@ -1,4 +1,4 @@
-#board_detail_text_title{
+.board_up_title{
     height: auto;
     /* margin: 150px 300px 100px 300px; */
     box-shadow: 3px 3px 10px #e6e6e6;
@@ -15,7 +15,7 @@
     margin: 200px auto;
 }
 
-#board_content_detail{
+.board_up_content{
     box-shadow: 3px 3px 10px #e6e6e6;
     border-radius: 15px;
     border: 1px solid black;
