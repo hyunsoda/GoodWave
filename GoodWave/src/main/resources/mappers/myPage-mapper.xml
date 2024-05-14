@@ -50,9 +50,9 @@
 	</select>
 	
 	<!-- 신청활동 취소 -->
-	<delete id="cancle">
+	<delete id="cancle" parameterType="edu.kh.goodWave.volunteer.model.dto.Volunteer">
 	 	DELETE FROM "VOLUNTEERLIST" 
-		WHERE VOLUNTEER_NO = #{volunteerNo}
+		WHERE ORDER_NO = #{orderNo}
 		AND MEMBER_NO = #{memberNo}
  	</delete>
  

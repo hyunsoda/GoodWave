@@ -76,6 +76,26 @@
 
     </script>
 
+<script>
+ 
+  let today = new Date(); // 현재 날짜 시간
+
+   let year = today.getFullYear();
+  let month = String(today.getMonth() + 1).padStart(2, '0');
+ let day = String(today.getDate()).padStart(2, '0');
+   let currentDate = `${year}-${month}-${day}`;
+
+
+  document.getElementById("TDRegisterDate2").min = currentDate; // 날짜 넘기기
+
+
+
+
+
+
+
+</script>
+
 
     <script src="/js/volunteer/yeontan.js"></script>
 </body>
