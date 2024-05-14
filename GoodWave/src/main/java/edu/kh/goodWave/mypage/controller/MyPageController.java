@@ -47,6 +47,8 @@ public class MyPageController {
 		//주소만 꺼내옴
 		String memberAddress = loginMember.getMemberAddress();
 		
+		log.info("memberAddress {}", memberAddress);
+		
 		// 주소가 있을 경우에만 동작
 				if (memberAddress != null) {
 
@@ -55,12 +57,24 @@ public class MyPageController {
 					String[] arr = memberAddress.split("\\^\\^\\^"); // ^은 \\ 2개 붙여줘야한다.
 																		// regex->정규표현식을 전달해야함
 
+					
+					if(arr.length > 2) {
+						model.addAttribute("postcode", arr[0]);
+						model.addAttribute("address", arr[1]);
+						model.addAttribute("detailAddress", arr[2]);
+					}
+					
+					
 					// 05831^^^서울 송파구 동남로 99^^^201호^^^
 					// ->["05831" , "서울 송파구 동남로 99","201호"]
 					// [0] [1] [2]
 					model.addAttribute("postcode", arr[0]);
 					model.addAttribute("address", arr[1]);
-					model.addAttribute("detailAddress", arr[2]);
+					
+					//model.addAttribute("detailAddress", arr[2]);
+					
+					//log.info("arr의 길이  {}", arr.length);
+					//log.info("arr의 2번  {}" , arr[2]);
 					
 			}
 

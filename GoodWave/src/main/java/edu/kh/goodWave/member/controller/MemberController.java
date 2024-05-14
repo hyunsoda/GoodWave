@@ -59,41 +59,36 @@ public class MemberController {
 						@RequestParam(value="saveId", required=false) String saveId,
 						HttpServletResponse resp) {
 		
-		
+		log.info("inputMember {}", inputMember);
 		Member loginMember = service.loginMember(inputMember);
 		
+		// 회원 정보 없을때 
 		if(loginMember == null ) {
 			ra.addFlashAttribute("message","아이디 혹은 비밀번호를 확인해주세요");
 			return "redirect:/member/login";
 		}
-		if(loginMember != null) {
-			model.addAttribute("loginMember",loginMember);
-			
-			
-			Cookie cookie = new Cookie("saveId", loginMember.getMemberId());
-			
-			
-			
-			
-			
-			
-			//saveId=user01
-			
-			cookie.setPath("/");
-			
-			if(saveId != null) {
-				cookie.setMaxAge(60 * 60 * 24 * 30);
-			}else {
-				cookie.setMaxAge(0);
-			}
-			
-			resp.addCookie(cookie);
-			
-			ra.addFlashAttribute("message","로그인되었습니다.");
-			
+		
+		// 회원 정보 있을때
+		model.addAttribute("loginMember",loginMember);
+		
+		Cookie cookie = new Cookie("saveId", loginMember.getMemberId());
+		
+		
+		//saveId=user01
+		
+		cookie.setPath("/");
+		
+		if(saveId != null) {
+			cookie.setMaxAge(60 * 60 * 24 * 30);
+		}else {
+			cookie.setMaxAge(0);
 		}
 		
+		resp.addCookie(cookie);
 		
+		ra.addFlashAttribute("message","로그인되었습니다.");
+		
+	
 		
 		return "redirect:/";
 	}
