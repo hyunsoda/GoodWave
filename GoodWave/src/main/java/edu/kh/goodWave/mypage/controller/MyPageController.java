@@ -144,7 +144,7 @@ public class MyPageController {
 
 		ra.addFlashAttribute("message", message);
 
-		return "redirect:/mypage";
+		return "redirect:/mypage/mypage";
 		
 	}
 	
@@ -262,9 +262,7 @@ public class MyPageController {
 //		@DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date
 //		String  applyCancleDate = date.toString();
 		
-		log.info("volunteerNo : " + volunteer.getVolunteerNo());
-		
-		log.info("registryDate : " + volunteer.getActDate());
+
 		
 		volunteer.setMemberNo(loginMember.getMemberNo());
 		
