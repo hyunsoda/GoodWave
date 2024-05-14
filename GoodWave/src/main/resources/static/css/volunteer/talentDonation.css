@@ -154,7 +154,7 @@ main {
 #registerBtn2{
   font-weight: bold;
     margin: auto;
-    margin-top: -5px;
+    margin-top: 21px;
     width: 300px;
     height: 45px;
     cursor: pointer;
@@ -172,14 +172,14 @@ main {
 
 
 #TDRegisterName, #TDRegisterName2, #TDRegisterName3{
-    width: 350px;
+    width: 357px;
 }
 #TDRegisterTel, #TDRegisterTel2, #TDRegisterTel3{
-    width: 310px;
+    width: 325px;
 }
 
 #TDRegisterSort{
-    width: 415px;
+    width: 407px;
 }
 #TDRegisterDate, #TDRegisterDate2, #TDRegisterDate3{
     width: 375px;

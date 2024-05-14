@@ -262,9 +262,9 @@ public class MyPageController {
 //		@DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date
 //		String  applyCancleDate = date.toString();
 		
-		log.info("volunteerNo : " + volunteer.getVolunteerNo());
 		
 		log.info("registryDate : " + volunteer.getActDate());
+		log.info("order_no :     " + volunteer.getOrderNo());
 		
 		volunteer.setMemberNo(loginMember.getMemberNo());
 		
