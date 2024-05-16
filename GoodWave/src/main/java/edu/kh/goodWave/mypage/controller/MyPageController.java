@@ -77,6 +77,10 @@ public class MyPageController {
 					//log.info("arr의 길이  {}", arr.length);
 					//log.info("arr의 2번  {}" , arr[2]);
 					
+					
+					
+					
+					
 			}
 
 		
@@ -222,6 +226,10 @@ public class MyPageController {
 		return "redirect:" + path;
 	}
 
+	
+	
+	
+	
 	@ResponseBody
 	@GetMapping("applyList")
 	public List<Volunteer> applyList(@SessionAttribute("loginMember") Member loginMember){
@@ -233,6 +241,10 @@ public class MyPageController {
 		
 		return applyList;
 	}
+	
+	
+	
+	
 	
 	@ResponseBody
 	@GetMapping("donationList")
