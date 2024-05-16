@@ -58,23 +58,27 @@ public class MyPageController {
 																		// regex->정규표현식을 전달해야함
 
 					
-//					if(arr.length > 2) {
+					if(arr.length > 2) {
 						model.addAttribute("postcode", arr[0]);
 						model.addAttribute("address", arr[1]);
 						model.addAttribute("detailAddress", arr[2]);
-//					}
+					}
 					
 					
 					// 05831^^^서울 송파구 동남로 99^^^201호^^^
 					// ->["05831" , "서울 송파구 동남로 99","201호"]
 					// [0] [1] [2]
-//					model.addAttribute("postcode", arr[0]);
-//					model.addAttribute("address", arr[1]);
+					model.addAttribute("postcode", arr[0]);
+					model.addAttribute("address", arr[1]);
 					
 					//model.addAttribute("detailAddress", arr[2]);
 					
 					//log.info("arr의 길이  {}", arr.length);
 					//log.info("arr의 2번  {}" , arr[2]);
+					
+					
+					
+					
 					
 			}
 
@@ -221,6 +225,10 @@ public class MyPageController {
 		return "redirect:/" + path;
 	}
 
+	
+	
+	
+	
 	@ResponseBody
 	@GetMapping("applyList")
 	public List<Volunteer> applyList(@SessionAttribute("loginMember") Member loginMember){
@@ -232,6 +240,10 @@ public class MyPageController {
 		
 		return applyList;
 	}
+	
+	
+	
+	
 	
 	@ResponseBody
 	@GetMapping("donationList")
