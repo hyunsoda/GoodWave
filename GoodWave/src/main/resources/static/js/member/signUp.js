@@ -109,8 +109,8 @@ const checkobj = {
     "pw" : false,
     "pwConfirm" : false,
     "name" : false,
-    "tel" : false
-
+    "tel" : false,
+    "postcode" : false
 };
 
 // =======이메일 유효성 검사
@@ -362,6 +362,38 @@ id.addEventListener("input", (e)=>{
 
 })
 
+//------------------------------------------------------------------------
+
+const postcode = document.getElementById("postcode");
+
+if(postcode.value.trim().length===0){
+        
+    checkobj.postcode=true;
+
+    };
+
+postcode.addEventListener("input",(e)=>{
+
+
+    const regExp = /^[0-9]{5}$/;
+    if(postcode.value.trim().length===0){
+        
+    checkobj.postcode=true;
+      return;
+    };
+
+    if(!regExp.test(postcode.value)){
+
+        checkobj.postcode=false;
+
+        return;
+    };
+
+
+    checkobj.postcode=true;
+})
+//--------------------------------------------------------------------------------
+
 
 // ========== 형식 안 맞으면 제출 막기
 const signUpForm = document.getElementById("signUpForm");
@@ -380,7 +412,7 @@ signUpForm.addEventListener("submit",(e)=> {
                 case "pwConfirm" : str = "비밀번호가 일치하지 않습니다."; break;
                 case "name" : str = "이름을 올바른 형식으로 작성해주세요."; break;
                 case "tel" : str = "전화번호를 올바른 형식으로 작성해주세요."; break;
-
+                case "postcode" : str ="주소를 정확하게 작성해주세요."; break;
             }
             alert(str);
 
@@ -397,5 +429,7 @@ signUpForm.addEventListener("submit",(e)=> {
         e.preventDefault();
         return;
     }
+
+    
 
 });
