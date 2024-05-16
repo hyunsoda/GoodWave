@@ -172,6 +172,8 @@ amount.addEventListener("input",(e)=>{
         checkobj.amount=false;
         return;
     };
+
+  
     
 
     if(amount.value % 5000!=0){
