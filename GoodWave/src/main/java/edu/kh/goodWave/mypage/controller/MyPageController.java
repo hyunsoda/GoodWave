@@ -73,6 +73,7 @@ public class MyPageController {
 					
 					//model.addAttribute("detailAddress", arr[2]);
 					
+					
 					//log.info("arr의 길이  {}", arr.length);
 					//log.info("arr의 2번  {}" , arr[2]);
 					
@@ -210,19 +211,19 @@ public class MyPageController {
 
 		if (result > 0) {
 			message = "탈퇴 되었습니다";
-			path = "/";
+			
 
 			status.setComplete(); // 세션을 완료시킴
-
+			path = "/";
 		} else {
 			message = "비밀번호가 일치하지 않습니다";
-			path = "withdrawal";
+			path = "/withdrawal";
 
 		}
 
 		ra.addFlashAttribute("message", message);
 
-		return "redirect:/" + path;
+		return "redirect:" + path;
 	}
 
 	
