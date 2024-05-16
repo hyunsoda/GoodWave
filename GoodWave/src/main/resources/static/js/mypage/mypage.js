@@ -68,8 +68,44 @@ if(mypage != null){
         }
 
 
+        
+        
+        const postcode = document.getElementById("postcode");
+
+        if(postcode.value.trim().length===0){
+                
+            checkobj.postcode=true;
+
+            };
+
+        postcode.addEventListener("input",(e)=>{
+
+
+            const regExp = /^[0-9]{5}$/;
+            if(postcode.value.trim().length===0){
+                
+            checkobj.postcode=true;
+            return;
+            };
+
+            if(!regExp.test(postcode.value)){
+
+                checkobj.postcode=false;
+
+                return;
+            };
+
+
+            checkobj.postcode=true;
+        })
+
+
+
     });
 }
+
+
+
 
 
 /********************************************************************************************** */
