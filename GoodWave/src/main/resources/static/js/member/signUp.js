@@ -25,6 +25,10 @@ function execDaumPostcode() {
     }).open();
 }
 
+
+
+
+
 // 주소 검색 버튼 클릭 시
 document.querySelector("#searchAddress").addEventListener("click", execDaumPostcode);
 
@@ -103,15 +107,21 @@ const telSpan = document.getElementById("telSpan");
 const idSpan = document.getElementById("idSpan");
 
 
+
 const checkobj = {
     "id" : false,
     "email" : false,
     "pw" : false,
     "pwConfirm" : false,
     "name" : false,
-    "tel" : false
-
+    "tel" : false,
+    
 };
+
+
+
+
+
 
 // =======이메일 유효성 검사
 email.addEventListener("input",(e)=> {
