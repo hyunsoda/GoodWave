@@ -3,6 +3,8 @@ package edu.kh.goodWave.member.model.service;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -10,10 +12,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.context.Context;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 import org.thymeleaf.spring6.SpringTemplateEngine;
 import edu.kh.goodWave.member.model.dto.Member;
 import edu.kh.goodWave.member.model.mapper.MemberMapper;
 import jakarta.mail.internet.MimeMessage;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -21,6 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Slf4j
 @RequiredArgsConstructor
+@PropertySource("classpath:/config.properties")
 public class MemberServiceImpl implements MemberService{
 
 	private final MemberMapper mapper;
@@ -30,6 +35,17 @@ public class MemberServiceImpl implements MemberService{
 	private final JavaMailSender mailSender;
 	
 	private final SpringTemplateEngine templateEngine;
+	
+    @Value("${naver.client_id}")
+    private String naverClientId;
+    
+    @Value("${naver.redirect_uri}")
+    private String naverRedirectUri;
+    
+    @Value("${naver.client_secret}")
+    private String naverClientSecret;
+	
+    
 	
 	// 로그인
 	@Override
@@ -195,6 +211,36 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public int checkMemberId(String memberId) {
 		return mapper.checkMemberId(memberId);
+	}
+
+
+
+
+	@Override
+	public String loginUrl(Model model,HttpServletRequest request2) {
+		
+	 
+	    String state = "state";
+	    
+	
+	    String baseUrl = "https://nid.naver.com/oauth2.0/authorize?response_type=code";
+	    
+	    StringBuilder sb = new StringBuilder();
+	    
+	    sb.append(baseUrl);
+	    sb.append("?response_type=code");
+	    sb.append("&client_id=" + naverClientId);
+	    sb.append("&redirect_uri=" + naverRedirectUri);
+	    sb.append("&state=" + state);
+	    
+	    log.debug("aaaaaaaaaaa                "+ sb.toString());
+	    
+//	    request2.getSession().setAttribute("state", state);
+	    
+	    
+	    
+	    
+		return sb.toString();
 	}
 
 
