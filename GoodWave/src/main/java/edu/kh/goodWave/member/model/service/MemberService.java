@@ -2,7 +2,10 @@ package edu.kh.goodWave.member.model.service;
 
 import java.util.Map;
 
+import org.springframework.ui.Model;
+
 import edu.kh.goodWave.member.model.dto.Member;
+import jakarta.servlet.http.HttpServletRequest;
 
 public interface MemberService {
 
@@ -42,6 +45,16 @@ public interface MemberService {
 
 
 	int checkMemberId(String memberId);
+
+
+	String loginUrl(Model model, HttpServletRequest request2);
+
+
+	/** 네이버 로그인 회원가입
+	 * @param inputMember
+	 * @return
+	 */
+	int signUpNaver(Member inputMember);
 
 
 }

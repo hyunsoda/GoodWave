@@ -27,6 +27,14 @@
 	 #{memberAddress},DEFAULT,DEFAULT, DEFAULT)
 </insert>
 
+	<!--네이버 회원가입-->
+<insert id="signUpNaver">
+	 INSERT INTO "MEMBER" 
+	 VALUES(SEQ_MEMBER_NO.NEXTVAL ,#{memberId}, #{memberName}, 
+	 #{memberEmail},NULL,#{memberTel}, 
+	 NULL,DEFAULT,DEFAULT, DEFAULT)
+</insert>
+
 
 <select id="checkEmail" resultType="_int" parameterType="string"> 
 SELECT COUNT(*) FROM "MEMBER"
