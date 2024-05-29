@@ -59,6 +59,8 @@ public class MemberServiceImpl implements MemberService{
 		
 		if(loginMember == null) return null;
 		
+		
+		if(loginMember.getMemberPw() == null) return loginMember;
 
 		if(!bcrypt.matches(inputMember.getMemberPw(), loginMember.getMemberPw())) {
 			return null;
@@ -241,6 +243,15 @@ public class MemberServiceImpl implements MemberService{
 	    
 	    
 		return sb.toString();
+	}
+
+
+
+
+	@Override
+	public int signUpNaver(Member inputMember) {
+		
+		return mapper.signUpNaver(inputMember);
 	}
 
 

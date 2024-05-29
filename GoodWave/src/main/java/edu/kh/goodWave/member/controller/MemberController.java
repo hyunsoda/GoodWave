@@ -33,7 +33,6 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.kh.goodWave.member.model.dto.Member;
-import edu.kh.goodWave.member.model.dto.NaverAPI;
 import edu.kh.goodWave.member.model.service.MemberService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
@@ -67,7 +66,7 @@ public class MemberController {
 	@Autowired
 	private BCryptPasswordEncoder bcrypt;
 	
-	private NaverAPI naverApi;
+	
 	
 	@RequestMapping("/naver_login")
 	public String naver_login(HttpServletRequest request, Model model, HttpServletRequest request2) {
@@ -79,7 +78,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/naverCallback")
-	public String naver_redirect(HttpServletRequest request) {
+	public String naver_redirect(HttpServletRequest request, Model model,RedirectAttributes ra) {
 		// 네이버에서 전달해준 code, state 값 가져오기
 	    String code = request.getParameter("code");
 	    String state = request.getParameter("state");
@@ -163,12 +162,34 @@ public class MemberController {
 
 	        Member inputMember = new Member();
 	        
+	        int emailResult = service.checkEmail(userResultMap.get("response").get("email").toString());
+	        
 	        inputMember.setMemberEmail(userResultMap.get("response").get("email").toString());
 	        inputMember.setMemberId(userResultMap.get("response").get("id").toString());
 	        inputMember.setMemberName(userResultMap.get("response").get("nickname").toString());
-	        
+		        
 	        String PhoneNumber = (userResultMap.get("response").get("mobile").toString()).replaceAll("-", "");
 	        inputMember.setMemberTel(PhoneNumber);
+	        
+	        log.debug("멤버확이니인이닝" + inputMember);
+	        log.debug("멤버확이니인이닝" + emailResult);
+	        
+	        if(emailResult == 0) {
+	        	
+		        int signUpNaverResult = service.signUpNaver(inputMember);
+		        
+				if(signUpNaverResult <1) {
+				
+					String message = "회원가입 실패";
+					ra.addFlashAttribute("message", message);
+					return "redirect:/";
+				} 
+		        
+	        }
+	        	
+		        Member loginMember = service.loginMember(inputMember);
+		        model.addAttribute("loginMember",loginMember);
+	        
 	        
 	    } catch (Exception e) {
 	        e.printStackTrace();

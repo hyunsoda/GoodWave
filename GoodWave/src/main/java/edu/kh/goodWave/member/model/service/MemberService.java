@@ -50,4 +50,11 @@ public interface MemberService {
 	String loginUrl(Model model, HttpServletRequest request2);
 
 
+	/** 네이버 로그인 회원가입
+	 * @param inputMember
+	 * @return
+	 */
+	int signUpNaver(Member inputMember);
+
+
 }

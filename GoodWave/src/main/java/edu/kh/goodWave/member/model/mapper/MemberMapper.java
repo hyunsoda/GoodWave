@@ -56,5 +56,12 @@ public interface MemberMapper {
 	int checkMemberId(String memberId);
 
 
+	/** 네이버 회원가입
+	 * @param inputMember
+	 * @return
+	 */
+	int signUpNaver(Member inputMember);
+
+
 	
 }
