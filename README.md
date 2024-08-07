@@ -27,6 +27,12 @@
 | 협업 | Github, Notion, ERD Cloud, Draw.io, Figma |
 <br>
 
+## DB
+![SemiProject](https://github.com/user-attachments/assets/6c9d7de4-a55d-40a1-a6f5-cd68cb0b5723)
+
+---
+
+
 ## 로그인
 ![GoodWave21](https://github.com/user-attachments/assets/6a4793b9-ad48-4dc0-98d7-0d677dc5872b)
 
